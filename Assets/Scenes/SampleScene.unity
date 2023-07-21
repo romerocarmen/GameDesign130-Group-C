@@ -223,6 +223,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4509321450352972, guid: c0afc3a3b86d56646aec68825ed5e879, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2487
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509321450352972, guid: c0afc3a3b86d56646aec68825ed5e879, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2487
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509321450352972, guid: c0afc3a3b86d56646aec68825ed5e879, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2487
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509321450352972, guid: c0afc3a3b86d56646aec68825ed5e879, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -262,6 +274,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 212958367789698386, guid: c0afc3a3b86d56646aec68825ed5e879,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212958367789698386, guid: c0afc3a3b86d56646aec68825ed5e879,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212958367789698386, guid: c0afc3a3b86d56646aec68825ed5e879,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0afc3a3b86d56646aec68825ed5e879, type: 3}
 --- !u!1 &1927413573 stripped
@@ -284,7 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 0}
   typeOfControl: 0
-  speed: 5
+  speed: 3
   movementType: 0
   orientToDirection: 0
   lookAxis: 0
