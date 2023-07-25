@@ -17,6 +17,9 @@ public class FollowTarget : Physics2DObject
 
 	// The direction that will face the target
 	public Enums.Directions useSide = Enums.Directions.Up;
+
+	// ADDED TO SCRIPT BY JARED 
+	private Vector2 directionToPlayer; 
 	
 	// FixedUpdate is called once per frame
 	void FixedUpdate ()
@@ -32,7 +35,13 @@ public class FollowTarget : Physics2DObject
 		}
 		
 		//Move towards the target
-		rigidbody2D.MovePosition(Vector2.Lerp(transform.position, target.position, Time.fixedDeltaTime * speed));
+		//NOTE: I am changing the script here to not use the pre-included line,
+		//  	as the Lerp operation causes the velocity of the following object
+		//		to grow faster the further away the target is, which isn't great for enemy AI
+		//rigidbody2D.MovePosition(Vector2.Lerp(transform.position, target.position, Time.fixedDeltaTime * speed));
+
+		directionToPlayer = (target.transform.position - transform.position).normalized;
+		rigidbody2D.velocity = new Vector2(directionToPlayer.x, directionToPlayer.y) * speed;
 
 	}
 }
