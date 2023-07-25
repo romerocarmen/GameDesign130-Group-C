@@ -9,19 +9,23 @@ TagManager:
   - Bullet
   - Ground
   - Pickup
+  - Arena Wall
+  - RedStageAttack
+  - GreenStageAttack
+  - BlueStageAttack
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Walls
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Red
+  - Green
+  - Blue
+  - RedZone
+  - GreenZone
+  - BlueZone
   - 
   - 
   - 
