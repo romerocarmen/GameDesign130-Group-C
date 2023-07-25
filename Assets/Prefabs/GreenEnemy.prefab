@@ -186,7 +186,7 @@ MonoBehaviour:
   rigidbody2D: {fileID: 0}
   target: {fileID: 0}
   speed: 10
-  lookAtTarget: 0
+  lookAtTarget: 1
   useSide: 0
 --- !u!1 &2106751534298107250
 GameObject:

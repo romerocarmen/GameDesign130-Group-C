@@ -20,7 +20,7 @@ public class SASpawner : MonoBehaviour
     void FixedUpdate()
     {
         timer += Time.deltaTime;
-        Debug.Log(Time.fixedTime);
+        
         if(timer > 10){
             timer = 0;
             //Set wall that the attack is coming from
