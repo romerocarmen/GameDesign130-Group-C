@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class BombHandler : MonoBehaviour
 {
-    private Vector3 scaleChange = new Vector3(0.3f, 0.3f, 0f);
+    private Vector3 scaleChange = new Vector3(2f, 2f, 0f);
     private float timer;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         timer += Time.deltaTime;
         gameObject.transform.localScale += scaleChange;
         if(timer > 1){
-            Destroy(gameObject, 1);
+            Destroy(gameObject);
         }
     }
 

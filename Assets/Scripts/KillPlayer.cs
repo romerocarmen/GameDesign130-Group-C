@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class KillPlayer : MonoBehaviour
 {
-    private bool invincible = false;
+    public bool invincible = false;
+    public bool inRed = false;
+    public bool inGreen = false;
+    public bool inBlue = false;
     public GameObject shield;
     private void Update() {
         if(Time.timeScale < 0.01f){
@@ -15,22 +18,63 @@ public class KillPlayer : MonoBehaviour
     // Death by enemy
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Enemy" && !invincible){
-            // Make the player invincible
-            invincible = true;
-            // Stop time
-            Time.timeScale = 0;
             //Set center of ship to color of whatever touched it
             gameObject.GetComponent<SpriteRenderer>().color = other.gameObject.GetComponentInChildren<SpriteRenderer>().color;
+            //kill the player
+            Death();
+        }
+    }
+
+    // This sets player safety to stage attacks when they are in a safe zone
+    // Death by Stage attack trigger is moved to script on the stage attack itself as it requires less checks there
+    private void OnTriggerEnter2D(Collider2D other) {
+        // Sets safety if player is in RedZone
+        if(other.gameObject.tag == "RedSafeZone"){
+            inRed = true;
+        }
+
+        // Sets safety if player is in GreenZone
+        if(other.gameObject.tag == "GreenSafeZone"){
+            inGreen = true;
+        }
+
+        // Sets safety if player is in BlueZone
+        if(other.gameObject.tag == "BlueSafeZone"){
+            inBlue = true;
+        }
+    }
+
+    // This removes player safety to stage attacks when they have left a safe zone
+    // Death by Stage attack trigger is moved to script on the stage attack itself as it requires less checks there
+    private void OnTriggerExit2D(Collider2D other) {
+        // Removes safety if player exits RedZone
+        if(other.gameObject.tag == "RedSafeZone"){
+            inRed = false;
+        }
+
+        // Removes safety if player exits GreenZone
+        if(other.gameObject.tag == "GreenSafeZone"){
+            inGreen = false;
+        }
+
+        // Removes safety if player exits BlueZone
+        if(other.gameObject.tag == "BlueSafeZone"){
+            inBlue = false;
+        }
+    }
+
+    public void Death(){
+        if(!invincible){
+            // Make the player invincible
+            invincible = true;
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            // Stop time
+            Time.timeScale = 0;
             // This sets the first child of the gameobject, the particle system, to be active
             gameObject.transform.GetChild(0).gameObject.SetActive(true);
             // Does some wacky stuff since the time is stopped
             StartCoroutine(Deathstop());
         }
-    }
-
-    // Death by stage attack
-    private void OnTriggerEnter2D(Collider2D other) {
-        
     }
 
     IEnumerator Deathstop(){

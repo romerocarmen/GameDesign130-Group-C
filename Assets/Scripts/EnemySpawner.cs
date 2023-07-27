@@ -27,13 +27,13 @@ public class EnemySpawner : MonoBehaviour
                 // 1/4 of a chance for each enemy color, 1/4 chance of nothing
                 switch(RollSpawnDie()){
                     case 1: //5-10 Red Enemies spawn
-                        SpawnEnemies(Random.Range(5,10), i, redEnemy);
+                        SpawnEnemies(1, i, redEnemy);//Random.Range(5,10)
                         break;
                     case 2: //5-10 Green Enemies spawn
-                        SpawnEnemies(Random.Range(5,10), i, greenEnemy);
+                        SpawnEnemies(1, i, greenEnemy);//Random.Range(5,10)
                         break;
                     case 3: //5-10 Blue Enemies spawn
-                        SpawnEnemies(Random.Range(5,10), i, blueEnemy);
+                        SpawnEnemies(1, i, blueEnemy);//Random.Range(5,10)
                         break;
                     default:
                         //This is if the die rolls 4, in which nothing spawns
@@ -70,7 +70,7 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemies(int quantity, int position, GameObject enemy){
         for(int j = 0; j < quantity; j++){
-            Instantiate(enemy, SetSpawnPosition(position), Quaternion.Euler(new Vector3(0,0,45)));
+            Instantiate(enemy, SetSpawnPosition(position), Quaternion.identity);
             enemy.gameObject.GetComponent<FollowTarget>().target = target;
         }
     }
