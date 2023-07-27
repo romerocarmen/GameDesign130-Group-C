@@ -14,6 +14,9 @@ TagManager:
   - GreenStageAttack
   - BlueStageAttack
   - Shield
+  - RedSafeZone
+  - GreenSafeZone
+  - BlueSafeZone
   layers:
   - Default
   - TransparentFX

@@ -348,6 +348,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b33d04416a3c049a1fe847e6fd63f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincible: 0
+  inRed: 0
+  inGreen: 0
+  inBlue: 0
   shield: {fileID: 6128323547626369279, guid: 0273d67e975186f47b697a74e44b4ec5, type: 3}
 --- !u!114 &448095532
 MonoBehaviour:
@@ -890,7 +894,7 @@ GameObject:
   - component: {fileID: 1061331293}
   m_Layer: 0
   m_Name: RedPlayerTrigger
-  m_TagString: Untagged
+  m_TagString: RedSafeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5813,7 +5817,7 @@ GameObject:
   - component: {fileID: 1118737164}
   m_Layer: 0
   m_Name: BluePlayerTrigger
-  m_TagString: Untagged
+  m_TagString: BlueSafeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5917,7 +5921,7 @@ GameObject:
   - component: {fileID: 1291068523}
   m_Layer: 11
   m_Name: BlueSafeZone
-  m_TagString: Untagged
+  m_TagString: BlueSafeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6063,7 +6067,7 @@ GameObject:
   - component: {fileID: 1299815649}
   m_Layer: 0
   m_Name: GreenPlayerTrigger
-  m_TagString: Untagged
+  m_TagString: GreenSafeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6510,7 +6514,7 @@ GameObject:
   - component: {fileID: 2108961626}
   m_Layer: 10
   m_Name: GreenSafeZone
-  m_TagString: Untagged
+  m_TagString: GreenSafeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
