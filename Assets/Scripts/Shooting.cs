@@ -6,6 +6,8 @@ public class Shooting : MonoBehaviour
 {
     [SerializeField]
     private GameObject Bullet;
+    //public float fireRate = 1f;
+    //public float canFire = 1f;
 
     void Start()
     {
@@ -14,9 +16,10 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) //&& Time.time > canFire
         {
-            Instantiate(Bullet, transform.position, transform.rotation);
+           Instantiate(Bullet, transform.position, transform.rotation);
+           //canFire = Time.time + fireRate;
         }
     }
 }
