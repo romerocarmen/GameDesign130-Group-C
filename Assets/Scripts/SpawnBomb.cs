@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnBomb : MonoBehaviour
 {
-
+    public int bombCount = 3;
     public GameObject bombPrefab;
     private float timeSinceLastBomb = 2;
     // Start is called before the first frame update
@@ -17,8 +17,10 @@ public class SpawnBomb : MonoBehaviour
     void Update()
     {
         timeSinceLastBomb += Time.deltaTime;
-        if(Input.GetButtonDown("Bomb") && timeSinceLastBomb > 2){
+        if(Input.GetButtonDown("Bomb") && timeSinceLastBomb > 2 && bombCount > 0){
             BigABomb();
+            bombCount -= 1;
+            GameObject.Find("BombCounter").GetComponent<UIBombCounter>().decrementBombCounter();
         }
     }
 
