@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject blueEnemy;
 
     private float timer = 5;
+    private int waveNumber = 0;
     public Transform target;
 
     // Update is called once per frame
@@ -20,6 +21,7 @@ public class EnemySpawner : MonoBehaviour
         if(timer > 3){
             // Set timer back to 0
             timer = 0;
+            waveNumber += 1;
             //"roll" to see if enemies spawn for each side of the arena
             //Loop runs 4 times, once for each side
             for(int i = 0; i<4; i++){
@@ -27,13 +29,13 @@ public class EnemySpawner : MonoBehaviour
                 // 1/4 of a chance for each enemy color, 1/4 chance of nothing
                 switch(RollSpawnDie()){
                     case 1: //5-10 Red Enemies spawn
-                        SpawnEnemies(1, i, redEnemy);//Random.Range(5,10)
+                        SpawnEnemies(Random.Range(0,waveNumber) + 1, i, redEnemy);//Random.Range(5,10)
                         break;
                     case 2: //5-10 Green Enemies spawn
-                        SpawnEnemies(1, i, greenEnemy);//Random.Range(5,10)
+                        SpawnEnemies(Random.Range(0,waveNumber) + 1, i, greenEnemy);//Random.Range(5,10)
                         break;
                     case 3: //5-10 Blue Enemies spawn
-                        SpawnEnemies(1, i, blueEnemy);//Random.Range(5,10)
+                        SpawnEnemies(Random.Range(0,waveNumber) + 1, i, blueEnemy);//Random.Range(5,10)
                         break;
                     default:
                         //This is if the die rolls 4, in which nothing spawns
