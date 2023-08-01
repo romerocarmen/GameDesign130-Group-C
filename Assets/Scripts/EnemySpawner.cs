@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
     {
         timer += Time.deltaTime;
         //Every 5 seconds
-        if(timer > 5){
+        if(timer > 3){
             // Set timer back to 0
             timer = 0;
             //"roll" to see if enemies spawn for each side of the arena
