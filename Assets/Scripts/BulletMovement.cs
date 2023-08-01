@@ -6,9 +6,11 @@ public class BulletMovement : MonoBehaviour
 {
 
     [SerializeField]
+
     private float speed = 5.0f;
     float maxDistance = 100f;
     Vector3 startingPosition;
+
 
     // Start is called before the first frame update
     void Start()
