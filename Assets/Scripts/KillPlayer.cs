@@ -99,8 +99,9 @@ public class KillPlayer : MonoBehaviour
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
         // Decrement the player life counter
         GameObject.Find("LifeCounter").GetComponent<UILifeCounter>().decrementLifeCounter();
-        if(livesLeft == 0){
-            SceneManager.LoadScene(1);
+        livesLeft -= 1;
+        if(livesLeft < 1){
+            SceneManager.LoadScene(2);
         }
         // Set time to move again
         Time.timeScale = 1;
