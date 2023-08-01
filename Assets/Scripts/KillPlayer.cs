@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KillPlayer : MonoBehaviour
 {
@@ -72,6 +73,8 @@ public class KillPlayer : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             // Stop time
             Time.timeScale = 0;
+            //freezes player rotation
+            gameObject.GetComponent<Move>().orientToDirection = false;
             // This sets the first child of the gameobject, the particle system, to be active
             gameObject.transform.GetChild(0).gameObject.SetActive(true);
             // Does some wacky stuff since the time is stopped
@@ -96,10 +99,15 @@ public class KillPlayer : MonoBehaviour
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
         // Decrement the player life counter
         GameObject.Find("LifeCounter").GetComponent<UILifeCounter>().decrementLifeCounter();
+        if(livesLeft == 0){
+            SceneManager.LoadScene(1);
+        }
         // Set time to move again
         Time.timeScale = 1;
         // Turn off player's invincibility in 5 seconds
         StartCoroutine(InvincibilityTimer());
+        //unfreezes player rotation
+        gameObject.GetComponent<Move>().orientToDirection = true;
     }
 
     IEnumerator InvincibilityTimer(){

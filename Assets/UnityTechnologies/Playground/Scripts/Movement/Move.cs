@@ -56,11 +56,14 @@ public class Move : Physics2DObject
 		//the axis to look can be decided with the "axis" variable
 		if(orientToDirection)
 		{
-			if(movement.sqrMagnitude >= 0.01f)
-			{
-				cachedDirection = movement;
-			}
-			Utils.SetAxisTowards(lookAxis, transform, cachedDirection);
+			// if(movement.sqrMagnitude >= 0.01f)
+			// {
+			// 	cachedDirection = movement;
+			// }
+			// Utils.SetAxisTowards(lookAxis, transform, cachedDirection);
+			Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        	Vector3 direction = (Vector3)(Input.mousePosition - screenPoint);
+        	Utils.SetAxisTowards(Enums.Directions.Right, transform, direction);
 		}
 	}
 
