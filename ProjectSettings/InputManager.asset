@@ -73,7 +73,7 @@ InputManager:
     m_Name: Bomb
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: s
+    negativeButton: 
     positiveButton: space
     altNegativeButton: 
     altPositiveButton: j

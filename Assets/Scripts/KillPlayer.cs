@@ -5,6 +5,8 @@ using UnityEngine;
 public class KillPlayer : MonoBehaviour
 {
     public bool invincible = false;
+
+    public int livesLeft = 3;
     public bool inRed = false;
     public bool inGreen = false;
     public bool inBlue = false;
@@ -92,6 +94,8 @@ public class KillPlayer : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1,0.36f);
         // Set particle emitter to stop
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        // Decrement the player life counter
+        GameObject.Find("LifeCounter").GetComponent<UILifeCounter>().decrementLifeCounter();
         // Set time to move again
         Time.timeScale = 1;
         // Turn off player's invincibility in 5 seconds
