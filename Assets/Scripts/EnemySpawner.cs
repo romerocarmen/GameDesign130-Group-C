@@ -49,7 +49,7 @@ public class EnemySpawner : MonoBehaviour
         return Random.Range(1,5);
     }
 
-    Vector2 SetSpawnPosition(int spot){
+    public Vector2 SetSpawnPosition(int spot){
         Vector2 spawnPosition = new Vector2(0,0);
         switch(spot){
             case 0: //Left
@@ -70,7 +70,7 @@ public class EnemySpawner : MonoBehaviour
         return spawnPosition;
     }
 
-    void SpawnEnemies(int quantity, int position, GameObject enemy){
+    public void SpawnEnemies(int quantity, int position, GameObject enemy){
         for(int j = 0; j < quantity; j++){
             Instantiate(enemy, SetSpawnPosition(position), Quaternion.identity);
             enemy.gameObject.GetComponent<FollowTarget>().target = target;

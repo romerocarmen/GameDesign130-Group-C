@@ -44,4 +44,10 @@ public class FollowTarget : Physics2DObject
 		rigidbody2D.velocity = new Vector2(directionToPlayer.x, directionToPlayer.y) * speed;
 
 	}
+
+	private void OnTriggerEnter2D(Collider2D other) {
+		if(other.name == "TargetSwitcher"){
+			target = GameObject.Find("Player").transform;
+		}
+	}
 }
