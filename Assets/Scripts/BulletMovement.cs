@@ -7,10 +7,11 @@ public class BulletMovement : MonoBehaviour
 
     [SerializeField]
 
+    private GameObject XP;
     private float speed = 5.0f;
     float maxDistance = 100f;
     Vector3 startingPosition;
-
+    bool placedXP = false;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +46,16 @@ public class BulletMovement : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
+            Vector3 endingPosition = other.gameObject.transform.position;
             Destroy(other.gameObject);
+
+            // place XP where enemy was
+            if (!placedXP)
+            {
+                GameObject tmpXP = Instantiate(XP);
+                tmpXP.transform.position = endingPosition;
+                placedXP = true;
+            }
         }
     }
 
@@ -53,7 +63,16 @@ public class BulletMovement : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
+            Vector3 endingPosition = gameObject.transform.position;
             Destroy(gameObject);
+
+            // place XP where enemy was
+            if (!placedXP)
+            {
+                GameObject tmpXP = Instantiate(XP);
+                tmpXP.transform.position = endingPosition;
+                placedXP = true;
+            }
         }
     }
 }
