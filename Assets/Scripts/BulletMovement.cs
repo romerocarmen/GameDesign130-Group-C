@@ -36,6 +36,9 @@ public class BulletMovement : MonoBehaviour
         Utils.SetAxisTowards(Enums.Directions.Right, transform, direction);
 		//gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(directionToMouse.x, directionToMouse.y) * speed;
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * speed, ForceMode2D.Impulse);
+        while(gameObject.GetComponent<Rigidbody2D>().velocity.magnitude < 40){
+            gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity.magnitude * 1.1f * gameObject.GetComponent<Rigidbody2D>().velocity.normalized;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
