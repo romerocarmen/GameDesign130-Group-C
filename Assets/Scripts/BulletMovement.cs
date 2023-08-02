@@ -46,6 +46,11 @@ public class BulletMovement : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
+            // Finds the audio source
+            AudioSource audio = GameObject.Find("Enemy Death Sound Effect").GetComponent<AudioSource>();
+            // Plays the sound
+            audio.Play();
+
             Vector3 endingPosition = other.gameObject.transform.position;
             Destroy(other.gameObject);
 

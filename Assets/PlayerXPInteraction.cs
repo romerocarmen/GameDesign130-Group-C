@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerXPInteraction : MonoBehaviour
 {
     // tracking the number of XP collected
-    public static int totalXP = 0; 
+    public static int totalXP = 0;
 
     void Awake()
     {
@@ -18,6 +18,10 @@ public class PlayerXPInteraction : MonoBehaviour
         // XP disappears if it comes into contact with player
         if (collider.CompareTag("Player"))
         {
+            // Finds the audio source
+            AudioSource audio = GameObject.Find("Sound Effect").GetComponent<AudioSource>();
+            // Plays the sound
+            audio.Play();
             // add XP to counter
             totalXP += 2;
             // Destroy the XP
