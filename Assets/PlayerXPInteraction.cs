@@ -19,7 +19,7 @@ public class PlayerXPInteraction : MonoBehaviour
         if (collider.CompareTag("Player"))
         {
             // add XP to counter
-            totalXP += 1;
+            totalXP += 2;
             // Destroy the XP
             Destroy(gameObject);
         }
