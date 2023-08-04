@@ -15,7 +15,7 @@ public class PlayerXPInteraction : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        // XP disappears if it comes into contact with player object
+        // XP disappears if it comes into contact with player object :)
         if (collider.CompareTag("Player"))
         {
             // Finds the audio source
