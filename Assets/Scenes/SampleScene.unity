@@ -811,7 +811,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3c6b8797e6fdd924ba52424b985b04b1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.164
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1470,7 +1470,7 @@ GameObject:
   - component: {fileID: 286557737}
   - component: {fileID: 286557739}
   - component: {fileID: 286557738}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: NoEnemySpawnBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1762,7 +1762,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -2911,7 +2911,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -43, y: -27}
+  m_AnchoredPosition: {x: -213.59998, y: -79}
   m_SizeDelta: {x: 750, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1003457126
@@ -9686,7 +9686,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -83, y: -27.5}
+  m_AnchoredPosition: {x: -253.6, y: -79.5}
   m_SizeDelta: {x: 12.1119995, y: 11.725998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1690964164

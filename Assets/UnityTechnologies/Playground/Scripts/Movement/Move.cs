@@ -29,13 +29,13 @@ public class Move : Physics2DObject
 		// Moving with the arrow keys
 		if(typeOfControl == Enums.KeyGroups.ArrowKeys)
 		{
-			moveHorizontal = Input.GetAxis("Horizontal");
-			moveVertical = Input.GetAxis("Vertical");
+			moveHorizontal = Input.GetAxisRaw("Horizontal");
+			moveVertical = Input.GetAxisRaw("Vertical");
 		}
 		else
 		{
-			moveHorizontal = Input.GetAxis("Horizontal2");
-			moveVertical = Input.GetAxis("Vertical2");
+			moveHorizontal = Input.GetAxisRaw("Horizontal2");
+			moveVertical = Input.GetAxisRaw("Vertical2");
 		}
 
 		//zero-out the axes that are not needed, if the movement is constrained
@@ -74,5 +74,8 @@ public class Move : Physics2DObject
 	{
 		// Apply the force to the Rigidbody2d
 		rigidbody2D.AddForce(movement * speed * 10f);
+		if(movement == Vector2.zero){
+			rigidbody2D.velocity = Vector2.zero;
+		}
 	}
 }

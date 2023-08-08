@@ -27,6 +27,14 @@ public class CollisionSetter : MonoBehaviour
         //Blue
         Physics2D.IgnoreLayerCollision(8,9);
         Physics2D.IgnoreLayerCollision(8,10);
+
+        // Set collisions between NoSpawnBubble and safe zones off
+        Physics2D.IgnoreLayerCollision(12,9);
+        Physics2D.IgnoreLayerCollision(12,10);
+        Physics2D.IgnoreLayerCollision(12,11);
+
+        // Set collisions between NoSpawnBubble and stage attacks off
+        Physics2D.IgnoreLayerCollision(12,0);
     }
 
     // Update is called once per frame

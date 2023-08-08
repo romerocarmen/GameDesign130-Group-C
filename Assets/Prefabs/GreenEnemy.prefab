@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 2106751534270024596}
   - component: {fileID: 2106751534270024599}
   - component: {fileID: 8436456983690750605}
+  - component: {fileID: -6287514664172994130}
   m_Layer: 7
   m_Name: GreenEnemy
   m_TagString: Enemy
@@ -202,6 +203,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2106751534270024681}
+--- !u!114 &-6287514664172994130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106751534270024681}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0027ecc622a19415e89fe29ca9261170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody2D: {fileID: 0}
+  target: {fileID: 0}
+  speed: 5
+  directionChangeInterval: 3
+  keepNearStartingPoint: 1
+  orientToDirection: 0
+  lookAxis: 0
 --- !u!1 &2106751534298107250
 GameObject:
   m_ObjectHideFlags: 0

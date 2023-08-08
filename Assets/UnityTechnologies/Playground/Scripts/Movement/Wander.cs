@@ -7,6 +7,9 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Wander : Physics2DObject
 {
+	// This is the target the object is going to check to see if it swaps scripts
+	public Transform target;
+
 	[Header("Movement")]
 	public float speed = 1f;
 	public float directionChangeInterval = 3f;
@@ -21,6 +24,11 @@ public class Wander : Physics2DObject
 	private Vector2 direction;
 	private Vector3 startingPoint;
 
+
+	//When this script is enabled, disable other movement scripts attached to the enemy
+	private void OnEnable() {
+		gameObject.GetComponent<FollowTarget>().enabled = false;
+	}
 
 	// Start is called at the beginning of the game
 	private void Start()
@@ -77,6 +85,31 @@ public class Wander : Physics2DObject
 	// FixedUpdate is called every frame when the physics are calculated
 	private void FixedUpdate()
 	{
-		rigidbody2D.AddForce(direction * speed);
+		// check the color of this enemy, and if the player is out of the corresponding color zone then the enemy swaps to targeting instead
+		switch(gameObject.layer){
+			//This enemy is RED
+			case 6:
+				if(!target.gameObject.GetComponent<KillPlayer>().inRed){
+					gameObject.GetComponent<FollowTarget>().enabled = true;
+				}
+				break;
+			//This enemy is GREEN
+			case 7:
+				if(!target.gameObject.GetComponent<KillPlayer>().inGreen){
+					gameObject.GetComponent<FollowTarget>().enabled = true;
+				}
+				break;
+			//This enemy is BLUE
+			case 8:
+				if(!target.gameObject.GetComponent<KillPlayer>().inBlue){
+					gameObject.GetComponent<FollowTarget>().enabled = true;
+				}
+				break;
+
+			default:
+				break;
+		}
+		//rigidbody2D.velocity = direction * speed;
+		//rigidbody2D.AddForce(direction * speed);
 	}
 }
