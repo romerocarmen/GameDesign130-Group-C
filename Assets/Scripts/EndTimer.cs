@@ -15,6 +15,7 @@ public class EndTimer : MonoBehaviour
 
     private void Awake() {
          EndTimeLabel.GetComponent<TMPro.TextMeshProUGUI>().text = TimeSpan.FromSeconds(Timer.timer).ToString(@"mm\:ss");
+         Timer.timer = 0;
     }
 
     // Update is called once per frame
