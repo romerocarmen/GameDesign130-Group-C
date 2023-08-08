@@ -21,9 +21,45 @@ public class FollowTarget : Physics2DObject
 	// ADDED TO SCRIPT BY JARED 
 	private Vector2 directionToPlayer; 
 	
+	//When this script is enabled, disable other movement scripts attached to the enemy
+	private void OnEnable() {
+		gameObject.GetComponent<Wander>().enabled = false;
+	}
+	
 	// FixedUpdate is called once per frame
 	void FixedUpdate ()
 	{
+		// // check the color of this enemy, and if the player is in the corresponding color zone then the enemy swaps to wandering instead
+		// // first make sure the enemy is targeting the player
+		// if(target.name == "Player"){
+		// 	switch(gameObject.layer){
+		// 		//This enemy is RED
+		// 		case 6:
+		// 			if(target.gameObject.GetComponent<KillPlayer>().inRed){
+		// 				gameObject.GetComponent<Wander>().enabled = true;
+		// 				gameObject.GetComponent<Wander>().target = target;
+		// 			}
+		// 			break;
+		// 		//This enemy is GREEN
+		// 		case 7:
+		// 			if(target.gameObject.GetComponent<KillPlayer>().inGreen){
+		// 				gameObject.GetComponent<Wander>().enabled = true;
+		// 				gameObject.GetComponent<Wander>().target = target;
+		// 			}
+		// 			break;
+		// 		//This enemy is BLUE
+		// 		case 8:
+		// 			if(target.gameObject.GetComponent<KillPlayer>().inBlue){
+		// 				gameObject.GetComponent<Wander>().enabled = true;
+		// 				gameObject.GetComponent<Wander>().target = target;
+		// 			}
+		// 			break;
+		// 		default:
+		// 			break;
+		// 	}
+		// }
+		
+
 		//do nothing if the target hasn't been assigned or it was detroyed for some reason
 		if(target == null)
 			return;
@@ -48,6 +84,33 @@ public class FollowTarget : Physics2DObject
 	private void OnTriggerEnter2D(Collider2D other) {
 		if(other.name == "TargetSwitcher"){
 			target = GameObject.Find("Player").transform;
+		}
+	}
+
+	private void OnCollisionEnter2D(Collision2D other){
+		Debug.Log("Hello" + other.gameObject.tag);
+		switch(gameObject.layer){
+			// Enemy is RED
+			case 6:
+			if(other.gameObject.tag == "RedSafeZone"){
+				Destroy(gameObject);
+			}
+			break;
+
+			// Enemy is GREEN
+			case 7:
+			if(other.gameObject.tag == "GreenSafeZone"){
+				Destroy(gameObject);
+			}
+			break;
+			// Enemy is BLUE
+			case 8:
+			if(other.gameObject.tag == "BlueSafeZone"){
+				Destroy(gameObject);
+			}
+			break;
+			default:
+			break;
 		}
 	}
 }

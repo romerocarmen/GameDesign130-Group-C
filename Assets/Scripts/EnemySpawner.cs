@@ -74,6 +74,7 @@ public class EnemySpawner : MonoBehaviour
         for(int j = 0; j < quantity; j++){
             Instantiate(enemy, SetSpawnPosition(position), Quaternion.identity);
             enemy.gameObject.GetComponent<FollowTarget>().target = target;
+            enemy.gameObject.GetComponent<Wander>().enabled = false;
         }
     }
 }
