@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2106751534270024681}
+  timer: 0
 --- !u!114 &-6287514664172994130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,8 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 0}
-  target: {fileID: 0}
-  speed: 5
+  speed: 20
   directionChangeInterval: 3
   keepNearStartingPoint: 1
   orientToDirection: 0

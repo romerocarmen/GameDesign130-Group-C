@@ -7,8 +7,8 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Wander : Physics2DObject
 {
-	// This is the target the object is going to check to see if it swaps scripts
-	public Transform target;
+	// This is the timer the object is going to check to see if it swaps scripts
+	private float timer = 0;
 
 	[Header("Movement")]
 	public float speed = 1f;
@@ -28,11 +28,15 @@ public class Wander : Physics2DObject
 	//When this script is enabled, disable other movement scripts attached to the enemy
 	private void OnEnable() {
 		gameObject.GetComponent<FollowTarget>().enabled = false;
+		gameObject.GetComponent<EnemySpawnChecker>().timer = 1;
 	}
+
 
 	// Start is called at the beginning of the game
 	private void Start()
 	{
+
+		
 		//we don't want directionChangeInterval to be 0, so we force it to a minimum value ;)
 		if(directionChangeInterval < 0.1f)
 		{
@@ -85,31 +89,35 @@ public class Wander : Physics2DObject
 	// FixedUpdate is called every frame when the physics are calculated
 	private void FixedUpdate()
 	{
-		// check the color of this enemy, and if the player is out of the corresponding color zone then the enemy swaps to targeting instead
-		switch(gameObject.layer){
-			//This enemy is RED
-			case 6:
-				if(!target.gameObject.GetComponent<KillPlayer>().inRed){
-					gameObject.GetComponent<FollowTarget>().enabled = true;
-				}
-				break;
-			//This enemy is GREEN
-			case 7:
-				if(!target.gameObject.GetComponent<KillPlayer>().inGreen){
-					gameObject.GetComponent<FollowTarget>().enabled = true;
-				}
-				break;
-			//This enemy is BLUE
-			case 8:
-				if(!target.gameObject.GetComponent<KillPlayer>().inBlue){
-					gameObject.GetComponent<FollowTarget>().enabled = true;
-				}
-				break;
-
-			default:
-				break;
+		timer += Time.deltaTime;
+		if(timer > .1){
+			gameObject.GetComponent<FollowTarget>().enabled = true;
 		}
-		//rigidbody2D.velocity = direction * speed;
+		// // check the color of this enemy, and if the player is out of the corresponding color zone then the enemy swaps to targeting instead
+		// switch(gameObject.layer){
+		// 	//This enemy is RED
+		// 	case 6:
+		// 		if(!target.gameObject.GetComponent<KillPlayer>().inRed){
+		// 			gameObject.GetComponent<FollowTarget>().enabled = true;
+		// 		}
+		// 		break;
+		// 	//This enemy is GREEN
+		// 	case 7:
+		// 		if(!target.gameObject.GetComponent<KillPlayer>().inGreen){
+		// 			gameObject.GetComponent<FollowTarget>().enabled = true;
+		// 		}
+		// 		break;
+		// 	//This enemy is BLUE
+		// 	case 8:
+		// 		if(!target.gameObject.GetComponent<KillPlayer>().inBlue){
+		// 			gameObject.GetComponent<FollowTarget>().enabled = true;
+		// 		}
+		// 		break;
+
+		// 	default:
+		// 		break;
+		// }
+		rigidbody2D.velocity = direction * speed;
 		//rigidbody2D.AddForce(direction * speed);
 	}
 }

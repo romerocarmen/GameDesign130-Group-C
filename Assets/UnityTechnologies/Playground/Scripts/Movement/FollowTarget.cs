@@ -21,10 +21,6 @@ public class FollowTarget : Physics2DObject
 	// ADDED TO SCRIPT BY JARED 
 	private Vector2 directionToPlayer; 
 	
-	//When this script is enabled, disable other movement scripts attached to the enemy
-	private void OnEnable() {
-		gameObject.GetComponent<Wander>().enabled = false;
-	}
 	
 	// FixedUpdate is called once per frame
 	void FixedUpdate ()
@@ -88,7 +84,6 @@ public class FollowTarget : Physics2DObject
 	}
 
 	private void OnCollisionEnter2D(Collision2D other){
-		Debug.Log("Hello" + other.gameObject.tag);
 		switch(gameObject.layer){
 			// Enemy is RED
 			case 6:

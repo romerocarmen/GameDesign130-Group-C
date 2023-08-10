@@ -126,6 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d95879451df974cbf9e169353fc4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleChange: {x: 1, y: 0, z: 0}
+  ghostBoxTime: 3
+  width: 15
 --- !u!82 &-3923109751513029945
 AudioSource:
   m_ObjectHideFlags: 0

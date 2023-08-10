@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class StageAttackHandler : MonoBehaviour
 {
-    private Vector3 scaleChange = new Vector3(1f, 0f, 0f);
+    public Vector3 scaleChange = new Vector3(1f, 0f, 0f);
+    public float ghostBoxTime = 3;
+    public float width = 15;
+
     private float timer;
+
+    private void Awake() {
+        gameObject.transform.localScale = new Vector3(1, width, 1);
+    }
 
     // Update is called once per frame
     // Stage Attack grows
@@ -13,7 +20,7 @@ public class StageAttackHandler : MonoBehaviour
     {
         timer += Time.deltaTime;
         gameObject.transform.localScale += scaleChange;
-        if(timer > 3){
+        if(timer > ghostBoxTime){
             activateAttack();
         }
     }

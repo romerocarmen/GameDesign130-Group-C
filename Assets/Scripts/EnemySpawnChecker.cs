@@ -6,7 +6,8 @@ public class EnemySpawnChecker : MonoBehaviour
 {
     public GameObject enemy;
 
-    private float timer = 0;
+    public float timer = 0;
+    private bool onScreen = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +20,12 @@ public class EnemySpawnChecker : MonoBehaviour
         timer += Time.deltaTime;
     }
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.name == "NoEnemySpawnBubble" && timer < 0.5){
+        if(other.name == "NoEnemySpawnBubble" && (timer < 0.5 || !onScreen)){
             GameObject.Find("ArenaMaster").GetComponent<EnemySpawner>().SpawnEnemies(1, Random.Range(0, 3), enemy);
             Destroy(gameObject);
+        }
+        if(other.name == "TargetSwitcher"){
+            onScreen = true;
         }
     }
 }
