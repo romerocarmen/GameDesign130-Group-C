@@ -7,41 +7,109 @@ public class EnemySpawner : MonoBehaviour
     public GameObject redEnemy;
     public GameObject greenEnemy;
     public GameObject blueEnemy;
+    public GameObject rainbowEnemy;
+    public GameObject redSplitter;
+    public GameObject greenSplitter;
+    public GameObject blueSplitter;
+    
 
-    private float timer = 5;
-    private int waveNumber = 0;
+    // timer
+    private float basicTimer = 0;
+    // timer for splitter enemies
+    private float splitterTimer = 0;
+    // timer for rainbow enemies
+    private float rainbowTimer = 0;
+
+    //private int waveNumber = 0;
     public Transform target;
+    // amount of times basic enemy spawns per second
+    public float spawnRateBasic = 1f;
 
+    // amount of times splitter enemy spawns per second
+    public float spawnRateSplitter = .5f;
+
+    // amount of times rainbow enemy spawns per second
+    public float spawnRateRainbow = .5f;
+
+    private int enemyColor; // 1 is red, 2 is green, 3 is blue
+    private int spawnWall; // 0 left, 1 top, 2 right, 3 bottom
+    public float spawnDelta = 0.00005f;
+    public float spawnDeltaAdvanced = 0.00005f;
     // Update is called once per frame
     // This spawns a random amount of enemies every 5 seconds
     void FixedUpdate()
     {
-        timer += Time.deltaTime;
-        //Every 5 seconds
-        if(timer > 3){
-            // Set timer back to 0
-            timer = 0;
-            waveNumber += 1;
-            //"roll" to see if enemies spawn for each side of the arena
-            //Loop runs 4 times, once for each side
-            for(int i = 0; i<4; i++){
-                //switch statement determines what is spawning at this side
-                // 1/4 of a chance for each enemy color, 1/4 chance of nothing
-                switch(RollSpawnDie()){
-                    case 1: //5-10 Red Enemies spawn
-                        SpawnEnemies(Random.Range(0,waveNumber) + 1, i, redEnemy);//Random.Range(5,10)
-                        break;
-                    case 2: //5-10 Green Enemies spawn
-                        SpawnEnemies(Random.Range(0,waveNumber) + 1, i, greenEnemy);//Random.Range(5,10)
-                        break;
-                    case 3: //5-10 Blue Enemies spawn
-                        SpawnEnemies(Random.Range(0,waveNumber) + 1, i, blueEnemy);//Random.Range(5,10)
-                        break;
-                    default:
-                        //This is if the die rolls 4, in which nothing spawns
-                        break;
-                }
+        if(spawnRateBasic != 0){
+            spawnRateBasic += spawnDelta;
+            basicTimer += Time.deltaTime;
+            if(basicTimer > 1/spawnRateBasic){
+                basicEnemySpawner();
             }
+        }
+        
+        if(spawnRateSplitter != 0){
+            splitterTimer += Time.deltaTime;
+            spawnRateSplitter += spawnDeltaAdvanced;
+            if(splitterTimer > 1/spawnRateSplitter){
+                splitterEnemySpawner();
+            }
+        }
+        
+        if(spawnRateRainbow != 0){
+            spawnRateRainbow += spawnDeltaAdvanced;
+            rainbowTimer += Time.deltaTime;
+            if(rainbowTimer > 1/spawnRateRainbow){
+                rainbowEnemySpawner();
+            }
+        }
+    }
+
+    private void basicEnemySpawner(){
+        basicTimer = 0;
+        enemyColor = Random.Range(1,4);
+        spawnWall = Random.Range(0,4);
+
+        switch(enemyColor){
+            case 1: //Red Enemy spawn
+                SpawnEnemies(1, spawnWall, redEnemy);
+                break;
+            case 2: //Green Enemy spawn
+                SpawnEnemies(1, spawnWall, greenEnemy);
+                break;
+            case 3: //Blue Enemy spawn
+                SpawnEnemies(1, spawnWall, blueEnemy);
+                break;
+            default:
+                //This is if the die rolls 4, in which nothing spawns
+                break;
+        }
+    }
+
+    private void rainbowEnemySpawner(){
+        rainbowTimer = 0;
+        spawnWall = Random.Range(0,4);
+        SpawnEnemies(1, spawnWall, rainbowEnemy);
+    }
+
+    private void splitterEnemySpawner(){
+        Debug.Log("Spawning a splitter now!");
+        splitterTimer = 0;
+        enemyColor = Random.Range(1,4);
+        spawnWall = Random.Range(0,4);
+
+        switch(enemyColor){
+            case 1: //Red Enemy spawn
+                SpawnEnemies(1, spawnWall, redSplitter);
+                break;
+            case 2: //Green Enemy spawn
+                SpawnEnemies(1, spawnWall, greenSplitter);
+                break;
+            case 3: //Blue Enemy spawn
+                SpawnEnemies(1, spawnWall, blueSplitter);
+                break;
+            default:
+                //This is if the die rolls 4, in which nothing spawns
+                break;
         }
     }
 
@@ -71,10 +139,12 @@ public class EnemySpawner : MonoBehaviour
     }
 
     public void SpawnEnemies(int quantity, int position, GameObject enemy){
-        for(int j = 0; j < quantity; j++){
-            Instantiate(enemy, SetSpawnPosition(position), Quaternion.identity);
-            enemy.gameObject.GetComponent<FollowTarget>().target = target;
-            enemy.gameObject.GetComponent<Wander>().enabled = false;
-        }
+        enemy.gameObject.GetComponent<FollowTarget>().enabled = true;
+        enemy.gameObject.GetComponent<FollowTarget>().target = target;
+        Instantiate(enemy, SetSpawnPosition(position), Quaternion.identity);
+        // for(int j = 0; j < quantity; j++){
+        //     enemy.gameObject.GetComponent<FollowTarget>().target = target;
+        //     Instantiate(enemy, SetSpawnPosition(position), Quaternion.identity);
+        // }
     }
 }

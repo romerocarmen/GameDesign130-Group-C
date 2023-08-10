@@ -11,6 +11,7 @@ public class CollisionSetter : MonoBehaviour
         Physics2D.IgnoreLayerCollision(3,6);
         Physics2D.IgnoreLayerCollision(3,7);
         Physics2D.IgnoreLayerCollision(3,8);
+        Physics2D.IgnoreLayerCollision(3,13);
 
         // Set collisions between player and safe zones off
         Physics2D.IgnoreLayerCollision(0,9);
@@ -27,6 +28,10 @@ public class CollisionSetter : MonoBehaviour
         //Blue
         Physics2D.IgnoreLayerCollision(8,9);
         Physics2D.IgnoreLayerCollision(8,10);
+        //Rainbow
+        Physics2D.IgnoreLayerCollision(13,9);
+        Physics2D.IgnoreLayerCollision(13,10);
+        Physics2D.IgnoreLayerCollision(13,11);
 
         // Set collisions between NoSpawnBubble and safe zones off
         Physics2D.IgnoreLayerCollision(12,9);
