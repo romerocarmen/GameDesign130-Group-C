@@ -21,4 +21,10 @@ public class LevelCounter : MonoBehaviour
         levelValue++;
         levelCounter.text = levelValue.ToString();
     }
+
+    public static void ResetLevel()
+    {
+        levelValue = 0;
+        levelCounter.text = levelValue.ToString();
+    }
 }
