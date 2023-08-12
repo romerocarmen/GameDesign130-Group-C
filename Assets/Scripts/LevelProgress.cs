@@ -28,4 +28,10 @@ public class LevelProgress : MonoBehaviour
             }
         }
     }
+
+    public static void ResetXP()
+    {
+        PlayerXPInteraction.totalXP = 0;
+        levelSlider.value = 0;
+    }
 }
