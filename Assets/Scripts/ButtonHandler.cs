@@ -10,6 +10,6 @@ public class ButtonHandler : MonoBehaviour
         // reset the level values
         LevelCounter.ResetLevel();
         LevelProgress.ResetXP();
-
+        ScoreCounter.ResetScore();
     }
 }

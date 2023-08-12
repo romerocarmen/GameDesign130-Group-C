@@ -24,7 +24,7 @@ public class LevelCounter : MonoBehaviour
 
     public static void ResetLevel()
     {
-        levelValue = 0;
+        levelValue = 1;
         levelCounter.text = levelValue.ToString();
     }
 }
