@@ -12,6 +12,8 @@ public class BulletMovement : MonoBehaviour
     float maxDistance = 100f;
     Vector3 startingPosition;
     bool placedXP = false;
+    bool destroyedXP = false;
+    bool updatedScore = false;
 
     // Start is called before the first frame update
     void Start()
@@ -60,9 +62,21 @@ public class BulletMovement : MonoBehaviour
                 GameObject tmpXP = Instantiate(XP);
                 tmpXP.transform.position = endingPosition;
                 placedXP = true;
+
+                if (!destroyedXP)
+                {
+                    // delete XP after 15 seconds
+                    Destroy(tmpXP, 15.0f);
+                    destroyedXP = true;
+                }
             }
 
-            ScorePlayerInteraction.UpdateScore(other.name);
+            // update score since an enemy was killed
+            if (!updatedScore)
+            {
+                ScorePlayerInteraction.UpdateScore(other.name);
+                updatedScore = true;
+            }
         }
     }
 
@@ -80,8 +94,19 @@ public class BulletMovement : MonoBehaviour
                 tmpXP.transform.position = endingPosition;
                 placedXP = true;
 
-                // delete XP after 15 seconds
-                Destroy(tmpXP, 15.0f);
+                if (!destroyedXP)
+                {
+                    // delete XP after 15 seconds
+                    Destroy(tmpXP, 15.0f);
+                    destroyedXP = true;
+                }
+            }
+
+            // update score since an enemy was killed
+            if (!updatedScore)
+            {
+                ScorePlayerInteraction.UpdateScore(other.name);
+                updatedScore = true;
             }
         }
     }
