@@ -61,6 +61,8 @@ public class BulletMovement : MonoBehaviour
                 tmpXP.transform.position = endingPosition;
                 placedXP = true;
             }
+
+            ScorePlayerInteraction.UpdateScore(other.name);
         }
     }
 
