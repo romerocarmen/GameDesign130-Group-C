@@ -79,6 +79,9 @@ public class BulletMovement : MonoBehaviour
                 GameObject tmpXP = Instantiate(XP);
                 tmpXP.transform.position = endingPosition;
                 placedXP = true;
+
+                // delete XP after 15 seconds
+                Destroy(tmpXP, 15.0f);
             }
         }
     }
