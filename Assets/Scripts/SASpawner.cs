@@ -20,6 +20,15 @@ public class SASpawner : MonoBehaviour
 
     private int lastSpawnWall = 1;
 
+    [SerializeField] public AudioClip theClip; 
+    [SerializeField] private AudioSource stageAttackAudio;
+    [SerializeField] private float volume = 1f; 
+
+    private void Start()
+    {
+        stageAttackAudio = GetComponent<AudioSource>();
+    }
+
     // Update is called once per frame
     //Stage Attacks happen every 10 seconds
     void FixedUpdate()
@@ -31,6 +40,11 @@ public class SASpawner : MonoBehaviour
                 multiAttackNumber = Random.Range(minMultiCount, maxMultiCount+1);
                 Debug.Log("MULTI ATTACK! Number is " + multiAttackNumber);
             }
+            else
+            {
+                Debug.Log("Only one stage attack");
+            }
+            stageAttackAudio.PlayOneShot(theClip, volume);
             timer = 0;
 
             for(int i = 0; i < multiAttackNumber; i++){

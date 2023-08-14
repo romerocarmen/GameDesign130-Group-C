@@ -165,7 +165,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1028137}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6712e621f0ae32c419a8d8d94fed035c, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 8139569}
   - component: {fileID: 8139570}
   - component: {fileID: 8139571}
+  - component: {fileID: 8139572}
   m_Layer: 0
   m_Name: ArenaMaster
   m_TagString: Untagged
@@ -336,6 +337,105 @@ MonoBehaviour:
   multiAttackChance: 0.5
   minMultiCount: 1
   maxMultiCount: 2
+  theClip: {fileID: 8300000, guid: 79e9eb1596c1d124e8a520f1ec097303, type: 3}
+  stageAttackAudio: {fileID: 8139572}
+  volume: 1
+--- !u!82 &8139572
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8139567}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 79e9eb1596c1d124e8a520f1ec097303, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &9634743
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,9 +751,10 @@ GameObject:
   - component: {fileID: 122181052}
   - component: {fileID: 122181051}
   - component: {fileID: 122181056}
+  - component: {fileID: 122181057}
   m_Layer: 10
   m_Name: GreenSafeZone
-  m_TagString: GreenSafeZone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -688,8 +789,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1eb2df869ca10540a880a003fecf0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
-  lowerSpeed: 100
+  speed: 1500
+  lowerSpeed: 1000
 --- !u!58 &122181052
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -699,8 +800,8 @@ CircleCollider2D:
   m_GameObject: {fileID: 122181049}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 6712e621f0ae32c419a8d8d94fed035c, type: 2}
-  m_IsTrigger: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -718,7 +819,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -792,14 +893,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e286911f78791499cfb047600d8cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  origScale: 25
-  maxScale: 35
-  minScale: 20
-  changeSpeed: 1
+  origScale: 20
+  maxScale: 30
+  minScale: 1
+  shrinkRate: 1
+  growthRate: 0.75
   scale: 1
-  targetMax: 0
-  targetMin: 0
-  startsDecreasing: 1
+  isPlayer: 0
+--- !u!114 &122181057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122181049}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66eec6aefb56e4015b605a5088d6e109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody2D: {fileID: 0}
+  speed: 5
+  directionChangeInterval: 3
+  orientToDirection: 0
+  lookAxis: 0
+  waypoints:
+  - {x: 20, y: 9}
+  - {x: 20, y: -9}
+  - {x: -20, y: -9}
+  - {x: -20, y: 9}
 --- !u!1 &156449322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,9 +1213,10 @@ GameObject:
   - component: {fileID: 225151067}
   - component: {fileID: 225151066}
   - component: {fileID: 225151071}
+  - component: {fileID: 225151072}
   m_Layer: 11
   m_Name: BlueSafeZone
-  m_TagString: BlueSafeZone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1128,8 +1251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1eb2df869ca10540a880a003fecf0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
-  lowerSpeed: 100
+  speed: 1500
+  lowerSpeed: 1000
 --- !u!58 &225151067
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1139,8 +1262,8 @@ CircleCollider2D:
   m_GameObject: {fileID: 225151064}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 6712e621f0ae32c419a8d8d94fed035c, type: 2}
-  m_IsTrigger: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1158,7 +1281,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -1232,14 +1355,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e286911f78791499cfb047600d8cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  origScale: 25
-  maxScale: 35
-  minScale: 20
-  changeSpeed: 1
+  origScale: 20
+  maxScale: 30
+  minScale: 1
+  shrinkRate: 1
+  growthRate: 0.75
   scale: 1
-  targetMax: 0
-  targetMin: 0
-  startsDecreasing: 1
+  isPlayer: 0
+--- !u!114 &225151072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225151064}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66eec6aefb56e4015b605a5088d6e109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody2D: {fileID: 0}
+  speed: 5
+  directionChangeInterval: 3
+  orientToDirection: 0
+  lookAxis: 0
+  waypoints:
+  - {x: -20, y: -9}
+  - {x: -20, y: 9}
+  - {x: 20, y: 9}
+  - {x: 20, y: -9}
 --- !u!1 &236156981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,11 +1586,11 @@ GameObject:
   - component: {fileID: 272249314}
   m_Layer: 11
   m_Name: BlueSafeZoneEnemyCollider
-  m_TagString: Untagged
+  m_TagString: BlueSafeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &272249313
 Transform:
   m_ObjectHideFlags: 0
@@ -1827,6 +1971,7 @@ GameObject:
   - component: {fileID: 448095532}
   - component: {fileID: 448095533}
   - component: {fileID: 448095534}
+  - component: {fileID: 448095535}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2050,6 +2195,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
   fireRate: 10
+--- !u!114 &448095535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448095525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5624e7f39ea24d24fb3e3d21f7caa632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &449116362
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,7 +2249,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 449116362}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6712e621f0ae32c419a8d8d94fed035c, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2179,7 +2336,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 510828349}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6712e621f0ae32c419a8d8d94fed035c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2676,7 +2833,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 758044956}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6712e621f0ae32c419a8d8d94fed035c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2941,11 +3098,11 @@ GameObject:
   - component: {fileID: 938781207}
   m_Layer: 10
   m_Name: GreenSafeZoneEnemyCollider
-  m_TagString: Untagged
+  m_TagString: GreenSafeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &938781206
 Transform:
   m_ObjectHideFlags: 0
@@ -8152,11 +8309,11 @@ GameObject:
   - component: {fileID: 1119956901}
   m_Layer: 9
   m_Name: RedSafeZoneEnemyCollider
-  m_TagString: Untagged
+  m_TagString: RedSafeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1119956900
 Transform:
   m_ObjectHideFlags: 0
@@ -8230,7 +8387,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1159124461}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6712e621f0ae32c419a8d8d94fed035c, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -9959,7 +10116,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1637245105}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6712e621f0ae32c419a8d8d94fed035c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -10989,7 +11146,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1860389234}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6712e621f0ae32c419a8d8d94fed035c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -11237,7 +11394,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1978474388}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6712e621f0ae32c419a8d8d94fed035c, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -11311,9 +11468,10 @@ GameObject:
   - component: {fileID: 2015979312}
   - component: {fileID: 2015979311}
   - component: {fileID: 2015979316}
+  - component: {fileID: 2015979317}
   m_Layer: 9
   m_Name: RedSafeZone
-  m_TagString: RedSafeZone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11348,8 +11506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1eb2df869ca10540a880a003fecf0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
-  lowerSpeed: 100
+  speed: 1500
+  lowerSpeed: 1000
 --- !u!58 &2015979312
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11359,8 +11517,8 @@ CircleCollider2D:
   m_GameObject: {fileID: 2015979309}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 6712e621f0ae32c419a8d8d94fed035c, type: 2}
-  m_IsTrigger: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -11378,7 +11536,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -11452,14 +11610,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e286911f78791499cfb047600d8cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  origScale: 25
-  maxScale: 35
-  minScale: 20
-  changeSpeed: 1
+  origScale: 20
+  maxScale: 30
+  minScale: 1
+  shrinkRate: 1
+  growthRate: 0.75
   scale: 1
-  targetMax: 0
-  targetMin: 0
-  startsDecreasing: 0
+  isPlayer: 0
+--- !u!114 &2015979317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015979309}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66eec6aefb56e4015b605a5088d6e109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody2D: {fileID: 0}
+  speed: 5
+  directionChangeInterval: 3
+  orientToDirection: 0
+  lookAxis: 0
+  waypoints:
+  - {x: 20, y: 9}
+  - {x: 20, y: -9}
+  - {x: -20, y: -9}
+  - {x: -20, y: 9}
 --- !u!1 &2089528608
 GameObject:
   m_ObjectHideFlags: 0
