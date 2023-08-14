@@ -23,7 +23,7 @@ public class PlayerXPInteraction : MonoBehaviour
             // Plays the sound
             audio.Play();
             // add XP to counter
-            totalXP += 2;
+            totalXP += 1;
             // Destroy the XP
             Destroy(gameObject);
         }

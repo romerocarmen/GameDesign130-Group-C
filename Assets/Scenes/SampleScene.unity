@@ -1957,7 +1957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b33d04416a3c049a1fe847e6fd63f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invincible: 0
+  invincible: 1
   livesLeft: 3
   inRed: 0
   inGreen: 0
