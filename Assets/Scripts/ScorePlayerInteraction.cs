@@ -16,11 +16,11 @@ public class ScorePlayerInteraction : MonoBehaviour
         }
         else if (enemyType == "BlueSplitter(Clone)" || enemyType == "GreenSplitter(Clone)" || enemyType == "RedSplitter(Clone)" || enemyType == "RainbowSplitter(Clone)")
         {
-            totalScore += 10;
+            totalScore += 5;
         }
         else if (enemyType == "RainbowEnemy(Clone)")
         {
-            totalScore += 50;
+            totalScore += 10;
         }
     }
 }
