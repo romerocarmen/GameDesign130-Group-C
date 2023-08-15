@@ -73,11 +73,11 @@ public class Move : Physics2DObject
 	void FixedUpdate ()
 	{
 		// Apply the force to the Rigidbody2d
-		rigidbody2D.velocity = movement.normalized * speed;
-		//rigidbody2D.AddForce(movement * speed * 10f);
+		//rigidbody2D.velocity = movement.normalized * speed;
+		rigidbody2D.AddForce(movement * speed * 10f);
 		//Debug.Log((movement * speed * 10f).magnitude);
-		// if(movement == Vector2.zero){
-		// 	rigidbody2D.velocity = Vector2.zero;
-		// }
+		 //if(movement == Vector2.zero){
+		 //	rigidbody2D.velocity = Vector2.zero;
+		 //}
 	}
 }

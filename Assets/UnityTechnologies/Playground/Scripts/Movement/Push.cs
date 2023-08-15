@@ -14,7 +14,7 @@ public class Push : Physics2DObject
 
 	// strength of the push, and the axis on which it is applied (can be X or Y)
 	public float pushStrength = 5f;
-	public Enums.Axes axis = Enums.Axes.Y;
+	public Enums.Axes axis = Enums.Axes.X;
 	public bool relativeAxis = true;
 
 
@@ -45,17 +45,6 @@ public class Push : Physics2DObject
 			{
 				rigidbody2D.AddForce(pushVector);
 			}
-		}
-	}
-
-	//Draw an arrow to show the direction in which the object will move
-	void OnDrawGizmosSelected()
-	{
-		if(this.enabled)
-		{
-			float extraAngle = (relativeAxis) ? transform.rotation.eulerAngles.z : 0f;
-			pushVector = Utils.GetVectorFromAxis(axis) * pushStrength;
-			Utils.DrawMoveArrowGizmo(transform.position, pushVector, extraAngle, pushStrength * .5f);
 		}
 	}
 }
