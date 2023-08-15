@@ -74,6 +74,12 @@ public class FollowTarget : Physics2DObject
 
 		directionToPlayer = (target.transform.position - transform.position).normalized;
 		rigidbody2D.velocity = new Vector2(directionToPlayer.x, directionToPlayer.y) * speed;
+		// if(!deathFlag){
+		// 	rigidbody2D.velocity = new Vector2(directionToPlayer.x, directionToPlayer.y) * speed;
+		// } else {
+		// 	//rigidbody2D.velocity = new Vector2(-directionToPlayer.x, -directionToPlayer.y) * speed;
+		// }
+		
 
 	}
 
@@ -108,4 +114,40 @@ public class FollowTarget : Physics2DObject
 			break;
 		}
 	}
+
+	public void death(){
+		// gameObject.GetComponent<Rigidbody2D>().simulated = false;
+		// Rigidbody2D[] rb = gameObject.GetComponentsInChildren<Rigidbody2D>();
+		// foreach(Rigidbody2D r in rb){
+			
+		// 	r.simulated = true;
+		// 	directionToPlayer = (target.transform.position - transform.position).normalized;
+		// 	rigidbody2D.velocity = new Vector2(-directionToPlayer.x, -directionToPlayer.y) * speed;
+		// }
+		if(gameObject.GetComponent<BoxCollider2D>() != null){
+			gameObject.GetComponent<BoxCollider2D>().enabled = false;
+		} else if (gameObject.GetComponent<CircleCollider2D>() != null){
+			gameObject.GetComponent<CircleCollider2D>().enabled = false;
+			gameObject.GetComponent<Splitter>().spawnBaddies();
+		}
+		
+		speed = 0;
+		lookAtTarget = false;
+
+
+		SpriteRenderer[] sprites = gameObject.GetComponentsInChildren<SpriteRenderer>();
+		foreach(SpriteRenderer sprite in sprites){
+			sprite.enabled = false;
+		}
+
+
+		StartCoroutine(deathAnimation());
+	}
+	IEnumerator deathAnimation(){
+        
+		transform.Find("deathParticles").gameObject.SetActive(true);
+		
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
+    }
 }

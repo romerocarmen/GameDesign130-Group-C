@@ -14,7 +14,7 @@ public class ScorePlayerInteraction : MonoBehaviour
         {
             totalScore += 5;
         }
-        else if (enemyType == "BlueSplitter(Clone)" || enemyType == "GreenSplitter(Clone)" || enemyType == "RedSplitter(Clone)")
+        else if (enemyType == "BlueSplitter(Clone)" || enemyType == "GreenSplitter(Clone)" || enemyType == "RedSplitter(Clone)" || enemyType == "RainbowSplitter(Clone)")
         {
             totalScore += 10;
         }

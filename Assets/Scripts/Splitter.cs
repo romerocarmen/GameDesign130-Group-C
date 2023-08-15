@@ -6,7 +6,7 @@ public class Splitter : MonoBehaviour
 {
     public GameObject enemy;
     
-    private void OnDestroy() {
+    public void spawnBaddies() {
         for(int i = 1; i < 5; i++){
             enemy.gameObject.GetComponent<FollowTarget>().target = GameObject.Find("Player").transform;
             enemy.gameObject.GetComponent<FollowTarget>().enabled = false;

@@ -79,7 +79,7 @@ public class SASpawner : MonoBehaviour
 
     void SpawnAttack(GameObject attack){
         if(dangerWall == 0 || dangerWall == 2){ //Left or Right Wall
-           Instantiate(attack, SetSpawnPosition(), Quaternion.identity);
+            Instantiate(attack, SetSpawnPosition(), Quaternion.identity);
         } else {
             Instantiate(attack, SetSpawnPosition(), Quaternion.Euler(new Vector3(0,0,90)));
         }

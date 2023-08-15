@@ -54,8 +54,8 @@ public class BulletMovement : MonoBehaviour
             audio.Play();
 
             Vector3 endingPosition = other.gameObject.transform.position;
-            Destroy(other.gameObject);
-
+            //Destroy(other.gameObject);
+            other.gameObject.GetComponent<FollowTarget>().death();
             // place XP where enemy was
             if (!placedXP)
             {

@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject redSplitter;
     public GameObject greenSplitter;
     public GameObject blueSplitter;
+    public GameObject rainbowSplitter;
     
 
     // timer
@@ -67,6 +68,7 @@ public class EnemySpawner : MonoBehaviour
     private void basicEnemySpawner(){
         basicTimer = 0;
         enemyColor = Random.Range(1,4);
+        enemyColor = 3;
         spawnWall = Random.Range(0,4);
 
         switch(enemyColor){
@@ -94,7 +96,7 @@ public class EnemySpawner : MonoBehaviour
     private void splitterEnemySpawner(){
         Debug.Log("Spawning a splitter now!");
         splitterTimer = 0;
-        enemyColor = Random.Range(1,4);
+        enemyColor = Random.Range(1,5);
         spawnWall = Random.Range(0,4);
 
         switch(enemyColor){
@@ -106,6 +108,9 @@ public class EnemySpawner : MonoBehaviour
                 break;
             case 3: //Blue Enemy spawn
                 SpawnEnemies(1, spawnWall, blueSplitter);
+                break;
+            case 4: //rainbow Enemy spawn
+                SpawnEnemies(1, spawnWall, rainbowSplitter);
                 break;
             default:
                 //This is if the die rolls 4, in which nothing spawns
