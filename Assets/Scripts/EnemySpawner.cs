@@ -37,12 +37,6 @@ public class EnemySpawner : MonoBehaviour
     public float spawnDelta = 0.00005f;
     public float spawnDeltaAdvanced = 0.00005f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        SetSpawnRate();
-    }
-
     // This spawns a random amount of enemies every 5 seconds
     void FixedUpdate()
     {
@@ -157,70 +151,5 @@ public class EnemySpawner : MonoBehaviour
         //     enemy.gameObject.GetComponent<FollowTarget>().target = target;
         //     Instantiate(enemy, SetSpawnPosition(position), Quaternion.identity);
         // }
-    }
-
-    void SetSpawnRate()
-    {
-        // setting the spawn rate
-        if (LevelCounter.levelValue == 1)
-        {
-            spawnRateBasic = 1f;
-            spawnRateRainbow = 0f;
-            spawnRateSplitter = 0f;
-        }
-        else if (LevelCounter.levelValue == 2)
-        {
-            spawnRateBasic = 1.5f;
-            spawnRateRainbow = 0.1f;
-            spawnRateSplitter = 0.1f;
-        }
-        else if (LevelCounter.levelValue == 3)
-        {
-            spawnRateBasic = 2f;
-            spawnRateRainbow = 0.2f;
-            spawnRateSplitter = 0.2f;
-        }
-        else if (LevelCounter.levelValue == 4)
-        {
-            spawnRateBasic = 2.5f;
-            spawnRateRainbow = 0.3f;
-            spawnRateSplitter = 0.3f;
-        }
-        else if (LevelCounter.levelValue == 5)
-        {
-            spawnRateBasic = 0f;
-            spawnRateRainbow = 0f;
-            spawnRateSplitter = 0f;
-        }
-        else if (LevelCounter.levelValue == 6)
-        {
-            spawnRateBasic = 3f;
-            spawnRateRainbow = 0.5f;
-            spawnRateSplitter = 0.5f;
-        }
-        else if (LevelCounter.levelValue == 7)
-        {
-            spawnRateBasic = 3.5f;
-            spawnRateRainbow = 0.6f;
-            spawnRateSplitter = 0.6f;
-        }
-        else if (LevelCounter.levelValue == 8)
-        {
-            spawnRateBasic = 4f;
-            spawnRateRainbow = 0.7f;
-            spawnRateSplitter = 0.7f;
-        }
-        else if (LevelCounter.levelValue == 9)
-        {
-            spawnRateBasic = 4.5f;
-            spawnRateRainbow = 0.8f;
-            spawnRateSplitter = 0.8f;
-        }
-        else if (LevelCounter.levelValue == 10)
-        {
-            spawnRateBasic = 5f;
-            spawnRateRainbow = 0.9f;
-            spawnRateSplitter = 0.9f;
-        }
     }
 }

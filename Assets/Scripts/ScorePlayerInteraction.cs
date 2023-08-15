@@ -22,5 +22,9 @@ public class ScorePlayerInteraction : MonoBehaviour
         {
             totalScore += 10;
         }
+        else if (enemyType == "RainbowSplitter(Clone)")
+        {
+            totalScore += 5;
+        }
     }
 }
