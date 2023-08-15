@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 122181057}
   m_Layer: 10
   m_Name: GreenSafeZone
-  m_TagString: Untagged
+  m_TagString: GreenSafeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1352,7 +1352,7 @@ GameObject:
   - component: {fileID: 225151072}
   m_Layer: 11
   m_Name: BlueSafeZone
-  m_TagString: Untagged
+  m_TagString: BlueSafeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12081,7 +12081,7 @@ GameObject:
   - component: {fileID: 2015979317}
   m_Layer: 9
   m_Name: RedSafeZone
-  m_TagString: Untagged
+  m_TagString: RedSafeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -19,7 +19,7 @@ public class BombHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Enemy"){
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<FollowTarget>().death();
         }
     }
 }

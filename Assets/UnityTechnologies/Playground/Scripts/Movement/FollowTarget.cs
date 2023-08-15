@@ -94,20 +94,20 @@ public class FollowTarget : Physics2DObject
 			// Enemy is RED
 			case 6:
 			if(other.gameObject.tag == "RedSafeZone"){
-				Destroy(gameObject);
+				gameObject.GetComponent<FollowTarget>().death();
 			}
 			break;
 
 			// Enemy is GREEN
 			case 7:
 			if(other.gameObject.tag == "GreenSafeZone"){
-				Destroy(gameObject);
+				gameObject.GetComponent<FollowTarget>().death();
 			}
 			break;
 			// Enemy is BLUE
 			case 8:
 			if(other.gameObject.tag == "BlueSafeZone"){
-				Destroy(gameObject);
+				gameObject.GetComponent<FollowTarget>().death();
 			}
 			break;
 			default:
