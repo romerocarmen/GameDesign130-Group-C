@@ -1029,11 +1029,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e286911f78791499cfb047600d8cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  origScale: 20
-  maxScale: 30
+  origScale: 15
+  maxScale: 15
   minScale: 1
-  shrinkRate: 1
-  growthRate: 0.75
+  shrinkRate: 3
+  growthRate: 3
   scale: 1
   isPlayer: 0
 --- !u!114 &122181057
@@ -1491,11 +1491,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e286911f78791499cfb047600d8cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  origScale: 20
-  maxScale: 30
+  origScale: 15
+  maxScale: 15
   minScale: 1
-  shrinkRate: 1
-  growthRate: 0.75
+  shrinkRate: 3
+  growthRate: 3
   scale: 1
   isPlayer: 0
 --- !u!114 &225151072
@@ -1753,7 +1753,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 272249312}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6712e621f0ae32c419a8d8d94fed035c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3602,7 +3602,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 938781205}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6712e621f0ae32c419a8d8d94fed035c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -8813,7 +8813,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1119956899}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6712e621f0ae32c419a8d8d94fed035c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -12220,11 +12220,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e286911f78791499cfb047600d8cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  origScale: 20
-  maxScale: 30
+  origScale: 15
+  maxScale: 15
   minScale: 1
-  shrinkRate: 1
-  growthRate: 0.75
+  shrinkRate: 3
+  growthRate: 3
   scale: 1
   isPlayer: 0
 --- !u!114 &2015979317
