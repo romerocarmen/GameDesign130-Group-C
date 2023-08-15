@@ -296,6 +296,8 @@ MonoBehaviour:
     type: 3}
   blueSplitter: {fileID: 8682274067387880833, guid: 9e77aabc2e39e034e88bb45a1592a632,
     type: 3}
+  rainbowSplitter: {fileID: 326015395501888949, guid: 3031fef7395644b4eab1f3757b19c7d3,
+    type: 3}
   target: {fileID: 1028138}
   spawnRateBasic: 1
   spawnRateSplitter: 0.5
@@ -332,9 +334,9 @@ MonoBehaviour:
     type: 3}
   blueStageAttack: {fileID: 1585439823582012329, guid: c6701e8890c24f2468f48e88eca7a3fe,
     type: 3}
-  spawnRate: 0.5
+  spawnRate: 0
   spawnDelta: 0.00005
-  multiAttackChance: 0.5
+  multiAttackChance: 0
   minMultiCount: 1
   maxMultiCount: 2
   theClip: {fileID: 8300000, guid: 79e9eb1596c1d124e8a520f1ec097303, type: 3}
@@ -1072,7 +1074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &156449323
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9049,8 +9051,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 90fa03c576e217443a2331af2a26ae8a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
-  m_Pitch: 1
+  m_Volume: 0.2
+  m_Pitch: 0.5
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -12445,7 +12447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2147238218
 Transform:
   m_ObjectHideFlags: 0
