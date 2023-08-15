@@ -47,15 +47,4 @@ public class Push : Physics2DObject
 			}
 		}
 	}
-
-	//Draw an arrow to show the direction in which the object will move
-	void OnDrawGizmosSelected()
-	{
-		if(this.enabled)
-		{
-			float extraAngle = (relativeAxis) ? transform.rotation.eulerAngles.z : 0f;
-			pushVector = Utils.GetVectorFromAxis(axis) * pushStrength;
-			Utils.DrawMoveArrowGizmo(transform.position, pushVector, extraAngle, pushStrength * .5f);
-		}
-	}
 }
