@@ -8,7 +8,7 @@ public class PlayerXPInteraction : MonoBehaviour
     public static int totalXP = 0;
     private float timer = 0;
     private Color tmp;
-    private float flashSpeed = 0.005f;
+    private float flashSpeed = 0.003f;
 
     void Awake()
     {
@@ -19,17 +19,23 @@ public class PlayerXPInteraction : MonoBehaviour
     private void FixedUpdate() {
         
         timer += Time.deltaTime;
-        if (timer > 10){
-            flashSpeed = 0.01f;
-        }
+        // if (timer > 10){
+        //     flashSpeed = 0.01f;
+        // }
 
         for(int i = 0; i < transform.childCount; i++){
             if(transform.GetChild(i).GetComponent<SpriteRenderer>() != null){
                 tmp = transform.GetChild(i).GetComponent<SpriteRenderer>().color;
                 if(tmp.a <= 0){
+                    if (timer > 10){
+                        flashSpeed = 0.03f;
+                    }
                     flashSpeed = -Mathf.Abs(flashSpeed);
                     tmp.a = 0;
                 } else if(tmp.a >= 1){
+                    if (timer > 10){
+                        flashSpeed = 0.03f;
+                    }
                     flashSpeed = Mathf.Abs(flashSpeed);
                     tmp.a = 1;
                 }
