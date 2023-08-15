@@ -94,7 +94,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
     private void splitterEnemySpawner(){
-        Debug.Log("Spawning a splitter now!");
+
         splitterTimer = 0;
         enemyColor = Random.Range(1,5);
         spawnWall = Random.Range(0,4);
