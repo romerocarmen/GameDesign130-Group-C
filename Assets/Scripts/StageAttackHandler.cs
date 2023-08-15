@@ -46,15 +46,15 @@ public class StageAttackHandler : MonoBehaviour
         if(other.gameObject.tag == "Enemy"){
             //Check if color of attack and enemy are both red
             if(gameObject.tag == "RedStageAttack" && other.gameObject.layer == 6){
-                Destroy(other.gameObject);
+                other.gameObject.GetComponent<FollowTarget>().death();
             }
             //Check if color of attack and enemy are both green
             if(gameObject.tag == "GreenStageAttack" && other.gameObject.layer == 7){
-                Destroy(other.gameObject);
+                other.gameObject.GetComponent<FollowTarget>().death();
             }
             //Check if color of attack and enemy are both blue
             if(gameObject.tag == "BlueStageAttack" && other.gameObject.layer == 8){
-                Destroy(other.gameObject);
+                other.gameObject.GetComponent<FollowTarget>().death();
             }
         }
 
