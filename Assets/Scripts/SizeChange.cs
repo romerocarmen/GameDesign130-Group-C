@@ -35,6 +35,7 @@ public class SizeChange : MonoBehaviour {
         gameObject.layer = 14;
         isPlayer = false; 
         scale = origScale;
+        transform.localScale = new Vector2(scale, scale);
 
         //startsDecreasing = randomBoolean();
         //StartCoroutine(SizeOscillation());
