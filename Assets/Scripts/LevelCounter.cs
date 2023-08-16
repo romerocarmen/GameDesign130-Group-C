@@ -7,6 +7,7 @@ using TMPro;
 public class LevelCounter : MonoBehaviour
 {
     [SerializeField] public static TextMeshProUGUI levelCounter;
+
     public static int levelValue;
 
     void Start()
