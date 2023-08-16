@@ -5,17 +5,12 @@ using UnityEngine;
 public class Upgrades : MonoBehaviour
 {
     public int level = LevelCounter.levelValue;
-
-    // public float enemyBasicSpawnRate = EnemySpawner.spawnRateBasic;
-    // public float enemySplitterSpawnRate = EnemySpawner.spawnRateSplitter;
-    // public float enemyRainbowSpawnRate = EnemySpawner.spawnRateRainbow;
-
     public float playerSpeed = 3f;
-    public float playerFireRate = 10f;
+    public float playerFireRate = 1f;
     //public int playerWeapon = 1;
-    public float basicEnemySpeed = 10f;
+    public float basicEnemySpeed = 5f;
     public float splitterSpeed = 5f;
-    public float basicEnemySpawnRate = 1f;
+    public float basicEnemySpawnRate = 0.5f;
     public float basicEnemySpawnDelta = 0.0005f;
     public float splitterSpawnRate = 0f;
     public float rainbowSpawnRate = 0f;
@@ -27,12 +22,12 @@ public class Upgrades : MonoBehaviour
     public Vector3 saScaleChange = Vector3.zero;
     public float szMaxDiameter = 20f;
     public float szPatrolSpeed = 0f;
-    public float szShrinkRate = 1f;
-    public float szGrowthRate = 1f;
+    public float szShrinkRate = 2f;
+    public float szGrowthRate = 2f;
 
     private bool valuesChanged = false;
     
-    void Start()
+    void Awake()
     {
         // set the game values for lvl 1
         changeGameValues();
@@ -49,233 +44,259 @@ public class Upgrades : MonoBehaviour
         }
         
         if(!valuesChanged){
-            if (level == 2)
+            if (level == 1)
             {
                 // player setters
-                playerSpeed = 3f;
-                playerFireRate = 10f;
+                //playerSpeed = 3f;
+                //playerFireRate = 5f;
                 // playerWeapon = 2; need weapon upgrade number
 
                 // enemy setters
-                basicEnemySpeed = 1f;
-                basicEnemySpawnRate = 0f;
-                splitterSpawnRate = 0f;
-                rainbowSpawnRate = 0f;
+                // basicEnemySpeed = 5f;
+                //basicEnemySpawnRate = 1f;
+                // splitterSpawnRate = 0f;
+                // rainbowSpawnRate = 0f;
 
                 // stage attack setters
-                saSpawnRate = 1f;
-                saWidth = 15f;
-                saGhostBoxTiming = 1f;
-
+                //saSpawnRate = 0f;
+                // saWidth = 0f;
+                //saGhostBoxTiming = 0f;
+                // saScaleChange = 0;
 
                 // safe zone setters
-                szMaxDiameter = 20f;
-                szPatrolSpeed = 0f;
-                szShrinkRate = 1f;
-                szGrowthRate = 1f;
+                // szMaxDiameter = 20f;
+                // szPatrolSpeed = 0f;
+                // szShrinkRate = 0f;
+                // szGrowthRate = 0f;
 
                 changeGameValues();
                 valuesChanged = true;
             }
-            else if (level == 3)
+                if (level == 2)
             {
                 // player setters
-                playerSpeed = 3f;
-                playerFireRate = 10f;
-                // playerWeapon = 3; need weapon upgrade number
+                playerSpeed = 3.1f;
+                playerFireRate = 6f;
+                // playerWeapon = 2; need weapon upgrade number
 
                 // enemy setters
-                basicEnemySpeed = 1f;
-                basicEnemySpawnRate = 0f;
+                basicEnemySpeed = 5.5f;
+                basicEnemySpawnRate = 1.1f;
                 splitterSpawnRate = 0f;
                 rainbowSpawnRate = 0f;
 
                 // stage attack setters
-                saSpawnRate = 2f;
-                saWidth = 15f;
-                saGhostBoxTiming = 1f;
-
+                saSpawnRate = 0f;
+                saWidth = 0f;
+                saGhostBoxTiming = 0f;
+                // saScaleChange = 0;
 
                 // safe zone setters
-                szMaxDiameter = 20f;
-                szPatrolSpeed = 0f;
-                szShrinkRate = 1f;
-                szGrowthRate = 1f;
+                szMaxDiameter = 21f;
+                szPatrolSpeed = 1f;
+                szShrinkRate = 2.5f;
+                szGrowthRate = 2f;
+                
+            }
+            else if (level == 3)
+            {
+                // player setters
+                playerSpeed = 3.2f;
+                playerFireRate = 7f;
+                // playerWeapon = 3; need weapon upgrade number
+
+                // enemy setters
+                basicEnemySpeed = 6f;
+                basicEnemySpawnRate = 1.2f;
+                splitterSpawnRate = 0.2f;
+                rainbowSpawnRate = 0.2f;
+
+                // stage attack setters
+                saSpawnRate = 0f;
+                saWidth = 0f;
+                saGhostBoxTiming = 0f;
+                //saScaleChange = 0;
+
+                // safe zone setters
+                szMaxDiameter = 22f;
+                szPatrolSpeed = 1.1f;
+                szShrinkRate = 3f;
+                szGrowthRate = 2f;
             }
             else if (level == 4)
             {
                 // player setters
-                playerSpeed = 3f;
-                playerFireRate = 10f;
+                playerSpeed = 3.3f;
+                playerFireRate = 8f;
                 // playerWeapon = 4; need weapon upgrade number
 
                 // enemy setters
-                basicEnemySpeed = 1f;
-                basicEnemySpawnRate = 0f;
-                splitterSpawnRate = 0f;
-                rainbowSpawnRate = 0f;
+                basicEnemySpeed = 6.5f;
+                basicEnemySpawnRate = 1.3f;
+                splitterSpawnRate = 0.2f;
+                rainbowSpawnRate = 0.2f;
 
                 // stage attack setters
-                saSpawnRate = 3f;
-                saWidth = 15f;
-                saGhostBoxTiming = 1f;
-
+                saSpawnRate = 0.1f;
+                saWidth = 18f;
+                saGhostBoxTiming = 2f;
+                saScaleChange = new Vector3(1.5f, 0, 0);
 
                 // safe zone setters
-                szMaxDiameter = 15f;
-                szPatrolSpeed = 0f;
-                szShrinkRate = 1f;
-                szGrowthRate = 1f;
+                szMaxDiameter = 23f;
+                szPatrolSpeed = 1.2f;
+                szShrinkRate = 3f;
+                szGrowthRate = 2f;
             }
             else if (level == 5)
             {
                 // player setters
-                playerSpeed = 3f;
-                playerFireRate = 10f;
+                playerSpeed = 3.4f;
+                playerFireRate = 9f;
                 // playerWeapon = 5; need weapon upgrade number
 
                 // enemy setters
-                basicEnemySpeed = 1f;
-                basicEnemySpawnRate = 0f;
-                splitterSpawnRate = 0f;
-                rainbowSpawnRate = 0f;
+                basicEnemySpeed = 7f;
+                basicEnemySpawnRate = 1.4f;
+                splitterSpawnRate = 0.3f;
+                rainbowSpawnRate = 0.3f;
 
                 // stage attack setters
-                saSpawnRate = 10f;
-                saWidth = 15f;
-                saGhostBoxTiming = 1f;
-
+                saSpawnRate = 0.1f;
+                saWidth = 18f;
+                saGhostBoxTiming = 2f;
+                saScaleChange = new Vector3(1.5f, 0, 0);
 
                 // safe zone setters
-                szMaxDiameter = 15f;
-                szPatrolSpeed = 0f;
-                szShrinkRate = 1f;
-                szGrowthRate = 1f;
+                szMaxDiameter = 24f;
+                szPatrolSpeed = 1.3f;
+                szShrinkRate = 3f;
+                szGrowthRate = 1.5f;
             }
             else if (level == 6)
             {
                 // player setters
-                playerSpeed = 3f;
+                playerSpeed = 3.5f;
                 playerFireRate = 10f;
                 // playerWeapon = 6; need weapon upgrade number
 
                 // enemy setters
-                basicEnemySpeed = 1f;
-                basicEnemySpawnRate = 0f;
-                splitterSpawnRate = 0f;
-                rainbowSpawnRate = 0f;
+                basicEnemySpeed = 7.5f;
+                basicEnemySpawnRate = 1.5f;
+                splitterSpawnRate = 0.4f;
+                rainbowSpawnRate = 0.4f;
 
                 // stage attack setters
-                saSpawnRate = 4f;
+                saSpawnRate = 0.1f;
                 saWidth = 15f;
-                saGhostBoxTiming = 1f;
-
+                saGhostBoxTiming = 2f;
+                saScaleChange = new Vector3(2f, 0, 0);
 
                 // safe zone setters
-                szMaxDiameter = 15f;
-                szPatrolSpeed = 0f;
-                szShrinkRate = 1f;
+                szMaxDiameter = 25f;
+                szPatrolSpeed = 1.4f;
+                szShrinkRate = 3f;
                 szGrowthRate = 1f;
             }
             else if (level == 7)
             {
                 // player setters
-                playerSpeed = 3f;
-                playerFireRate = 10f;
+                playerSpeed = 3.6f;
+                playerFireRate = 11f;
                 // playerWeapon = 7; need weapon upgrade number
 
                 // enemy setters
-                basicEnemySpeed = 1f;
-                basicEnemySpawnRate = 0f;
-                splitterSpawnRate = 0f;
-                rainbowSpawnRate = 0f;
+                basicEnemySpeed = 8f;
+                basicEnemySpawnRate = 1.5f;
+                splitterSpawnRate = 0.5f;
+                rainbowSpawnRate = 0.5f;
 
                 // stage attack setters
-                saSpawnRate = 5f;
+                saSpawnRate = 0.1f;
                 saWidth = 15f;
-                saGhostBoxTiming = 1f;
-
+                saGhostBoxTiming = 2f;
+                saScaleChange = new Vector3(2f, 0, 0);
 
                 // safe zone setters
-                szMaxDiameter = 15f;
-                szPatrolSpeed = 0f;
-                szShrinkRate = 1f;
+                szMaxDiameter = 26f;
+                szPatrolSpeed = 1.5f;
+                szShrinkRate = 3f;
                 szGrowthRate = 1f;
             }
             else if (level == 8)
             {
                 // player setters
-                playerSpeed = 3f;
-                playerFireRate = 10f;
+                playerSpeed = 3.7f;
+                playerFireRate = 17f;
                 // playerWeapon = 8; need weapon upgrade number
 
                 // enemy setters
-                basicEnemySpeed = 1f;
-                basicEnemySpawnRate = 0f;
-                splitterSpawnRate = 0f;
-                rainbowSpawnRate = 0f;
+                basicEnemySpeed = 8.5f;
+                basicEnemySpawnRate = 1.6f;
+                splitterSpawnRate = 0.6f;
+                rainbowSpawnRate = 0.6f;
 
                 // stage attack setters
-                saSpawnRate = 6f;
+                saSpawnRate = 0.1f;
                 saWidth = 15f;
-                saGhostBoxTiming = 1f;
-
+                saGhostBoxTiming = 2f;
+                saScaleChange = new Vector3(2f, 0, 0);
 
                 // safe zone setters
-                szMaxDiameter = 15f;
-                szPatrolSpeed = 0f;
-                szShrinkRate = 1f;
+                szMaxDiameter = 27f;
+                szPatrolSpeed = 1.6f;
+                szShrinkRate = 3f;
                 szGrowthRate = 1f;
             }
             else if (level == 9)
             {
                 // player setters
-                playerSpeed = 3f;
-                playerFireRate = 10f;
+                playerSpeed = 3.8f;
+                playerFireRate = 12f;
                 // playerWeapon = 9; need weapon upgrade number
 
                 // enemy setters
-                basicEnemySpeed = 1f;
-                basicEnemySpawnRate = 0f;
-                splitterSpawnRate = 0f;
-                rainbowSpawnRate = 0f;
+                basicEnemySpeed = 9f;
+                basicEnemySpawnRate = 1.7f;
+                splitterSpawnRate = 0.8f;
+                rainbowSpawnRate = 0.8f;
 
                 // stage attack setters
-                saSpawnRate = 7f;
+                saSpawnRate = 0.1f;
                 saWidth = 15f;
-                saGhostBoxTiming = 1f;
-
+                saGhostBoxTiming = 2f;
+                saScaleChange = new Vector3(2f, 0, 0);
 
                 // safe zone setters
-                szMaxDiameter = 15f;
-                szPatrolSpeed = 0f;
-                szShrinkRate = 1f;
-                szGrowthRate = 1f;
+                szMaxDiameter = 28f;
+                szPatrolSpeed = 1.7f;
+                szShrinkRate = 4f;
+                szGrowthRate = 3f;
             }
             else if (level == 10)
             {
                 // player setters
-                playerSpeed = 3f;
-                playerFireRate = 10f;
+                playerSpeed = 4f;
+                playerFireRate = 15f;
                 // playerWeapon = 10; need weapon upgrade number
 
                 // enemy setters
-                basicEnemySpeed = 1f;
-                basicEnemySpawnRate = 0f;
-                splitterSpawnRate = 0f;
-                rainbowSpawnRate = 0f;
+                basicEnemySpeed = 10f;
+                basicEnemySpawnRate = 2f;
+                splitterSpawnRate = 1f;
+                rainbowSpawnRate = 1f;
 
                 // stage attack setters
-                saSpawnRate = 8f;
+                saSpawnRate = 0.1f;
                 saWidth = 15f;
-                saGhostBoxTiming = 1f;
-
+                saGhostBoxTiming = 2f;
+                saScaleChange = new Vector3(2f, 0, 0);
 
                 // safe zone setters
-                szMaxDiameter = 15f;
-                szPatrolSpeed = 0f;
-                szShrinkRate = 1f;
-                szGrowthRate = 1f;
+                szMaxDiameter = 30f;
+                szPatrolSpeed = 1.8f;
+                szShrinkRate = 5f;
+                szGrowthRate = 3f;
             }
             changeGameValues();
             valuesChanged = true;

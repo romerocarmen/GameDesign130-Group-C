@@ -16,7 +16,7 @@ public class LevelProgress : MonoBehaviour
     void Update()
     {
         // set the level bar limit
-        levelSlider.maxValue = (LevelCounter.levelValue * 10) + 10;
+        levelSlider.maxValue = (LevelCounter.levelValue * 5) + 5;
 
         // if at level 10, keep the bar full
         if (LevelCounter.levelValue == 10)

@@ -458,8 +458,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   playerSpeed: 3
-  playerFireRate: 10
-  basicEnemySpeed: 10
+  playerFireRate: 5
+  basicEnemySpeed: 5
   splitterSpeed: 5
   basicEnemySpawnRate: 1
   basicEnemySpawnDelta: 0.0005
@@ -940,7 +940,7 @@ RectTransform:
   m_GameObject: {fileID: 106677589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 801245859}
@@ -2179,7 +2179,7 @@ RectTransform:
   m_GameObject: {fileID: 405610398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 918888193}
@@ -2188,7 +2188,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -112}
+  m_AnchoredPosition: {x: 0, y: -130}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &405610400
@@ -2661,7 +2661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
-  fireRate: 5
+  fireRate: 1
   direction: 
 --- !u!114 &448095535
 MonoBehaviour:
@@ -3095,7 +3095,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 35}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 276.429, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &572779587
 MonoBehaviour:
@@ -3144,8 +3144,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12751,8 +12751,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -2.5025024, y: 0}
-  m_SizeDelta: {x: -105.005, y: 0}
+  m_AnchoredPosition: {x: 1.7420044, y: 0}
+  m_SizeDelta: {x: -85.198, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1860389234
 GameObject:
