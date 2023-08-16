@@ -39,15 +39,16 @@ public class BulletMovement : MonoBehaviour
         Vector3 direction = (Vector3)(Input.mousePosition - screenPoint);
         Utils.SetAxisTowards(Enums.Directions.Right, transform, direction);
 		//gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(directionToMouse.x, directionToMouse.y) * speed;
-        if(heading == "middle"){
-            gameObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * speed, ForceMode2D.Impulse);
-        } else if(heading == "left"){
-            gameObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * speed, ForceMode2D.Impulse);
-        } else if(heading == "right"){
-            gameObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * speed, ForceMode2D.Impulse);
-        } else if(heading == "back"){
-            gameObject.GetComponent<Rigidbody2D>().AddForce(-direction.normalized * speed, ForceMode2D.Impulse);
-        }
+        gameObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * speed, ForceMode2D.Impulse);
+        // if(heading == "middle"){
+        //     gameObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * speed, ForceMode2D.Impulse);
+        // } else if(heading == "left"){
+        //     gameObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * speed, ForceMode2D.Impulse);
+        // } else if(heading == "right"){
+        //     gameObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * speed, ForceMode2D.Impulse);
+        // } else if(heading == "back"){
+        //     gameObject.GetComponent<Rigidbody2D>().AddForce(-direction.normalized * speed, ForceMode2D.Impulse);
+        // }
         while(gameObject.GetComponent<Rigidbody2D>().velocity.magnitude < 40){
             gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity.magnitude * 1.1f * gameObject.GetComponent<Rigidbody2D>().velocity.normalized;
         }
@@ -64,6 +65,7 @@ public class BulletMovement : MonoBehaviour
 
             Vector3 endingPosition = other.gameObject.transform.position;
             //Destroy(other.gameObject);
+            Destroy(gameObject);
             other.gameObject.GetComponent<FollowTarget>().death();
             // place XP where enemy was
             if (!placedXP)
@@ -86,37 +88,38 @@ public class BulletMovement : MonoBehaviour
                 ScorePlayerInteraction.UpdateScore(other.name);
                 updatedScore = true;
             }
+            
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "Enemy")
-        {
-            Vector3 endingPosition = gameObject.transform.position;
-            Destroy(gameObject);
+    // private void OnTriggerExit2D(Collider2D other)
+    // {
+    //     if (other.tag == "Enemy")
+    //     {
+    //         Vector3 endingPosition = gameObject.transform.position;
+    //         Destroy(gameObject);
 
-            // place XP where enemy was
-            if (!placedXP)
-            {
-                GameObject tmpXP = Instantiate(XP);
-                tmpXP.transform.position = endingPosition;
-                placedXP = true;
+    //         // place XP where enemy was
+    //         if (!placedXP)
+    //         {
+    //             GameObject tmpXP = Instantiate(XP);
+    //             tmpXP.transform.position = endingPosition;
+    //             placedXP = true;
 
-                if (!destroyedXP)
-                {
-                    // delete XP after 15 seconds
-                    Destroy(tmpXP, 15.0f);
-                    destroyedXP = true;
-                }
-            }
+    //             if (!destroyedXP)
+    //             {
+    //                 // delete XP after 15 seconds
+    //                 Destroy(tmpXP, 15.0f);
+    //                 destroyedXP = true;
+    //             }
+    //         }
 
-            // update score since an enemy was killed
-            if (!updatedScore)
-            {
-                ScorePlayerInteraction.UpdateScore(other.name);
-                updatedScore = true;
-            }
-        }
-    }
+    //         // update score since an enemy was killed
+    //         if (!updatedScore)
+    //         {
+    //             ScorePlayerInteraction.UpdateScore(other.name);
+    //             updatedScore = true;
+    //         }
+    //     }
+    // }
 }
