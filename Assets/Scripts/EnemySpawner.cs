@@ -37,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
     public float spawnDelta = 0.00005f;
     public float spawnDeltaAdvanced = 0.00005f;
 
-    public float basicEnemySpeed = 10;
+    public float basicEnemySpeed = 5;
     public float splitterSpeed = 5;
 
     // Update is called once per frame

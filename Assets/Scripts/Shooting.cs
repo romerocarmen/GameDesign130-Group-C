@@ -7,7 +7,7 @@ public class Shooting : MonoBehaviour
     [SerializeField]
     private GameObject Bullet;
     private float timeSinceLastBullet = 1;
-    public float fireRate;
+    public float fireRate = 5;
     public string direction = "";
     //public float fireRate = 1f;
     //public float canFire = 1f;
