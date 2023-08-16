@@ -35,6 +35,7 @@ public class Push : Physics2DObject
 		if(keyPressed)
 		{
 			pushVector = Utils.GetVectorFromAxis(axis) * pushStrength;
+			//pushVector = gameObject.GetComponent<Rigidbody2D>().velocity.normalized * pushStrength;
 
 			//Apply the push
 			if(relativeAxis)

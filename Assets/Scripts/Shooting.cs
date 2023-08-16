@@ -8,6 +8,7 @@ public class Shooting : MonoBehaviour
     private GameObject Bullet;
     private float timeSinceLastBullet = 1;
     public float fireRate;
+    public string direction = "";
     //public float fireRate = 1f;
     //public float canFire = 1f;
 
@@ -21,6 +22,7 @@ public class Shooting : MonoBehaviour
         timeSinceLastBullet += Time.deltaTime;
         if (Input.GetMouseButton(0) && timeSinceLastBullet > 1/fireRate) //&& Time.time > canFire
         {
+           Bullet.GetComponent<BulletMovement>().heading = direction;
            Instantiate(Bullet, transform.position, transform.rotation);
            timeSinceLastBullet = 0;
            //canFire = Time.time + fireRate;

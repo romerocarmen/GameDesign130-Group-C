@@ -20,6 +20,12 @@ public class SASpawner : MonoBehaviour
 
     private int lastSpawnWall = 1;
 
+    //variables for each stage attack prefab spawn
+    public Vector3 scaleChange = new Vector3(1f, 0f, 0f);
+    public float ghostBoxTime = 3;
+    public float width = 15;
+
+
     [SerializeField] public AudioClip theClip; 
     [SerializeField] private AudioSource stageAttackAudio;
     [SerializeField] private float volume = 1f; 
@@ -92,6 +98,10 @@ public class SASpawner : MonoBehaviour
     }
 
     void SpawnAttack(GameObject attack){
+        attack.gameObject.GetComponent<StageAttackHandler>().scaleChange = scaleChange;
+        attack.gameObject.GetComponent<StageAttackHandler>().ghostBoxTime = ghostBoxTime;
+        attack.gameObject.GetComponent<StageAttackHandler>().width = width;
+
         if(dangerWall == 0 || dangerWall == 2){ //Left or Right Wall
             Instantiate(attack, SetSpawnPosition(), Quaternion.identity);
         } else {
