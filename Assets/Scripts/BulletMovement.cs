@@ -14,6 +14,7 @@ public class BulletMovement : MonoBehaviour
     bool placedXP = false;
     bool destroyedXP = false;
     bool updatedScore = false;
+    public string heading = "";
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +39,15 @@ public class BulletMovement : MonoBehaviour
         Vector3 direction = (Vector3)(Input.mousePosition - screenPoint);
         Utils.SetAxisTowards(Enums.Directions.Right, transform, direction);
 		//gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(directionToMouse.x, directionToMouse.y) * speed;
-        gameObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * speed, ForceMode2D.Impulse);
+        if(heading == "middle"){
+            gameObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * speed, ForceMode2D.Impulse);
+        } else if(heading == "left"){
+            gameObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * speed, ForceMode2D.Impulse);
+        } else if(heading == "right"){
+            gameObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * speed, ForceMode2D.Impulse);
+        } else if(heading == "back"){
+            gameObject.GetComponent<Rigidbody2D>().AddForce(-direction.normalized * speed, ForceMode2D.Impulse);
+        }
         while(gameObject.GetComponent<Rigidbody2D>().velocity.magnitude < 40){
             gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity.magnitude * 1.1f * gameObject.GetComponent<Rigidbody2D>().velocity.normalized;
         }

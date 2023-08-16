@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 48246800}
   - component: {fileID: 48246799}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
     Cai Spidel
 
     Jared
-    Elliot
+    Elliott
 
     David Armond'
   m_isRightToLeft: 0
@@ -719,7 +719,7 @@ GameObject:
   - component: {fileID: 1016875512}
   - component: {fileID: 1016875511}
   m_Layer: 5
-  m_Name: Credits
+  m_Name: Main Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

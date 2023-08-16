@@ -37,6 +37,15 @@ public class EnemySpawner : MonoBehaviour
     public float spawnDelta = 0.00005f;
     public float spawnDeltaAdvanced = 0.00005f;
 
+    public float basicEnemySpeed = 10;
+    public float splitterSpeed = 5;
+
+    // Update is called once per frame
+    void Update()
+    {
+        //SetSpawnRate();
+    }
+
     // This spawns a random amount of enemies every 5 seconds
     void FixedUpdate()
     {
@@ -68,18 +77,17 @@ public class EnemySpawner : MonoBehaviour
     private void basicEnemySpawner(){
         basicTimer = 0;
         enemyColor = Random.Range(1,4);
-        enemyColor = 3;
         spawnWall = Random.Range(0,4);
 
         switch(enemyColor){
             case 1: //Red Enemy spawn
-                SpawnEnemies(1, spawnWall, redEnemy);
+                SpawnEnemies(1, spawnWall, redEnemy, basicEnemySpeed);
                 break;
             case 2: //Green Enemy spawn
-                SpawnEnemies(1, spawnWall, greenEnemy);
+                SpawnEnemies(1, spawnWall, greenEnemy, basicEnemySpeed);
                 break;
             case 3: //Blue Enemy spawn
-                SpawnEnemies(1, spawnWall, blueEnemy);
+                SpawnEnemies(1, spawnWall, blueEnemy, basicEnemySpeed);
                 break;
             default:
                 //This is if the die rolls 4, in which nothing spawns
@@ -90,7 +98,7 @@ public class EnemySpawner : MonoBehaviour
     private void rainbowEnemySpawner(){
         rainbowTimer = 0;
         spawnWall = Random.Range(0,4);
-        SpawnEnemies(1, spawnWall, rainbowEnemy);
+        SpawnEnemies(1, spawnWall, rainbowEnemy, basicEnemySpeed);
     }
 
     private void splitterEnemySpawner(){
@@ -101,16 +109,16 @@ public class EnemySpawner : MonoBehaviour
 
         switch(enemyColor){
             case 1: //Red Enemy spawn
-                SpawnEnemies(1, spawnWall, redSplitter);
+                SpawnEnemies(1, spawnWall, redSplitter, splitterSpeed);
                 break;
             case 2: //Green Enemy spawn
-                SpawnEnemies(1, spawnWall, greenSplitter);
+                SpawnEnemies(1, spawnWall, greenSplitter, splitterSpeed);
                 break;
             case 3: //Blue Enemy spawn
-                SpawnEnemies(1, spawnWall, blueSplitter);
+                SpawnEnemies(1, spawnWall, blueSplitter, splitterSpeed);
                 break;
             case 4: //rainbow Enemy spawn
-                SpawnEnemies(1, spawnWall, rainbowSplitter);
+                SpawnEnemies(1, spawnWall, rainbowSplitter, splitterSpeed);
                 break;
             default:
                 //This is if the die rolls 4, in which nothing spawns
@@ -143,13 +151,80 @@ public class EnemySpawner : MonoBehaviour
         return spawnPosition;
     }
 
-    public void SpawnEnemies(int quantity, int position, GameObject enemy){
+    public void SpawnEnemies(int quantity, int position, GameObject enemy, float speed){
         enemy.gameObject.GetComponent<FollowTarget>().enabled = true;
         enemy.gameObject.GetComponent<FollowTarget>().target = target;
+        enemy.gameObject.GetComponent<FollowTarget>().speed = speed;
         Instantiate(enemy, SetSpawnPosition(position), Quaternion.identity);
         // for(int j = 0; j < quantity; j++){
         //     enemy.gameObject.GetComponent<FollowTarget>().target = target;
         //     Instantiate(enemy, SetSpawnPosition(position), Quaternion.identity);
         // }
     }
+
+    // void SetSpawnRate()
+    // {
+    //     // setting the spawn rate
+    //     if (LevelCounter.levelValue == 1)
+    //     {
+    //         spawnRateBasic = 1f;
+    //         spawnRateRainbow = 0f;
+    //         spawnRateSplitter = 0f;
+    //     }
+    //     else if (LevelCounter.levelValue == 2)
+    //     {
+    //         spawnRateBasic = 1.5f;
+    //         spawnRateRainbow = 0.1f;
+    //         spawnRateSplitter = 0.1f;
+    //     }
+    //     else if (LevelCounter.levelValue == 3)
+    //     {
+    //         spawnRateBasic = 2f;
+    //         spawnRateRainbow = 0.2f;
+    //         spawnRateSplitter = 0.2f;
+    //     }
+    //     else if (LevelCounter.levelValue == 4)
+    //     {
+    //         spawnRateBasic = 2.5f;
+    //         spawnRateRainbow = 0.3f;
+    //         spawnRateSplitter = 0.3f;
+    //     }
+    //     else if (LevelCounter.levelValue == 5)
+    //     {
+    //         spawnRateBasic = 0f;
+    //         spawnRateRainbow = 0f;
+    //         spawnRateSplitter = 0f;
+    //     }
+    //     else if (LevelCounter.levelValue == 6)
+    //     {
+    //         spawnRateBasic = 3f;
+    //         spawnRateRainbow = 0.5f;
+    //         spawnRateSplitter = 0.5f;
+    //     }
+    //     else if (LevelCounter.levelValue == 7)
+    //     {
+    //         spawnRateBasic = 3.5f;
+    //         spawnRateRainbow = 0.6f;
+    //         spawnRateSplitter = 0.6f;
+    //     }
+    //     else if (LevelCounter.levelValue == 8)
+    //     {
+    //         spawnRateBasic = 4f;
+    //         spawnRateRainbow = 0.7f;
+    //         spawnRateSplitter = 0.7f;
+    //     }
+    //     else if (LevelCounter.levelValue == 9)
+    //     {
+    //         spawnRateBasic = 4.5f;
+    //         spawnRateRainbow = 0.8f;
+    //         spawnRateSplitter = 0.8f;
+    //     }
+    //     else if (LevelCounter.levelValue == 10)
+    //     {
+    //         spawnRateBasic = 5f;
+    //         spawnRateRainbow = 0.9f;
+    //         spawnRateSplitter = 0.9f;
+    //     }
+    // }
+
 }
