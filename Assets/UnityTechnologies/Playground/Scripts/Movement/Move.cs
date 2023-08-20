@@ -52,8 +52,18 @@ public class Move : Physics2DObject
         movement = new Vector2(moveHorizontal, moveVertical);
 
 
+        float currentGameSpeed = Time.timeScale;
+        if (currentGameSpeed != 0)
+        {
+            lookAtMouse();
+        }
         //rotate the GameObject towards the direction of movement
         //the axis to look can be decided with the "axis" variable
+
+    }
+
+    private void lookAtMouse()
+    {
         if (orientToDirection)
         {
             // if(movement.sqrMagnitude >= 0.01f)
