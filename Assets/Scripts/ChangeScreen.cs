@@ -9,4 +9,11 @@ public class ChangeScreen : MonoBehaviour
     {
         SceneManager.LoadScene(sceneID);
     }
+
+    public void QuitTheGame()
+    {
+        Debug.Log("Quit: This only works outside the Unity Editor");
+        Application.Quit();
+    }
+
 }
