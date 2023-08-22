@@ -82,14 +82,14 @@ public class Upgrades : MonoBehaviour
                 // enemy setters
                 basicEnemySpeed = 5.5f;
                 basicEnemySpawnRate = 1.1f;
-                splitterSpawnRate = 0f;
-                rainbowSpawnRate = 0f;
+                splitterSpawnRate = 0.1f;
+                rainbowSpawnRate = 0.1f;
 
                 // stage attack setters
                 saSpawnRate = 0f;
                 saWidth = 0f;
                 saGhostBoxTiming = 0f;
-                // saScaleChange = 0;
+                // saScaleChange = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 21f;
