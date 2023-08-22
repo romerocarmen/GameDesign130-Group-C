@@ -26,7 +26,7 @@ public class BulletMovement : MonoBehaviour
     void Update()
     {
         float currentDistance = Vector3.Distance(startingPosition, transform.position);
-        
+
         if (currentDistance > maxDistance)
         {
             Destroy(gameObject);
@@ -38,7 +38,7 @@ public class BulletMovement : MonoBehaviour
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
         Vector3 direction = (Vector3)(Input.mousePosition - screenPoint);
         Utils.SetAxisTowards(Enums.Directions.Right, transform, direction);
-		//gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(directionToMouse.x, directionToMouse.y) * speed;
+        //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(directionToMouse.x, directionToMouse.y) * speed;
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * speed, ForceMode2D.Impulse);
         // if(heading == "middle"){
         //     gameObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * speed, ForceMode2D.Impulse);
@@ -49,13 +49,15 @@ public class BulletMovement : MonoBehaviour
         // } else if(heading == "back"){
         //     gameObject.GetComponent<Rigidbody2D>().AddForce(-direction.normalized * speed, ForceMode2D.Impulse);
         // }
-        while(gameObject.GetComponent<Rigidbody2D>().velocity.magnitude < 40){
+        while (gameObject.GetComponent<Rigidbody2D>().velocity.magnitude < 40)
+        {
             gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity.magnitude * 1.1f * gameObject.GetComponent<Rigidbody2D>().velocity.normalized;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        GameObject.Find("Target Switcher");
         if (other.tag == "Enemy")
         {
             // Finds the audio source
@@ -88,38 +90,42 @@ public class BulletMovement : MonoBehaviour
                 ScorePlayerInteraction.UpdateScore(other.name);
                 updatedScore = true;
             }
-            
+        }
+        if (other.tag == "Arena Wall") // destroys bullet on arena walls so enemies are not destroyed outside playspace
+        {
+            Destroy(this.gameObject);
         }
     }
 
-    // private void OnTriggerExit2D(Collider2D other)
+    //private void OnTriggerExit2D(Collider2D other)
     // {
-    //     if (other.tag == "Enemy")
-    //     {
-    //         Vector3 endingPosition = gameObject.transform.position;
-    //         Destroy(gameObject);
+        //     if (other.tag == "Enemy")
+        //     {
+        //         Vector3 endingPosition = gameObject.transform.position;
+        //         Destroy(gameObject);
 
-    //         // place XP where enemy was
-    //         if (!placedXP)
-    //         {
-    //             GameObject tmpXP = Instantiate(XP);
-    //             tmpXP.transform.position = endingPosition;
-    //             placedXP = true;
+        //         // place XP where enemy was
+        //         if (!placedXP)
+        //         {
+        //             GameObject tmpXP = Instantiate(XP);
+        //             tmpXP.transform.position = endingPosition;
+        //             placedXP = true;
 
-    //             if (!destroyedXP)
-    //             {
-    //                 // delete XP after 15 seconds
-    //                 Destroy(tmpXP, 15.0f);
-    //                 destroyedXP = true;
-    //             }
-    //         }
+        //             if (!destroyedXP)
+        //             {
+        //                 // delete XP after 15 seconds
+        //                 Destroy(tmpXP, 15.0f);
+        //                 destroyedXP = true;
+        //             }
+        //         }
 
-    //         // update score since an enemy was killed
-    //         if (!updatedScore)
-    //         {
-    //             ScorePlayerInteraction.UpdateScore(other.name);
-    //             updatedScore = true;
-    //         }
-    //     }
+        //         // update score since an enemy was killed
+        //         if (!updatedScore)
+        //         {
+        //             ScorePlayerInteraction.UpdateScore(other.name);
+        //             updatedScore = true;
+        //         }
+        //     }
+        // }
     // }
 }

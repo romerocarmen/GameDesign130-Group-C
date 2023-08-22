@@ -27,5 +27,6 @@ public class SpawnBomb : MonoBehaviour
     public void BigABomb(){
         Instantiate(bombPrefab, gameObject.transform.position, Quaternion.identity);
         timeSinceLastBomb = 0;
+        GameObject.Find("Main Camera").GetComponent<CameraShake>().shake = 1;
     }
 }
