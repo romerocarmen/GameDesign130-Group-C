@@ -339,9 +339,11 @@ MonoBehaviour:
     type: 3}
   spawnRate: 0
   spawnDelta: 0.00005
-  multiAttackChance: 0
+  multiAttackChance: 1
   minMultiCount: 1
   maxMultiCount: 2
+  multiAttackNumber: 1
+  targetPlayer: 0
   scaleChange: {x: 1, y: 0, z: 0}
   ghostBoxTime: 3
   width: 15
@@ -467,11 +469,13 @@ MonoBehaviour:
   splitterSpawnRate: 0
   rainbowSpawnRate: 0
   advancedSpawnDelta: 0
-  saSpawnRate: 0
+  saSpawnRate: 0.5
   saSpawnDelta: 0
-  saWidth: 0
-  saGhostBoxTiming: 0
-  saScaleChange: {x: 0, y: 0, z: 0}
+  saWidth: 1
+  saGhostBoxTiming: 2
+  saScaleChange: {x: 2, y: 0, z: 0}
+  saTargetPlayer: 0
+  saMultiAttackChance: 0
   szMaxDiameter: 20
   szPatrolSpeed: 0
   szShrinkRate: 1

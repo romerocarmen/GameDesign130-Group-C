@@ -8,7 +8,6 @@ public class Upgrades : MonoBehaviour
     public float playerSpeed = 3f;
     public float playerFireRate = 1f;
     public float playerBulletCount = 1f;
-    //public int playerWeapon = 1;
     public float basicEnemySpeed = 5f;
     public float splitterSpeed = 5f;
     public float basicEnemySpawnRate = 0.5f;
@@ -21,6 +20,8 @@ public class Upgrades : MonoBehaviour
     public float saWidth = 0f;
     public float saGhostBoxTiming = 0f;
     public Vector3 saScaleChange = Vector3.zero;
+    public bool saTargetPlayer = false;
+    public float saMultiAttackChance = 0f;
     public float szMaxDiameter = 20f;
     public float szPatrolSpeed = 0f;
     public float szShrinkRate = 2f;
@@ -48,20 +49,20 @@ public class Upgrades : MonoBehaviour
             if (level == 1)
             {
                 // player setters
-                //playerSpeed = 3f;
-                //playerFireRate = 5f;
+                // playerSpeed = 3f;
+                // playerFireRate = 5f;
                 // playerWeapon = 2; need weapon upgrade number
 
                 // enemy setters
                 // basicEnemySpeed = 5f;
-                //basicEnemySpawnRate = 1f;
+                // basicEnemySpawnRate = 1f;
                 // splitterSpawnRate = 0f;
                 // rainbowSpawnRate = 0f;
 
                 // stage attack setters
-                //saSpawnRate = 0f;
+                // saSpawnRate = 0f;
                 // saWidth = 0f;
-                //saGhostBoxTiming = 0f;
+                // saGhostBoxTiming = 0f;
                 // saScaleChange = 0;
 
                 // safe zone setters
@@ -78,6 +79,7 @@ public class Upgrades : MonoBehaviour
                 // player setters
                 playerSpeed = 3.1f;
                 playerFireRate = 6f;
+                playerBulletCount = 1f;
                 // playerWeapon = 2; need weapon upgrade number
 
                 // enemy setters
@@ -87,10 +89,12 @@ public class Upgrades : MonoBehaviour
                 rainbowSpawnRate = 0.1f;
 
                 // stage attack setters
-                saSpawnRate = 0f;
-                saWidth = 0f;
-                saGhostBoxTiming = 0f;
-                // saScaleChange = 0f;
+                saSpawnRate = 0.5f;
+                saWidth = 10f;
+                saGhostBoxTiming = 2f;
+                saScaleChange = new Vector3(2f,0,0);
+                saTargetPlayer = true;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 21f;
@@ -118,6 +122,8 @@ public class Upgrades : MonoBehaviour
                 saWidth = 0f;
                 saGhostBoxTiming = 0f;
                 //saScaleChange = 0;
+                saTargetPlayer = true;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 22f;
@@ -144,6 +150,8 @@ public class Upgrades : MonoBehaviour
                 saWidth = 18f;
                 saGhostBoxTiming = 2f;
                 saScaleChange = new Vector3(1.5f, 0, 0);
+                saTargetPlayer = false;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 23f;
@@ -170,6 +178,8 @@ public class Upgrades : MonoBehaviour
                 saWidth = 18f;
                 saGhostBoxTiming = 2f;
                 saScaleChange = new Vector3(1.5f, 0, 0);
+                saTargetPlayer = false;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 24f;
@@ -196,6 +206,8 @@ public class Upgrades : MonoBehaviour
                 saWidth = 15f;
                 saGhostBoxTiming = 2f;
                 saScaleChange = new Vector3(2f, 0, 0);
+                saTargetPlayer = false;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 25f;
@@ -222,6 +234,8 @@ public class Upgrades : MonoBehaviour
                 saWidth = 15f;
                 saGhostBoxTiming = 2f;
                 saScaleChange = new Vector3(2f, 0, 0);
+                saTargetPlayer = false;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 26f;
@@ -248,6 +262,8 @@ public class Upgrades : MonoBehaviour
                 saWidth = 15f;
                 saGhostBoxTiming = 2f;
                 saScaleChange = new Vector3(2f, 0, 0);
+                saTargetPlayer = false;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 27f;
@@ -274,6 +290,8 @@ public class Upgrades : MonoBehaviour
                 saWidth = 15f;
                 saGhostBoxTiming = 2f;
                 saScaleChange = new Vector3(2f, 0, 0);
+                saTargetPlayer = false;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 28f;
@@ -300,6 +318,8 @@ public class Upgrades : MonoBehaviour
                 saWidth = 15f;
                 saGhostBoxTiming = 2f;
                 saScaleChange = new Vector3(2f, 0, 0);
+                saTargetPlayer = true;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 30f;
@@ -330,9 +350,11 @@ public class Upgrades : MonoBehaviour
         GameObject.Find("ArenaMaster").GetComponent<SASpawner>().width = saWidth;
         GameObject.Find("ArenaMaster").GetComponent<SASpawner>().ghostBoxTime = saGhostBoxTiming;
         GameObject.Find("ArenaMaster").GetComponent<SASpawner>().scaleChange = saScaleChange;
+        GameObject.Find("ArenaMaster").GetComponent<SASpawner>().targetPlayer = saTargetPlayer;
+        GameObject.Find("ArenaMaster").GetComponent<SASpawner>().multiAttackChance = saMultiAttackChance;
 
         // change the max diameter, patrol speed, shrinkrate, and growthrate of safe zones
-        foreach(Transform childSafeZone in GameObject.Find("SafeZoneWrapper_RandomBounce").transform){
+        foreach (Transform childSafeZone in GameObject.Find("SafeZoneWrapper_RandomBounce").transform){
             childSafeZone.gameObject.GetComponent<SizeChange>().maxScale = szMaxDiameter;
             childSafeZone.gameObject.GetComponent<SafeZoneMovement>().maxSpeed = szPatrolSpeed;
             childSafeZone.gameObject.GetComponent<SizeChange>().shrinkRate = szShrinkRate;

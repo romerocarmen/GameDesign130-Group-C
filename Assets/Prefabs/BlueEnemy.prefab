@@ -5349,7 +5349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 0}
   target: {fileID: 0}
-  speed: 8.5
+  speed: 5.5
   lookAtTarget: 1
   useSide: 0
 --- !u!114 &7644496643627610925
