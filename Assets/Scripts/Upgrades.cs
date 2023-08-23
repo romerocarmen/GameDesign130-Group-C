@@ -7,7 +7,7 @@ public class Upgrades : MonoBehaviour
     public int level = LevelCounter.levelValue;
     public float playerSpeed = 3f;
     public float playerFireRate = 1f;
-    // public int playerWeapon = 1;
+    public float playerBulletCount = 1f;
     public float basicEnemySpeed = 5f;
     public float splitterSpeed = 5f;
     public float basicEnemySpawnRate = 0.5f;
@@ -79,6 +79,7 @@ public class Upgrades : MonoBehaviour
                 // player setters
                 playerSpeed = 3.1f;
                 playerFireRate = 6f;
+                playerBulletCount = 1f;
                 // playerWeapon = 2; need weapon upgrade number
 
                 // enemy setters
@@ -106,7 +107,8 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.2f;
-                playerFireRate = 7f;
+                playerFireRate = 6f;
+                playerBulletCount = 2f;
                 // playerWeapon = 3; need weapon upgrade number
 
                 // enemy setters
@@ -133,7 +135,8 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.3f;
-                playerFireRate = 8f;
+                playerFireRate = 7f;
+                playerBulletCount = 2f;
                 // playerWeapon = 4; need weapon upgrade number
 
                 // enemy setters
@@ -160,7 +163,8 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.4f;
-                playerFireRate = 9f;
+                playerFireRate = 7f;
+                playerBulletCount = 3f;
                 // playerWeapon = 5; need weapon upgrade number
 
                 // enemy setters
@@ -187,7 +191,8 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.5f;
-                playerFireRate = 10f;
+                playerFireRate = 8f;
+                playerBulletCount = 3f;
                 // playerWeapon = 6; need weapon upgrade number
 
                 // enemy setters
@@ -214,7 +219,8 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.6f;
-                playerFireRate = 11f;
+                playerFireRate = 8f;
+                playerBulletCount = 4f;
                 // playerWeapon = 7; need weapon upgrade number
 
                 // enemy setters
@@ -241,7 +247,8 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.7f;
-                playerFireRate = 17f;
+                playerFireRate = 9f;
+                playerBulletCount = 4f;
                 // playerWeapon = 8; need weapon upgrade number
 
                 // enemy setters
@@ -268,7 +275,8 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.8f;
-                playerFireRate = 12f;
+                playerFireRate = 9f;
+                playerBulletCount = 5f;
                 // playerWeapon = 9; need weapon upgrade number
 
                 // enemy setters
@@ -295,7 +303,8 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 4f;
-                playerFireRate = 15f;
+                playerFireRate = 10f;
+                playerBulletCount = 5f;
                 // playerWeapon = 10; need weapon upgrade number
 
                 // enemy setters
@@ -359,6 +368,7 @@ public class Upgrades : MonoBehaviour
         // change speed firerate, and type of weapon
         GameObject.Find("Player").GetComponent<Move>().speed = playerSpeed; 
         GameObject.Find("Player").GetComponent<Shooting>().fireRate = playerFireRate;
+        GameObject.Find("Player").GetComponent<Shooting>().numBullets = playerBulletCount;
         // GameObject.Find("Player").GetComponent<Shooting>().weapon = playerWeapon;  
     }
 }

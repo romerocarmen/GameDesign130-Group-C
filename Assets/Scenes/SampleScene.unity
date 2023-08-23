@@ -461,6 +461,7 @@ MonoBehaviour:
   level: 1
   playerSpeed: 3
   playerFireRate: 5
+  playerBulletCount: 1
   basicEnemySpeed: 5
   splitterSpeed: 5
   basicEnemySpawnRate: 1
@@ -594,7 +595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
   fireRate: 5
-  direction: 
+  numBullets: 2
 --- !u!212 &25177676
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2559,7 +2560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
   fireRate: 5
-  direction: 
+  numBullets: 2
 --- !u!1 &428105337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2761,6 +2762,7 @@ MonoBehaviour:
   movementType: 0
   orientToDirection: 1
   lookAxis: 1
+  heading: {x: 1, y: 0, z: 0}
 --- !u!50 &448095527
 Rigidbody2D:
   serializedVersion: 4
@@ -2960,7 +2962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
   fireRate: 1
-  direction: 
+  numBullets: 1
 --- !u!114 &448095535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4893,7 +4895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
   fireRate: 5
-  direction: 
+  numBullets: 2
 --- !u!212 &945791478
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11751,7 +11753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
   fireRate: 5
-  direction: 
+  numBullets: 2
 --- !u!212 &1504263846
 SpriteRenderer:
   m_ObjectHideFlags: 0
