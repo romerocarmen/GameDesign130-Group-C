@@ -17,7 +17,7 @@ public class ShieldFlash : MonoBehaviour
     {
         gameObject.GetComponent<SpriteRenderer>().color = tmp;
         timer += Time.deltaTime;
-        if(timer > 2){
+        if(timer > 3){
             if(tmp.a <= 0){
                 tmp.a = 1;
             } else {

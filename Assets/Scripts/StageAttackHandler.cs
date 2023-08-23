@@ -21,7 +21,9 @@ public class StageAttackHandler : MonoBehaviour
         timer += Time.deltaTime;
         gameObject.transform.localScale += scaleChange;
         if(timer > ghostBoxTime){
+            GameObject.Find("Main Camera").GetComponent<CameraShake>().StageAttackShake();
             activateAttack();
+            timer = 0;
         }
     }
 
