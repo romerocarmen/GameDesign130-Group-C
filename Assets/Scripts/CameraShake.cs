@@ -20,5 +20,19 @@ public class CameraShake : MonoBehaviour
             shake = 0;
         }
     }
+
+    public void StageAttackShake()
+    {
+        shakeAmount = 0.5f;
+        decreaseFactor = 5f;
+        shake = 1f;
+    }
+
+    public void BombShake()
+    {
+        shakeAmount = 0.7f;
+        decreaseFactor = 1f;
+        shake = 1f;
+    }
 }
 
