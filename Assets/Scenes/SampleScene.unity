@@ -307,6 +307,8 @@ MonoBehaviour:
   spawnDeltaAdvanced: 0.00005
   basicEnemySpeed: 10
   splitterSpeed: 5
+  minEnemyCount: 4
+  maxEnemyCount: 4
 --- !u!114 &8139570
 MonoBehaviour:
   m_ObjectHideFlags: 0

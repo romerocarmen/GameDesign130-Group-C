@@ -15,6 +15,8 @@ public class Upgrades : MonoBehaviour
     public float splitterSpawnRate = 0f;
     public float rainbowSpawnRate = 0f;
     public float advancedSpawnDelta = 0f;
+    public int minEnemyCount = 1;
+    public int maxEnemyCount = 1;
     public float saSpawnRate = 0f;
     public float saSpawnDelta = 0f;
     public float saWidth = 0f;
@@ -87,6 +89,8 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 1.1f;
                 splitterSpawnRate = 0.1f;
                 rainbowSpawnRate = 0.1f;
+                minEnemyCount = 1;
+                maxEnemyCount = 2;
 
                 // stage attack setters
                 saSpawnRate = 0.5f;
@@ -116,6 +120,8 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 1.2f;
                 splitterSpawnRate = 0.2f;
                 rainbowSpawnRate = 0.2f;
+                minEnemyCount = 2;
+                maxEnemyCount = 3;
 
                 // stage attack setters
                 saSpawnRate = 0f;
@@ -144,6 +150,8 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 1.3f;
                 splitterSpawnRate = 0.2f;
                 rainbowSpawnRate = 0.2f;
+                minEnemyCount = 3;
+                maxEnemyCount = 4;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
@@ -172,6 +180,8 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 1.4f;
                 splitterSpawnRate = 0.3f;
                 rainbowSpawnRate = 0.3f;
+                minEnemyCount = 1;
+                maxEnemyCount = 2;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
@@ -200,6 +210,8 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 1.5f;
                 splitterSpawnRate = 0.4f;
                 rainbowSpawnRate = 0.4f;
+                minEnemyCount++;
+                maxEnemyCount++;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
@@ -228,6 +240,8 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 1.5f;
                 splitterSpawnRate = 0.5f;
                 rainbowSpawnRate = 0.5f;
+                minEnemyCount = 1;
+                maxEnemyCount = 2;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
@@ -256,6 +270,8 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 1.6f;
                 splitterSpawnRate = 0.6f;
                 rainbowSpawnRate = 0.6f;
+                minEnemyCount = 1;
+                maxEnemyCount = 2;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
@@ -284,6 +300,8 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 1.7f;
                 splitterSpawnRate = 0.8f;
                 rainbowSpawnRate = 0.8f;
+                minEnemyCount = 1;
+                maxEnemyCount = 2;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
@@ -312,6 +330,8 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 2f;
                 splitterSpawnRate = 1f;
                 rainbowSpawnRate = 1f;
+                minEnemyCount = 1;
+                maxEnemyCount = 2;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
@@ -337,6 +357,8 @@ public class Upgrades : MonoBehaviour
         GameObject.Find("ArenaMaster").GetComponent<EnemySpawner>().basicEnemySpeed = basicEnemySpeed;
         GameObject.Find("ArenaMaster").GetComponent<EnemySpawner>().spawnRateBasic = basicEnemySpawnRate;
         GameObject.Find("ArenaMaster").GetComponent<EnemySpawner>().spawnDelta = basicEnemySpawnDelta;
+        GameObject.Find("ArenaMaster").GetComponent<EnemySpawner>().minEnemyCount = minEnemyCount;
+        GameObject.Find("ArenaMaster").GetComponent<EnemySpawner>().maxEnemyCount = maxEnemyCount;
         
         // splitter and rainbow enemies
         GameObject.Find("ArenaMaster").GetComponent<EnemySpawner>().splitterSpeed = splitterSpeed;
