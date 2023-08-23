@@ -40,6 +40,9 @@ public class EnemySpawner : MonoBehaviour
     public float basicEnemySpeed = 5;
     public float splitterSpeed = 5;
 
+    public int minEnemyCount = 1;
+    public int maxEnemyCount = 1;
+
     // Update is called once per frame
     void Update()
     {
@@ -78,16 +81,16 @@ public class EnemySpawner : MonoBehaviour
         basicTimer = 0;
         enemyColor = Random.Range(1,4);
         spawnWall = Random.Range(0,4);
-
+        int enemyNumber = Random.Range(minEnemyCount, maxEnemyCount + 1);
         switch(enemyColor){
             case 1: //Red Enemy spawn
-                SpawnEnemies(1, spawnWall, redEnemy, basicEnemySpeed);
+                SpawnEnemies(enemyNumber, spawnWall, redEnemy, basicEnemySpeed);
                 break;
             case 2: //Green Enemy spawn
-                SpawnEnemies(1, spawnWall, greenEnemy, basicEnemySpeed);
+                SpawnEnemies(enemyNumber, spawnWall, greenEnemy, basicEnemySpeed);
                 break;
             case 3: //Blue Enemy spawn
-                SpawnEnemies(1, spawnWall, blueEnemy, basicEnemySpeed);
+                SpawnEnemies(enemyNumber, spawnWall, blueEnemy, basicEnemySpeed);
                 break;
             default:
                 //This is if the die rolls 4, in which nothing spawns
@@ -98,7 +101,8 @@ public class EnemySpawner : MonoBehaviour
     private void rainbowEnemySpawner(){
         rainbowTimer = 0;
         spawnWall = Random.Range(0,4);
-        SpawnEnemies(1, spawnWall, rainbowEnemy, basicEnemySpeed);
+        int enemyNumber = Random.Range(minEnemyCount, maxEnemyCount + 1);
+        SpawnEnemies(enemyNumber, spawnWall, rainbowEnemy, basicEnemySpeed);
     }
 
     private void splitterEnemySpawner(){
@@ -155,11 +159,10 @@ public class EnemySpawner : MonoBehaviour
         enemy.gameObject.GetComponent<FollowTarget>().enabled = true;
         enemy.gameObject.GetComponent<FollowTarget>().target = target;
         enemy.gameObject.GetComponent<FollowTarget>().speed = speed;
-        Instantiate(enemy, SetSpawnPosition(position), Quaternion.identity);
-        // for(int j = 0; j < quantity; j++){
-        //     enemy.gameObject.GetComponent<FollowTarget>().target = target;
-        //     Instantiate(enemy, SetSpawnPosition(position), Quaternion.identity);
-        // }
+        
+        for(int j = 0; j < quantity; j++){
+            Instantiate(enemy, SetSpawnPosition(position), Quaternion.identity);
+        }
     }
 
     // void SetSpawnRate()
