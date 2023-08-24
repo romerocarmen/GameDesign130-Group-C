@@ -7,7 +7,7 @@ public class Upgrades : MonoBehaviour
     public int level = LevelCounter.levelValue;
     public float playerSpeed = 3f;
     public float playerFireRate = 1f;
-    //public int playerWeapon = 1;
+    public float playerBulletCount = 1f;
     public float basicEnemySpeed = 5f;
     public float splitterSpeed = 5f;
     public float basicEnemySpawnRate = 0.5f;
@@ -15,11 +15,15 @@ public class Upgrades : MonoBehaviour
     public float splitterSpawnRate = 0f;
     public float rainbowSpawnRate = 0f;
     public float advancedSpawnDelta = 0f;
+    public int minEnemyCount = 1;
+    public int maxEnemyCount = 1;
     public float saSpawnRate = 0f;
     public float saSpawnDelta = 0f;
     public float saWidth = 0f;
     public float saGhostBoxTiming = 0f;
     public Vector3 saScaleChange = Vector3.zero;
+    public bool saTargetPlayer = false;
+    public float saMultiAttackChance = 0f;
     public float szMaxDiameter = 20f;
     public float szPatrolSpeed = 0f;
     public float szShrinkRate = 2f;
@@ -47,20 +51,20 @@ public class Upgrades : MonoBehaviour
             if (level == 1)
             {
                 // player setters
-                //playerSpeed = 3f;
-                //playerFireRate = 5f;
+                // playerSpeed = 3f;
+                // playerFireRate = 5f;
                 // playerWeapon = 2; need weapon upgrade number
 
                 // enemy setters
                 // basicEnemySpeed = 5f;
-                //basicEnemySpawnRate = 1f;
+                // basicEnemySpawnRate = 1f;
                 // splitterSpawnRate = 0f;
                 // rainbowSpawnRate = 0f;
 
                 // stage attack setters
-                //saSpawnRate = 0f;
+                // saSpawnRate = 0f;
                 // saWidth = 0f;
-                //saGhostBoxTiming = 0f;
+                // saGhostBoxTiming = 0f;
                 // saScaleChange = 0;
 
                 // safe zone setters
@@ -77,6 +81,7 @@ public class Upgrades : MonoBehaviour
                 // player setters
                 playerSpeed = 3.1f;
                 playerFireRate = 6f;
+                playerBulletCount = 1f;
                 // playerWeapon = 2; need weapon upgrade number
 
                 // enemy setters
@@ -84,12 +89,16 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 1.1f;
                 splitterSpawnRate = 0.1f;
                 rainbowSpawnRate = 0.1f;
+                minEnemyCount = 1;
+                maxEnemyCount = 2;
 
                 // stage attack setters
-                saSpawnRate = 0f;
-                saWidth = 0f;
-                saGhostBoxTiming = 0f;
-                // saScaleChange = 0f;
+                saSpawnRate = 0.5f;
+                saWidth = 10f;
+                saGhostBoxTiming = 2f;
+                saScaleChange = new Vector3(2f,0,0);
+                saTargetPlayer = true;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 21f;
@@ -102,7 +111,8 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.2f;
-                playerFireRate = 7f;
+                playerFireRate = 6f;
+                playerBulletCount = 2f;
                 // playerWeapon = 3; need weapon upgrade number
 
                 // enemy setters
@@ -110,12 +120,16 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 1.2f;
                 splitterSpawnRate = 0.2f;
                 rainbowSpawnRate = 0.2f;
+                minEnemyCount = 2;
+                maxEnemyCount = 3;
 
                 // stage attack setters
                 saSpawnRate = 0f;
                 saWidth = 0f;
                 saGhostBoxTiming = 0f;
                 //saScaleChange = 0;
+                saTargetPlayer = true;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 22f;
@@ -127,7 +141,8 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.3f;
-                playerFireRate = 8f;
+                playerFireRate = 7f;
+                playerBulletCount = 2f;
                 // playerWeapon = 4; need weapon upgrade number
 
                 // enemy setters
@@ -135,12 +150,16 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 1.3f;
                 splitterSpawnRate = 0.2f;
                 rainbowSpawnRate = 0.2f;
+                minEnemyCount = 3;
+                maxEnemyCount = 4;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
                 saWidth = 18f;
                 saGhostBoxTiming = 2f;
                 saScaleChange = new Vector3(1.5f, 0, 0);
+                saTargetPlayer = false;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 23f;
@@ -152,7 +171,8 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.4f;
-                playerFireRate = 9f;
+                playerFireRate = 7f;
+                playerBulletCount = 3f;
                 // playerWeapon = 5; need weapon upgrade number
 
                 // enemy setters
@@ -160,12 +180,16 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 1.4f;
                 splitterSpawnRate = 0.3f;
                 rainbowSpawnRate = 0.3f;
+                minEnemyCount = 1;
+                maxEnemyCount = 2;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
                 saWidth = 18f;
                 saGhostBoxTiming = 2f;
                 saScaleChange = new Vector3(1.5f, 0, 0);
+                saTargetPlayer = false;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 24f;
@@ -177,7 +201,8 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.5f;
-                playerFireRate = 10f;
+                playerFireRate = 8f;
+                playerBulletCount = 3f;
                 // playerWeapon = 6; need weapon upgrade number
 
                 // enemy setters
@@ -185,12 +210,16 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 1.5f;
                 splitterSpawnRate = 0.4f;
                 rainbowSpawnRate = 0.4f;
+                minEnemyCount++;
+                maxEnemyCount++;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
                 saWidth = 15f;
                 saGhostBoxTiming = 2f;
                 saScaleChange = new Vector3(2f, 0, 0);
+                saTargetPlayer = false;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 25f;
@@ -202,7 +231,8 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.6f;
-                playerFireRate = 11f;
+                playerFireRate = 8f;
+                playerBulletCount = 4f;
                 // playerWeapon = 7; need weapon upgrade number
 
                 // enemy setters
@@ -210,12 +240,16 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 1.5f;
                 splitterSpawnRate = 0.5f;
                 rainbowSpawnRate = 0.5f;
+                minEnemyCount = 1;
+                maxEnemyCount = 2;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
                 saWidth = 15f;
                 saGhostBoxTiming = 2f;
                 saScaleChange = new Vector3(2f, 0, 0);
+                saTargetPlayer = false;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 26f;
@@ -227,7 +261,8 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.7f;
-                playerFireRate = 17f;
+                playerFireRate = 9f;
+                playerBulletCount = 4f;
                 // playerWeapon = 8; need weapon upgrade number
 
                 // enemy setters
@@ -235,12 +270,16 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 1.6f;
                 splitterSpawnRate = 0.6f;
                 rainbowSpawnRate = 0.6f;
+                minEnemyCount = 1;
+                maxEnemyCount = 2;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
                 saWidth = 15f;
                 saGhostBoxTiming = 2f;
                 saScaleChange = new Vector3(2f, 0, 0);
+                saTargetPlayer = false;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 27f;
@@ -252,7 +291,8 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.8f;
-                playerFireRate = 12f;
+                playerFireRate = 9f;
+                playerBulletCount = 5f;
                 // playerWeapon = 9; need weapon upgrade number
 
                 // enemy setters
@@ -260,12 +300,16 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 1.7f;
                 splitterSpawnRate = 0.8f;
                 rainbowSpawnRate = 0.8f;
+                minEnemyCount = 1;
+                maxEnemyCount = 2;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
                 saWidth = 15f;
                 saGhostBoxTiming = 2f;
                 saScaleChange = new Vector3(2f, 0, 0);
+                saTargetPlayer = false;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 28f;
@@ -277,7 +321,8 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 4f;
-                playerFireRate = 15f;
+                playerFireRate = 10f;
+                playerBulletCount = 5f;
                 // playerWeapon = 10; need weapon upgrade number
 
                 // enemy setters
@@ -285,12 +330,16 @@ public class Upgrades : MonoBehaviour
                 basicEnemySpawnRate = 2f;
                 splitterSpawnRate = 1f;
                 rainbowSpawnRate = 1f;
+                minEnemyCount = 1;
+                maxEnemyCount = 2;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
                 saWidth = 15f;
                 saGhostBoxTiming = 2f;
                 saScaleChange = new Vector3(2f, 0, 0);
+                saTargetPlayer = true;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 30f;
@@ -308,6 +357,8 @@ public class Upgrades : MonoBehaviour
         GameObject.Find("ArenaMaster").GetComponent<EnemySpawner>().basicEnemySpeed = basicEnemySpeed;
         GameObject.Find("ArenaMaster").GetComponent<EnemySpawner>().spawnRateBasic = basicEnemySpawnRate;
         GameObject.Find("ArenaMaster").GetComponent<EnemySpawner>().spawnDelta = basicEnemySpawnDelta;
+        GameObject.Find("ArenaMaster").GetComponent<EnemySpawner>().minEnemyCount = minEnemyCount;
+        GameObject.Find("ArenaMaster").GetComponent<EnemySpawner>().maxEnemyCount = maxEnemyCount;
         
         // splitter and rainbow enemies
         GameObject.Find("ArenaMaster").GetComponent<EnemySpawner>().splitterSpeed = splitterSpeed;
@@ -321,9 +372,11 @@ public class Upgrades : MonoBehaviour
         GameObject.Find("ArenaMaster").GetComponent<SASpawner>().width = saWidth;
         GameObject.Find("ArenaMaster").GetComponent<SASpawner>().ghostBoxTime = saGhostBoxTiming;
         GameObject.Find("ArenaMaster").GetComponent<SASpawner>().scaleChange = saScaleChange;
+        GameObject.Find("ArenaMaster").GetComponent<SASpawner>().targetPlayer = saTargetPlayer;
+        GameObject.Find("ArenaMaster").GetComponent<SASpawner>().multiAttackChance = saMultiAttackChance;
 
         // change the max diameter, patrol speed, shrinkrate, and growthrate of safe zones
-        foreach(Transform childSafeZone in GameObject.Find("SafeZoneWrapper_RandomBounce").transform){
+        foreach (Transform childSafeZone in GameObject.Find("SafeZoneWrapper_RandomBounce").transform){
             childSafeZone.gameObject.GetComponent<SizeChange>().maxScale = szMaxDiameter;
             childSafeZone.gameObject.GetComponent<SafeZoneMovement>().maxSpeed = szPatrolSpeed;
             childSafeZone.gameObject.GetComponent<SizeChange>().shrinkRate = szShrinkRate;
@@ -337,6 +390,7 @@ public class Upgrades : MonoBehaviour
         // change speed firerate, and type of weapon
         GameObject.Find("Player").GetComponent<Move>().speed = playerSpeed; 
         GameObject.Find("Player").GetComponent<Shooting>().fireRate = playerFireRate;
+        GameObject.Find("Player").GetComponent<Shooting>().numBullets = playerBulletCount;
         // GameObject.Find("Player").GetComponent<Shooting>().weapon = playerWeapon;  
     }
 }

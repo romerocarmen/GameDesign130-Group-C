@@ -10,10 +10,6 @@ public class CameraShake : MonoBehaviour
     
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1) && GameObject.Find("Player").GetComponent<SpawnBomb>().bombCount > 0)
-        {
-            shake = 1;
-        }
         if (shake > 0)
         {
             this.transform.localPosition = Random.insideUnitSphere * shakeAmount;
@@ -24,4 +20,19 @@ public class CameraShake : MonoBehaviour
             shake = 0;
         }
     }
+
+    public void StageAttackShake()
+    {
+        shakeAmount = 0.5f;
+        decreaseFactor = 5f;
+        shake = 1f;
+    }
+
+    public void BombShake()
+    {
+        shakeAmount = 0.7f;
+        decreaseFactor = 1f;
+        shake = 1f;
+    }
 }
+

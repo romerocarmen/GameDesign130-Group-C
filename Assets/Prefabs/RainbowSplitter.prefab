@@ -1288,7 +1288,7 @@ GameObject:
   - component: {fileID: 326015395501888946}
   - component: {fileID: 326015395501888947}
   - component: {fileID: 326015395501888948}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: RainbowSplitter
   m_TagString: Enemy
   m_Icon: {fileID: 0}

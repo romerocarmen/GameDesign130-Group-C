@@ -21,6 +21,7 @@ public class Move : Physics2DObject
     private Vector2 movement, cachedDirection;
     private float moveHorizontal;
     private float moveVertical;
+    public Vector3 heading = Vector3.right;
 
 
     // Update gets called every frame
@@ -72,8 +73,8 @@ public class Move : Physics2DObject
             // }
             // Utils.SetAxisTowards(lookAxis, transform, cachedDirection);
             Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
-            Vector3 direction = (Vector3)(Input.mousePosition - screenPoint);
-            Utils.SetAxisTowards(Enums.Directions.Right, transform, direction);
+            heading = (Vector3)(Input.mousePosition - screenPoint);
+            Utils.SetAxisTowards(Enums.Directions.Right, transform, heading);
         }
     }
 

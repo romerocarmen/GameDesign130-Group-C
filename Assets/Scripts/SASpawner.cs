@@ -13,10 +13,11 @@ public class SASpawner : MonoBehaviour
     public float spawnRate = .5f;
     public float spawnDelta = 0.00005f;
 
-    public float multiAttackChance = .5f;
+    public float multiAttackChance = 1f;
     public int minMultiCount = 1;
     public int maxMultiCount = 2;
-    private int multiAttackNumber = 1;
+    public int multiAttackNumber = 1;
+    public bool targetPlayer = false;
 
     private int lastSpawnWall = 1;
 
@@ -78,18 +79,42 @@ public class SASpawner : MonoBehaviour
 
     Vector2 SetSpawnPosition(){
         Vector2 spawnPosition = new Vector2(0,0);
-        switch(dangerWall){
+        switch (dangerWall) {
             case 0: //Left
-                spawnPosition = new Vector2(Random.Range(-50, -45), Random.Range(-15, 15));
-                break; 
+                if (targetPlayer == true)
+                {
+                    spawnPosition = new Vector2(-50, GameObject.Find("Player").transform.position.y);
+                } else
+                {
+                    spawnPosition = new Vector2(-50, Random.Range(-15, 15));
+                }
+                break;
             case 1: //Top
-                spawnPosition = new Vector2(Random.Range(-35, 35), Random.Range(25, 30));
+                if (targetPlayer == true)
+                {
+                    spawnPosition = new Vector2(GameObject.Find("Player").transform.position.x, 30);
+                } else
+                {
+                    spawnPosition = new Vector2(Random.Range(-35, 35), 30);
+                }
                 break;
             case 2: //Right
-                spawnPosition = new Vector2(Random.Range(45, 50), Random.Range(-15, 15));
+                if (targetPlayer == true)
+                {
+                    spawnPosition = new Vector2(50, GameObject.Find("Player").transform.position.y);
+                } else
+                {
+                    spawnPosition = new Vector2(50, Random.Range(-15, 15));
+                }
                 break;
             case 3: //Bottom
-                spawnPosition = new Vector2(Random.Range(-35, 35), Random.Range(-30, -25));
+                if (targetPlayer == true)
+                {
+                    spawnPosition = new Vector2(GameObject.Find("Player").transform.position.x, -30);
+                } else
+                {
+                    spawnPosition = new Vector2(Random.Range(-35, 35), -30);
+                }
                 break;
             default: //Should never happen
                 break;
@@ -102,7 +127,7 @@ public class SASpawner : MonoBehaviour
         attack.gameObject.GetComponent<StageAttackHandler>().ghostBoxTime = ghostBoxTime;
         attack.gameObject.GetComponent<StageAttackHandler>().width = width;
 
-        if(dangerWall == 0 || dangerWall == 2){ //Left or Right Wall
+        if (dangerWall == 0 || dangerWall == 2){ //Left or Right Wall
             Instantiate(attack, SetSpawnPosition(), Quaternion.identity);
         } else {
             Instantiate(attack, SetSpawnPosition(), Quaternion.Euler(new Vector3(0,0,90)));
