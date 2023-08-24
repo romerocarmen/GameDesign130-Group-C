@@ -40,6 +40,23 @@ public class CollisionSetter : MonoBehaviour
 
         // Set collisions between NoSpawnBubble and stage attacks off
         Physics2D.IgnoreLayerCollision(12,0);
+
+        // Set collisions between everything but player and XP off
+        // Physics2D.IgnoreLayerCollision(16, 1);
+        // Physics2D.IgnoreLayerCollision(16, 2);
+        // Physics2D.IgnoreLayerCollision(16, 3);
+        // Physics2D.IgnoreLayerCollision(16, 4);
+        // Physics2D.IgnoreLayerCollision(16, 5);
+        // Physics2D.IgnoreLayerCollision(16, 6);
+        // Physics2D.IgnoreLayerCollision(16, 7);
+        // Physics2D.IgnoreLayerCollision(16, 8);
+        // Physics2D.IgnoreLayerCollision(16, 9);
+        // Physics2D.IgnoreLayerCollision(16, 10);
+        // Physics2D.IgnoreLayerCollision(16, 11);
+        // Physics2D.IgnoreLayerCollision(16, 12);
+        // Physics2D.IgnoreLayerCollision(16, 13);
+        // Physics2D.IgnoreLayerCollision(16, 14);
+        // Physics2D.IgnoreLayerCollision(16, 15);
     }
 
     // Update is called once per frame

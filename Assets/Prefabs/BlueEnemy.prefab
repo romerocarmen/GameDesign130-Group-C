@@ -5379,7 +5379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 0}
-  speed: 20
+  speed: 10
   directionChangeInterval: 3
   keepNearStartingPoint: 0
   orientToDirection: 0

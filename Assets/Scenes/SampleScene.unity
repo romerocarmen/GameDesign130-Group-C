@@ -301,8 +301,8 @@ MonoBehaviour:
     type: 3}
   target: {fileID: 1028138}
   spawnRateBasic: 1
-  spawnRateSplitter: 0.5
-  spawnRateRainbow: 0.5
+  spawnRateSplitter: 0
+  spawnRateRainbow: 0
   spawnDelta: 0.00005
   spawnDeltaAdvanced: 0.00005
   basicEnemySpeed: 10
@@ -471,6 +471,8 @@ MonoBehaviour:
   splitterSpawnRate: 0
   rainbowSpawnRate: 0
   advancedSpawnDelta: 0
+  minEnemyCount: 1
+  maxEnemyCount: 1
   saSpawnRate: 0
   saSpawnDelta: 0
   saWidth: 0
@@ -13673,6 +13675,7 @@ MonoBehaviour:
   speed: 10
   lookAtTarget: 1
   useSide: 0
+  splitEnemy: 0
 --- !u!50 &1775701387
 Rigidbody2D:
   serializedVersion: 4

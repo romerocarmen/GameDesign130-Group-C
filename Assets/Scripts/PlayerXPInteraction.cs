@@ -14,6 +14,7 @@ public class PlayerXPInteraction : MonoBehaviour
     {
         //Make Collider2D as trigger 
         GetComponent<Collider2D>().isTrigger = true;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
     private void FixedUpdate() {

@@ -7,13 +7,17 @@ public class Splitter : MonoBehaviour
     public GameObject enemy;
     
     public void spawnBaddies() {
-        for(int i = 1; i < 5; i++){
-            enemy.gameObject.GetComponent<FollowTarget>().target = GameObject.Find("Player").transform;
-            enemy.gameObject.GetComponent<FollowTarget>().enabled = false;
-            enemy.gameObject.GetComponent<Wander>().enabled = true;
+        string[] walls = {"TopWall", "BottomWall", "RightWall", "LeftWall"};
+
+        for(int i = 0; i < 4; i++){
+            enemy.gameObject.GetComponent<FollowTarget>().splitEnemy = true;
+            //enemy.gameObject.GetComponent<FollowTarget>().target = GameObject.Find("Player").transform;
+            enemy.gameObject.GetComponent<EnemySpawnChecker>().timer = 1;
+            //enemy.gameObject.GetComponent<Wander>().enabled = true;
+            enemy.gameObject.GetComponent<FollowTarget>().target = GameObject.Find(walls[i]).transform;
             Instantiate(enemy, transform.position, Quaternion.identity);
-            enemy.gameObject.GetComponent<Wander>().enabled = false;
-            enemy.gameObject.GetComponent<FollowTarget>().enabled = true;
+            //enemy.gameObject.GetComponent<Wander>().enabled = false;
+            // enemy.gameObject.GetComponent<FollowTarget>().enabled = true;
         }
         
     }

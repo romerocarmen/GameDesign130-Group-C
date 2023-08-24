@@ -10,9 +10,9 @@ public class Upgrades : MonoBehaviour
     public float playerBulletCount = 1f;
     public float basicEnemySpeed = 5f;
     public float splitterSpeed = 5f;
-    public float basicEnemySpawnRate = 0.5f;
-    public float basicEnemySpawnDelta = 0.0005f;
-    public float splitterSpawnRate = 0f;
+    public float basicEnemySpawnRate = 0;//0.5f;
+    public float basicEnemySpawnDelta = 0;//0.0005f;
+    public float splitterSpawnRate = .5f;//0f;
     public float rainbowSpawnRate = 0f;
     public float advancedSpawnDelta = 0f;
     public int minEnemyCount = 1;
@@ -93,10 +93,10 @@ public class Upgrades : MonoBehaviour
                 maxEnemyCount = 2;
 
                 // stage attack setters
-                saSpawnRate = 0.5f;
-                saWidth = 10f;
-                saGhostBoxTiming = 2f;
-                saScaleChange = new Vector3(2f,0,0);
+                saSpawnRate = 0;
+                saWidth = 0;
+                saGhostBoxTiming = 0;
+                saScaleChange = new Vector3(0f,0,0);
                 saTargetPlayer = true;
                 saMultiAttackChance = 0f;
 
