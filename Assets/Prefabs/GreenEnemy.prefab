@@ -191,6 +191,7 @@ MonoBehaviour:
   speed: 5
   lookAtTarget: 1
   useSide: 0
+  splitEnemy: 0
 --- !u!114 &8436456983690750605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,7 +469,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
     type: 3}
-  m_Color: {r: 0, g: 1, b: 0.03529412, a: 0.14901961}
+  m_Color: {r: 0, g: 1, b: 0.03529412, a: 0.39215687}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
