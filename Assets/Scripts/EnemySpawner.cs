@@ -159,6 +159,7 @@ public class EnemySpawner : MonoBehaviour
         enemy.gameObject.GetComponent<FollowTarget>().enabled = true;
         enemy.gameObject.GetComponent<FollowTarget>().target = target;
         enemy.gameObject.GetComponent<FollowTarget>().speed = speed;
+        enemy.gameObject.GetComponent<FollowTarget>().splitEnemy = false;
         
         for(int j = 0; j < quantity; j++){
             Instantiate(enemy, SetSpawnPosition(position), Quaternion.identity);

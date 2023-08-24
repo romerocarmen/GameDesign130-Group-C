@@ -46,7 +46,7 @@ public class BulletMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        GameObject.Find("Target Switcher");
+        //GameObject.Find("Target Switcher");
         if (other.tag == "Enemy")
         {
             // Finds the audio source
@@ -59,7 +59,7 @@ public class BulletMovement : MonoBehaviour
             Destroy(gameObject);
             other.gameObject.GetComponent<FollowTarget>().death();
             // place XP where enemy was
-            if (!placedXP)
+            if (!placedXP && LevelCounter.levelValue < 10)
             {
                 GameObject tmpXP = Instantiate(XP);
                 tmpXP.transform.position = endingPosition;

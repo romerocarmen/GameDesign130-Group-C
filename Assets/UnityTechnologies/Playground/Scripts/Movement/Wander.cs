@@ -90,7 +90,7 @@ public class Wander : Physics2DObject
 	private void FixedUpdate()
 	{
 		timer += Time.deltaTime;
-		if(timer > .1){
+		if(timer > .3){
 			gameObject.GetComponent<FollowTarget>().enabled = true;
 		}
 		// // check the color of this enemy, and if the player is out of the corresponding color zone then the enemy swaps to targeting instead
@@ -118,6 +118,7 @@ public class Wander : Physics2DObject
 		// 		break;
 		// }
 		rigidbody2D.velocity = direction * speed;
+		speed = speed * .95f;
 		//rigidbody2D.AddForce(direction * speed);
 	}
 }

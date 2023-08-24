@@ -188,7 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 0}
   target: {fileID: 0}
-  speed: 5.5
+  speed: 5
   lookAtTarget: 1
   useSide: 0
 --- !u!114 &8436456983690750605
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 0}
-  speed: 20
+  speed: 12
   directionChangeInterval: 3
   keepNearStartingPoint: 1
   orientToDirection: 0

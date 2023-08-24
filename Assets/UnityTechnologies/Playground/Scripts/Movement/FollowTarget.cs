@@ -12,6 +12,8 @@ public class FollowTarget : Physics2DObject
 	// Speed used to move towards the target
 	public float speed = 1f;
 
+	//private float currentSpeed = 1f;
+
 	// Used to decide if the object will look at the target while pursuing it
 	public bool lookAtTarget = false;
 
@@ -21,39 +23,20 @@ public class FollowTarget : Physics2DObject
 	// ADDED TO SCRIPT BY JARED 
 	private Vector2 directionToPlayer; 
 	
+	private bool deathFlag = false;
+
+	private float timer = 0;
+	
+	public bool splitEnemy = false;
 	
 	// FixedUpdate is called once per frame
 	void FixedUpdate ()
 	{
-		// // check the color of this enemy, and if the player is in the corresponding color zone then the enemy swaps to wandering instead
-		// // first make sure the enemy is targeting the player
-		// if(target.name == "Player"){
-		// 	switch(gameObject.layer){
-		// 		//This enemy is RED
-		// 		case 6:
-		// 			if(target.gameObject.GetComponent<KillPlayer>().inRed){
-		// 				gameObject.GetComponent<Wander>().enabled = true;
-		// 				gameObject.GetComponent<Wander>().target = target;
-		// 			}
-		// 			break;
-		// 		//This enemy is GREEN
-		// 		case 7:
-		// 			if(target.gameObject.GetComponent<KillPlayer>().inGreen){
-		// 				gameObject.GetComponent<Wander>().enabled = true;
-		// 				gameObject.GetComponent<Wander>().target = target;
-		// 			}
-		// 			break;
-		// 		//This enemy is BLUE
-		// 		case 8:
-		// 			if(target.gameObject.GetComponent<KillPlayer>().inBlue){
-		// 				gameObject.GetComponent<Wander>().enabled = true;
-		// 				gameObject.GetComponent<Wander>().target = target;
-		// 			}
-		// 			break;
-		// 		default:
-		// 			break;
-		// 	}
-		// }
+		
+		timer += Time.deltaTime;
+		if(timer > .5 && splitEnemy){
+			target = GameObject.Find("Player").transform;
+		}
 		
 
 		//do nothing if the target hasn't been assigned or it was detroyed for some reason
@@ -74,6 +57,9 @@ public class FollowTarget : Physics2DObject
 
 		directionToPlayer = (target.transform.position - transform.position).normalized;
 		rigidbody2D.velocity = new Vector2(directionToPlayer.x, directionToPlayer.y) * speed;
+		// if(currentSpeed < speed){
+		// 	currentSpeed = currentSpeed * 1.05f;
+		// }
 		// if(!deathFlag){
 		// 	rigidbody2D.velocity = new Vector2(directionToPlayer.x, directionToPlayer.y) * speed;
 		// } else {
@@ -84,7 +70,7 @@ public class FollowTarget : Physics2DObject
 	}
 
 	private void OnTriggerEnter2D(Collider2D other) {
-		if(other.name == "TargetSwitcher"){
+		if(other.name == "TargetSwitcher" && !splitEnemy){
 			target = GameObject.Find("Player").transform;
 		}
 	}
@@ -124,6 +110,12 @@ public class FollowTarget : Physics2DObject
 		// 	directionToPlayer = (target.transform.position - transform.position).normalized;
 		// 	rigidbody2D.velocity = new Vector2(-directionToPlayer.x, -directionToPlayer.y) * speed;
 		// }
+		if(deathFlag){
+			return;
+		}
+
+		deathFlag = true;
+
 		if(gameObject.GetComponent<BoxCollider2D>() != null){
 			gameObject.GetComponent<BoxCollider2D>().enabled = false;
 		} else if (gameObject.GetComponent<CircleCollider2D>() != null){
