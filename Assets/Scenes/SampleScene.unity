@@ -479,8 +479,8 @@ MonoBehaviour:
   saTargetPlayer: 0
   saMultiAttackChance: 0
   szMaxDiameter: 20
-  szPatrolSpeed: 0
-  szShrinkRate: 1
+  szPatrolSpeed: 1
+  szShrinkRate: 0.5
   szGrowthRate: 1
 --- !u!1 &9634743
 GameObject:
@@ -1251,9 +1251,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3086e3b6e75a3504e9251e3d6cd35252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staticCompassTarget: {fileID: 448095530}
   maxSpeed: 2
+  followSpeedMultiplier: 1.5
   speedAcc: 1000
   currentSpeed: 0
+  isPlayer: 0
+  isRandomOnExit: 0
 --- !u!1 &156449322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,9 +1868,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3086e3b6e75a3504e9251e3d6cd35252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staticCompassTarget: {fileID: 448095530}
   maxSpeed: 2
+  followSpeedMultiplier: 1.5
   speedAcc: 1000
   currentSpeed: 0
+  isPlayer: 0
+  isRandomOnExit: 0
 --- !u!1 &236156981
 GameObject:
   m_ObjectHideFlags: 0
@@ -14776,9 +14784,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3086e3b6e75a3504e9251e3d6cd35252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staticCompassTarget: {fileID: 448095530}
   maxSpeed: 2
+  followSpeedMultiplier: 1.5
   speedAcc: 1000
   currentSpeed: 0
+  isPlayer: 0
+  isRandomOnExit: 0
 --- !u!1 &2089528608
 GameObject:
   m_ObjectHideFlags: 0
