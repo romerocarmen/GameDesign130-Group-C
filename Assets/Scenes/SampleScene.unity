@@ -2892,6 +2892,7 @@ MonoBehaviour:
   inGreen: 0
   inBlue: 0
   shield: {fileID: 6128323547626369279, guid: 0273d67e975186f47b697a74e44b4ec5, type: 3}
+  pauseScript: {fileID: 542026925}
 --- !u!114 &448095532
 MonoBehaviour:
   m_ObjectHideFlags: 0
