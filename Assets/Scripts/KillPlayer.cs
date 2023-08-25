@@ -12,6 +12,8 @@ public class KillPlayer : MonoBehaviour
     public bool inGreen = false;
     public bool inBlue = false;
     public GameObject shield;
+
+    [SerializeField] private GameObject pauseScript;
     private void Update() {
         if(Time.timeScale < 0.01f){
             gameObject.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Simulate(Time.unscaledDeltaTime, true, false);
@@ -71,7 +73,7 @@ public class KillPlayer : MonoBehaviour
             // Make the player invincible
             invincible = true;
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            // Stop time
+            // Stop time BUG HERE (but not really)
             Time.timeScale = 0;
             //freezes player rotation
             gameObject.GetComponent<Move>().orientToDirection = false;
@@ -83,13 +85,27 @@ public class KillPlayer : MonoBehaviour
     }
 
     IEnumerator Deathstop(){
+        // But the bug is also here, because it counts even when paused
+        // only count when not paused? 
+        // so need reference to that script
         // Time is stopped right now, so cannot wait for seconds normally
         // Only option is to use REAL TIME: record current real time in variable
         float startTime = Time.realtimeSinceStartup;
+        float storedTime = startTime;
+        
         // Loop runs until 3 seconds of real time has passed
-        while(Time.realtimeSinceStartup - startTime < 3){
+        while (Time.realtimeSinceStartup - startTime < 3){
+            if (pauseScript.GetComponent<PauseScript>().isPaused == true)
+            {
+                startTime += Time.unscaledDeltaTime;
+            }
+            else
+            {
+
+            }
             yield return null;
         }
+
         // Everything after the loop runs only after 3 seconds has passed
         // Clear the screen
         gameObject.GetComponent<SpawnBomb>().BigABomb();
@@ -103,7 +119,9 @@ public class KillPlayer : MonoBehaviour
         if(livesLeft < 1){
             SceneManager.LoadScene(2);
         }
-        // Set time to move again
+        // Set time to move again 
+        // This is where the bug actually is
+
         Time.timeScale = 1;
         // Turn off player's invincibility in 5 seconds
         StartCoroutine(InvincibilityTimer());
