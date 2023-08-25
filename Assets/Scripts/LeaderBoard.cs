@@ -6,47 +6,64 @@ using TMPro;
 
 public class LeaderBoard : MonoBehaviour
 {
-    public TextMeshProUGUI userName;
+    [SerializeField] string userName;
 
-    public TextMeshProUGUI name1;
-    public TextMeshProUGUI name2;
-    public TextMeshProUGUI name3;
-    public TextMeshProUGUI name4;
-    public TextMeshProUGUI name5;
+    [SerializeField] TextMeshProUGUI name1;
+    [SerializeField] TextMeshProUGUI name2;
+    [SerializeField] TextMeshProUGUI name3;
+    [SerializeField] TextMeshProUGUI name4;
+    [SerializeField] TextMeshProUGUI name5;
 
-    public TextMeshProUGUI score1;
-    public TextMeshProUGUI score2;
-    public TextMeshProUGUI score3;
-    public TextMeshProUGUI score4;
-    public TextMeshProUGUI score5;
+    [SerializeField] TextMeshProUGUI score1;
+    [SerializeField] TextMeshProUGUI score2;
+    [SerializeField] TextMeshProUGUI score3;
+    [SerializeField] TextMeshProUGUI score4;
+    [SerializeField] TextMeshProUGUI score5;
+
+    void Start()
+    {
+        name1 = GameObject.Find("firstPlaceName").GetComponent<TextMeshProUGUI>();
+        name2 = GameObject.Find("secondPlaceName").GetComponent<TextMeshProUGUI>();
+        name3 = GameObject.Find("thirdPlaceName").GetComponent<TextMeshProUGUI>();
+        name4 = GameObject.Find("fourthPlaceName").GetComponent<TextMeshProUGUI>();
+        name5 = GameObject.Find("fifthPlaceName").GetComponent<TextMeshProUGUI>();
+
+        score1 = GameObject.Find("firstPlaceScore").GetComponent<TextMeshProUGUI>();
+        score2 = GameObject.Find("secondPlaceScore").GetComponent<TextMeshProUGUI>();
+        score3 = GameObject.Find("thirdPlaceScore").GetComponent<TextMeshProUGUI>();
+        score4 = GameObject.Find("fourthPlaceScore").GetComponent<TextMeshProUGUI>();
+        score5 = GameObject.Find("fifthPlaceScore").GetComponent<TextMeshProUGUI>();
+
+        ConfigureBoard();
+    }
 
     public void ConfigureBoard()
     {
         Dictionary<string, int> scoreDict = new Dictionary<string, int>()
         {
-            { "JSB", 1220 },
+            { "BOB", 1220 },
             { "ACK", 455 },
-            { "LHF", 320 },
-            { "KMN", 735 }
+            { "AZZ", 105 },
+            { "DUD", 735 }
         };
 
-        userName.GetComponent<TMPro.TextMeshProUGUI>();
-        scoreDict.Add(userName.ToString(), ScorePlayerInteraction.totalScore);
+        userName = UserName.userNameInput;
+        scoreDict.Add(userName, ScorePlayerInteraction.totalScore);
 
         // sort by value
         var orderedDict = scoreDict.OrderByDescending(pair => pair.Value);
 
         // display
-        name1.GetComponent<TMPro.TextMeshProUGUI>().text = orderedDict.ElementAt(0).Key;
-        name2.GetComponent<TMPro.TextMeshProUGUI>().text = orderedDict.ElementAt(1).Key;
-        name3.GetComponent<TMPro.TextMeshProUGUI>().text = orderedDict.ElementAt(2).Key;
-        name4.GetComponent<TMPro.TextMeshProUGUI>().text = orderedDict.ElementAt(3).Key;
-        name5.GetComponent<TMPro.TextMeshProUGUI>().text = orderedDict.ElementAt(4).Key;
+        name1.text = orderedDict.ElementAt(0).Key;
+        name2.text = orderedDict.ElementAt(1).Key;
+        name3.text = orderedDict.ElementAt(2).Key;
+        name4.text = orderedDict.ElementAt(3).Key;
+        name5.text = orderedDict.ElementAt(4).Key;
 
-        score1.GetComponent<TMPro.TextMeshProUGUI>().text = orderedDict.ElementAt(0).Key.ToString();
-        score2.GetComponent<TMPro.TextMeshProUGUI>().text = orderedDict.ElementAt(1).Key.ToString();
-        score3.GetComponent<TMPro.TextMeshProUGUI>().text = orderedDict.ElementAt(2).Key.ToString();
-        score4.GetComponent<TMPro.TextMeshProUGUI>().text = orderedDict.ElementAt(3).Key.ToString();
-        score5.GetComponent<TMPro.TextMeshProUGUI>().text = orderedDict.ElementAt(4).Key.ToString();
+        score1.text = orderedDict.ElementAt(0).Value.ToString();
+        score2.text = orderedDict.ElementAt(1).Value.ToString();
+        score3.text = orderedDict.ElementAt(2).Value.ToString();
+        score4.text = orderedDict.ElementAt(3).Value.ToString();
+        score5.text = orderedDict.ElementAt(4).Value.ToString();
     }
 }
