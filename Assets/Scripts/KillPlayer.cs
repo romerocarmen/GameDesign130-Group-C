@@ -111,7 +111,8 @@ public class KillPlayer : MonoBehaviour
         gameObject.GetComponent<Move>().orientToDirection = true;
     }
 
-    IEnumerator InvincibilityTimer(){
+    public IEnumerator InvincibilityTimer(){
+        invincible = true;
         Instantiate(shield, gameObject.transform.position, gameObject.transform.rotation, gameObject.transform);
         yield return new WaitForSeconds(5);
         invincible = false;
