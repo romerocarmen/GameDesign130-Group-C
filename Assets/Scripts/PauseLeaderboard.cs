@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 using TMPro;
 
-public class LeaderBoard : MonoBehaviour
+public class PauseLeaderboard : MonoBehaviour
 {
     [SerializeField] string userName;
 
@@ -47,8 +47,8 @@ public class LeaderBoard : MonoBehaviour
             { "DUD", 735 }
         };
 
-        userName = UserName.userNameInput;
-        scoreDict.Add(userName, ScorePlayerInteraction.totalScore);
+        // default leaderboard input
+        scoreDict.Add("DEF", 5);
         
         // sort by value
         var orderedDict = scoreDict.OrderByDescending(pair => pair.Value);
