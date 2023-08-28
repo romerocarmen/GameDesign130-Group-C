@@ -42,9 +42,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1f67faa145653734297e889b412ec757, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ab6ffac318b7e324a8fbfab6c0774baf, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -170,7 +170,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3ec0636ba63983a488bf20d8aff445cc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ed9d0ecdb3320ca4e95e8a798e7fec38, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
@@ -358,6 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   XP: {fileID: 8614795579882293170, guid: fd3ea7d7e225d43aba89d272b0ca4d9d, type: 3}
+  heading: {x: -1, y: 0, z: 0}
 --- !u!50 &-8697535336440708949
 Rigidbody2D:
   serializedVersion: 4
