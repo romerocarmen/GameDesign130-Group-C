@@ -5396,7 +5396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 279986544728247302}
   - component: {fileID: 7855919609658709315}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SquareLighting
   m_TagString: Untagged
   m_Icon: {fileID: 0}

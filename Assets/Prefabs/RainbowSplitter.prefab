@@ -1030,7 +1030,7 @@ GameObject:
   m_Component:
   - component: {fileID: 326015394881542953}
   - component: {fileID: 326015394881542952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: JustBoldCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1935,7 +1935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3031762796520504089}
   - component: {fileID: 3548279589872718119}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GradientLigting2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

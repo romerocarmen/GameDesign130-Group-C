@@ -8,28 +8,27 @@ public class Upgrades : MonoBehaviour
     public float playerSpeed = 3f;
     public float playerFireRate = 1f;
     public float playerBulletCount = 1f;
-    public float basicEnemySpeed = 5f;
+    public float basicEnemySpeed = 5f; 
     public float splitterSpeed = 5f;
-    public float basicEnemySpawnRate = 0;//0.5f;
-    public float basicEnemySpawnDelta = 0;//0.0005f;
-    public float splitterSpawnRate = .5f;//0f;
+    public float basicEnemySpawnRate = 1f;
+    public float basicEnemySpawnDelta = 0.0001f; // how quickly the spawn rate increases over time 
+    public float splitterSpawnRate = 0f; 
     public float rainbowSpawnRate = 0f;
-    public float advancedSpawnDelta = 0f;
-    public int minEnemyCount = 1;
-    public int maxEnemyCount = 1;
-    public float saSpawnRate = 0f;
-    public float saSpawnDelta = 0f;
-    public float saWidth = 0f;
-    public float saGhostBoxTiming = 0f;
-    public Vector3 saScaleChange = Vector3.zero;
-    public bool saTargetPlayer = false;
-    public float saMultiAttackChance = 0f;
-    public float szMaxDiameter = 20f;
-    public float szPatrolSpeed = 0f;
-    public float szShrinkRate = 2f;
-    public float szGrowthRate = 2f;
-
-    private bool valuesChanged = false;
+    public float advancedSpawnDelta = 0f; // how quickly splitter and rainbow enemies increase over time
+    public int minEnemyCount = 1; // the minimum enemies spawned of the same color on a side at once
+    public int maxEnemyCount = 1; // the maximum enemies spawned of the same color on a side at once
+    public float saSpawnRate = 0f; // stage attack spawn rate
+    public float saSpawnDelta = 0f; // how quickly the stage attack spanws increase over time
+    public float saWidth = 0f; // stage attack width
+    public float saGhostBoxTiming = 0f; // how quickly the stage attacks become active after launching
+    public Vector3 saScaleChange = Vector3.zero; // how quickly the stage attacks go across the screen. Only the x value matters
+    public bool saTargetPlayer = false; // turn true if we want stage attacks to spawn at the position of the player
+    public float saMultiAttackChance = 0f; // the chance of having double stage attacks (1 vertical and 1 horizontal)
+    public float szMaxDiameter = 20f; // safe zone diameter
+    public float szPatrolSpeed = 0f; // how quickly the safezones move about the screen
+    public float szShrinkRate = 0.5f; // how quickly the safezones shrink while the player is in them
+    public float szGrowthRate = 1f; // how quickly the safezones grow back when the player leaves them
+    private bool valuesChanged = false; // used for updating the values per level
     
     void Awake()
     {
@@ -47,7 +46,7 @@ public class Upgrades : MonoBehaviour
             valuesChanged = false;
         }
         
-        if(!valuesChanged){
+        if(!valuesChanged){ 
             if (level == 1)
             {
                 // player setters
@@ -80,17 +79,16 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.1f;
-                playerFireRate = 6f;
+                playerFireRate++;
                 playerBulletCount = 1f;
-                // playerWeapon = 2; need weapon upgrade number
 
                 // enemy setters
-                basicEnemySpeed = 5.5f;
-                basicEnemySpawnRate = 1.1f;
+                basicEnemySpeed = 5f;
+                basicEnemySpawnRate = 1f;
                 splitterSpawnRate = 0.1f;
                 rainbowSpawnRate = 0.1f;
                 minEnemyCount = 1;
-                maxEnemyCount = 2;
+                maxEnemyCount = 1;
 
                 // stage attack setters
                 saSpawnRate = 0;
@@ -101,221 +99,214 @@ public class Upgrades : MonoBehaviour
                 saMultiAttackChance = 0f;
 
                 // safe zone setters
-                szMaxDiameter = 21f;
+                szMaxDiameter = 20f;
                 szPatrolSpeed = 1f;
-                szShrinkRate = 2.5f;
-                szGrowthRate = 2f;
+                szShrinkRate = 0.6f;
+                szGrowthRate = 0.9f;
                 
             }
             else if (level == 3)
             {
                 // player setters
                 playerSpeed = 3.2f;
-                playerFireRate = 6f;
+                playerFireRate = 5f;
                 playerBulletCount = 2f;
-                // playerWeapon = 3; need weapon upgrade number
 
                 // enemy setters
-                basicEnemySpeed = 6f;
-                basicEnemySpawnRate = 1.2f;
-                splitterSpawnRate = 0.2f;
-                rainbowSpawnRate = 0.2f;
-                minEnemyCount = 2;
-                maxEnemyCount = 3;
+                basicEnemySpeed = 5f;
+                basicEnemySpawnRate = 0.5f;
+                splitterSpawnRate = 0.1f;
+                rainbowSpawnRate = 0.1f;
+                minEnemyCount = 1;
+                maxEnemyCount = 2;
 
                 // stage attack setters
-                saSpawnRate = 0f;
-                saWidth = 0f;
-                saGhostBoxTiming = 0f;
-                //saScaleChange = 0;
-                saTargetPlayer = true;
+                saSpawnRate = 0.1f;
+                saWidth = 15f;
+                saGhostBoxTiming = 3.5f;
+                saScaleChange = new Vector3(1f,0,0);
+                saTargetPlayer = false;
                 saMultiAttackChance = 0f;
 
                 // safe zone setters
-                szMaxDiameter = 22f;
-                szPatrolSpeed = 1.1f;
-                szShrinkRate = 3f;
-                szGrowthRate = 2f;
+                szMaxDiameter = 20f;
+                szPatrolSpeed = 1.25f;
+                szShrinkRate = 0.7f;
+                szGrowthRate = 0.8f;
             }
             else if (level == 4)
             {
                 // player setters
                 playerSpeed = 3.3f;
-                playerFireRate = 7f;
+                playerFireRate++;
                 playerBulletCount = 2f;
-                // playerWeapon = 4; need weapon upgrade number
 
                 // enemy setters
-                basicEnemySpeed = 6.5f;
-                basicEnemySpawnRate = 1.3f;
-                splitterSpawnRate = 0.2f;
-                rainbowSpawnRate = 0.2f;
-                minEnemyCount = 3;
-                maxEnemyCount = 4;
+                basicEnemySpeed = 5f;
+                basicEnemySpawnRate = 0.5f;
+                splitterSpawnRate = 0.1f;
+                rainbowSpawnRate = 0.1f;
+                minEnemyCount = 1;
+                maxEnemyCount = 3;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
-                saWidth = 18f;
-                saGhostBoxTiming = 2f;
-                saScaleChange = new Vector3(1.5f, 0, 0);
+                saWidth = 15f;
+                saGhostBoxTiming = 3f;
+                saScaleChange = new Vector3(1.1f, 0, 0);
                 saTargetPlayer = false;
-                saMultiAttackChance = 0f;
+                saMultiAttackChance = 0.5f;
 
                 // safe zone setters
-                szMaxDiameter = 23f;
-                szPatrolSpeed = 1.2f;
-                szShrinkRate = 3f;
-                szGrowthRate = 2f;
+                szMaxDiameter = 20f;
+                szPatrolSpeed = 1.1f;
+                szShrinkRate = 0.8f;
+                szGrowthRate = 0.7f;
             }
             else if (level == 5)
             {
                 // player setters
                 playerSpeed = 3.4f;
-                playerFireRate = 7f;
+                playerFireRate = 6f;
                 playerBulletCount = 3f;
-                // playerWeapon = 5; need weapon upgrade number
 
                 // enemy setters
                 basicEnemySpeed = 7f;
-                basicEnemySpawnRate = 1.4f;
-                splitterSpawnRate = 0.3f;
-                rainbowSpawnRate = 0.3f;
+                basicEnemySpawnRate = 0.5f;
+                splitterSpawnRate = 0.5f;
+                rainbowSpawnRate = 0.1f;
                 minEnemyCount = 1;
-                maxEnemyCount = 2;
+                maxEnemyCount = 4;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
-                saWidth = 18f;
-                saGhostBoxTiming = 2f;
-                saScaleChange = new Vector3(1.5f, 0, 0);
-                saTargetPlayer = false;
-                saMultiAttackChance = 0f;
+                saWidth = 14f;
+                saGhostBoxTiming = 3f;
+                saScaleChange = new Vector3(1.2f, 0, 0);
+                saTargetPlayer = true;
+                saMultiAttackChance = 0.5f;
 
                 // safe zone setters
-                szMaxDiameter = 24f;
-                szPatrolSpeed = 1.3f;
-                szShrinkRate = 3f;
-                szGrowthRate = 1.5f;
+                szMaxDiameter = 20f;
+                szPatrolSpeed = 1.2f;
+                szShrinkRate = 0.9f;
+                szGrowthRate = 0.6f;
             }
             else if (level == 6)
             {
                 // player setters
                 playerSpeed = 3.5f;
-                playerFireRate = 8f;
+                playerFireRate++;
                 playerBulletCount = 3f;
-                // playerWeapon = 6; need weapon upgrade number
 
                 // enemy setters
-                basicEnemySpeed = 7.5f;
-                basicEnemySpawnRate = 1.5f;
+                basicEnemySpeed = 6f;
+                basicEnemySpawnRate = 0.5f;
                 splitterSpawnRate = 0.4f;
-                rainbowSpawnRate = 0.4f;
-                minEnemyCount++;
-                maxEnemyCount++;
+                rainbowSpawnRate = 0.1f;
+                minEnemyCount = 1;
+                maxEnemyCount = 4;
 
                 // stage attack setters
-                saSpawnRate = 0.1f;
-                saWidth = 15f;
-                saGhostBoxTiming = 2f;
-                saScaleChange = new Vector3(2f, 0, 0);
+                saSpawnRate = 0.2f;
+                saWidth = 13f;
+                saGhostBoxTiming = 2.5f;
+                saScaleChange = new Vector3(1.3f, 0, 0);
                 saTargetPlayer = false;
-                saMultiAttackChance = 0f;
+                saMultiAttackChance = 0.5f;
 
                 // safe zone setters
-                szMaxDiameter = 25f;
-                szPatrolSpeed = 1.4f;
-                szShrinkRate = 3f;
-                szGrowthRate = 1f;
+                szMaxDiameter = 20f;
+                szPatrolSpeed = 1.3f;
+                szShrinkRate = 1f;
+                szGrowthRate = 0.5f;
             }
             else if (level == 7)
             {
                 // player setters
                 playerSpeed = 3.6f;
-                playerFireRate = 8f;
+                playerFireRate = 7f;
                 playerBulletCount = 4f;
-                // playerWeapon = 7; need weapon upgrade number
 
                 // enemy setters
-                basicEnemySpeed = 8f;
-                basicEnemySpawnRate = 1.5f;
+                basicEnemySpeed = 7f;
+                basicEnemySpawnRate = 0.5f;
                 splitterSpawnRate = 0.5f;
-                rainbowSpawnRate = 0.5f;
+                rainbowSpawnRate = 0.1f;
                 minEnemyCount = 1;
-                maxEnemyCount = 2;
+                maxEnemyCount = 4;
 
                 // stage attack setters
-                saSpawnRate = 0.1f;
-                saWidth = 15f;
+                saSpawnRate = 0.2f;
+                saWidth = 12f;
                 saGhostBoxTiming = 2f;
-                saScaleChange = new Vector3(2f, 0, 0);
+                saScaleChange = new Vector3(1.4f, 0, 0);
                 saTargetPlayer = false;
-                saMultiAttackChance = 0f;
+                saMultiAttackChance = 0.5f;
 
                 // safe zone setters
-                szMaxDiameter = 26f;
-                szPatrolSpeed = 1.5f;
-                szShrinkRate = 3f;
-                szGrowthRate = 1f;
+                szMaxDiameter = 20f;
+                szPatrolSpeed = 1.4f;
+                szShrinkRate = 1f;
+                szGrowthRate = 0.5f;
             }
             else if (level == 8)
             {
                 // player setters
                 playerSpeed = 3.7f;
-                playerFireRate = 9f;
+                playerFireRate++;
                 playerBulletCount = 4f;
-                // playerWeapon = 8; need weapon upgrade number
 
                 // enemy setters
-                basicEnemySpeed = 8.5f;
-                basicEnemySpawnRate = 1.6f;
+                basicEnemySpeed = 8f;
+                basicEnemySpawnRate = 0.5f;
                 splitterSpawnRate = 0.6f;
-                rainbowSpawnRate = 0.6f;
+                rainbowSpawnRate = 0.1f;
                 minEnemyCount = 1;
                 maxEnemyCount = 2;
 
                 // stage attack setters
-                saSpawnRate = 0.1f;
-                saWidth = 15f;
-                saGhostBoxTiming = 2f;
+                saSpawnRate = 0.3f;
+                saWidth = 11f;
+                saGhostBoxTiming = 1.5f;
                 saScaleChange = new Vector3(2f, 0, 0);
                 saTargetPlayer = false;
-                saMultiAttackChance = 0f;
+                saMultiAttackChance = 0.5f;
 
                 // safe zone setters
-                szMaxDiameter = 27f;
-                szPatrolSpeed = 1.6f;
-                szShrinkRate = 3f;
-                szGrowthRate = 1f;
+                szMaxDiameter = 20f;
+                szPatrolSpeed = 1.5f;
+                szShrinkRate = 1f;
+                szGrowthRate = 0.5f;
             }
             else if (level == 9)
             {
                 // player setters
                 playerSpeed = 3.8f;
-                playerFireRate = 9f;
+                playerFireRate = 8f;
                 playerBulletCount = 5f;
-                // playerWeapon = 9; need weapon upgrade number
 
                 // enemy setters
                 basicEnemySpeed = 9f;
-                basicEnemySpawnRate = 1.7f;
+                basicEnemySpawnRate = 0.5f;
                 splitterSpawnRate = 0.8f;
-                rainbowSpawnRate = 0.8f;
+                rainbowSpawnRate = 0.1f;
                 minEnemyCount = 1;
-                maxEnemyCount = 2;
+                maxEnemyCount = 4;
 
                 // stage attack setters
-                saSpawnRate = 0.1f;
-                saWidth = 15f;
-                saGhostBoxTiming = 2f;
-                saScaleChange = new Vector3(2f, 0, 0);
+                saSpawnRate = 0.4f;
+                saWidth = 10f;
+                saGhostBoxTiming = 1.5f;
+                saScaleChange = new Vector3(3f, 0, 0);
                 saTargetPlayer = false;
-                saMultiAttackChance = 0f;
+                saMultiAttackChance = 0.5f;
 
                 // safe zone setters
-                szMaxDiameter = 28f;
-                szPatrolSpeed = 1.7f;
-                szShrinkRate = 4f;
-                szGrowthRate = 3f;
+                szMaxDiameter = 20f;
+                szPatrolSpeed = 1.6f;
+                szShrinkRate = 1f;
+                szGrowthRate = 0.5f;
             }
             else if (level == 10)
             {
@@ -323,29 +314,28 @@ public class Upgrades : MonoBehaviour
                 playerSpeed = 4f;
                 playerFireRate = 10f;
                 playerBulletCount = 5f;
-                // playerWeapon = 10; need weapon upgrade number
 
                 // enemy setters
                 basicEnemySpeed = 10f;
-                basicEnemySpawnRate = 2f;
+                basicEnemySpawnRate = 1f;
                 splitterSpawnRate = 1f;
-                rainbowSpawnRate = 1f;
+                rainbowSpawnRate = 0.1f;
                 minEnemyCount = 1;
-                maxEnemyCount = 2;
+                maxEnemyCount = 4;
 
                 // stage attack setters
-                saSpawnRate = 0.1f;
-                saWidth = 15f;
-                saGhostBoxTiming = 2f;
-                saScaleChange = new Vector3(2f, 0, 0);
+                saSpawnRate = 0.5f;
+                saWidth = 10f;
+                saGhostBoxTiming = 1f;
+                saScaleChange = new Vector3(3f, 0, 0);
                 saTargetPlayer = true;
-                saMultiAttackChance = 0f;
+                saMultiAttackChance = 1f;
 
                 // safe zone setters
-                szMaxDiameter = 30f;
-                szPatrolSpeed = 1.8f;
-                szShrinkRate = 5f;
-                szGrowthRate = 3f;
+                szMaxDiameter = 20f;
+                szPatrolSpeed = 1.7f;
+                szShrinkRate = 1f;
+                szGrowthRate = 0.5f;
             }
             changeGameValues();
             valuesChanged = true;
