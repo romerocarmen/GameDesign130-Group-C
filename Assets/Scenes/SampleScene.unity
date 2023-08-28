@@ -349,7 +349,7 @@ MonoBehaviour:
   scaleChange: {x: 1, y: 0, z: 0}
   ghostBoxTime: 3
   width: 15
-  theClip: {fileID: 8300000, guid: 79e9eb1596c1d124e8a520f1ec097303, type: 3}
+  theClip: {fileID: 8300000, guid: a06d61a4c526f44429dc6fdb4fda033b, type: 3}
   stageAttackAudio: {fileID: 8139572}
   volume: 1
 --- !u!82 &8139572
@@ -362,7 +362,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 79e9eb1596c1d124e8a520f1ec097303, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a06d61a4c526f44429dc6fdb4fda033b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c23b733a76da4923af862177d171dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
+  level: 10
   playerSpeed: 3
   playerFireRate: 4
   playerBulletCount: 1
@@ -1289,15 +1289,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3c6b8797e6fdd924ba52424b985b04b1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 157f000b3ae8b61459809c959adda9a5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 256
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -3690,7 +3690,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 542026926}
-  m_RootOrder: 6
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5634,7 +5634,7 @@ RectTransform:
   m_Children:
   - {fileID: 1747228574}
   m_Father: {fileID: 542026926}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11351,9 +11351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e9c925816474e84a8206bddf0eae0cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theClip: {fileID: 8300000, guid: c4d7d82c4c40a40478e3ab1451e433cc, type: 3}
+  theClip: {fileID: 8300000, guid: ca23c039c3f770f41a20e3b0be65defa, type: 3}
   boosterAudio: {fileID: 1193704489}
-  volume: 1
+  volume: 0.75
   isPlaying: 0
 --- !u!82 &1193704489
 AudioSource:
@@ -11365,9 +11365,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c4d7d82c4c40a40478e3ab1451e433cc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ca23c039c3f770f41a20e3b0be65defa, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -11493,11 +11493,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 90fa03c576e217443a2331af2a26ae8a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 45fc9fff16b5f754faaf295d0126e633, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
-  m_Pitch: 0.5
-  Loop: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -14611,9 +14611,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ae2022281140794ea073ccfbf47e0ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelUpClip: {fileID: 8300000, guid: 8d9eeab9e7fb9aa418ec468c4a0adc33, type: 3}
+  levelUpClip: {fileID: 8300000, guid: 6eabe2ee792b74b4db93728863722284, type: 3}
   levelAudio: {fileID: 1800204344}
-  volume: 3
+  volume: 0.625
 --- !u!82 &1800204344
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14624,9 +14624,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8d9eeab9e7fb9aa418ec468c4a0adc33, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6eabe2ee792b74b4db93728863722284, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.625
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -14842,7 +14842,7 @@ RectTransform:
   m_Children:
   - {fileID: 1671665812}
   m_Father: {fileID: 542026926}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

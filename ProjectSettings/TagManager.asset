@@ -18,6 +18,7 @@ TagManager:
   - GreenSafeZone
   - BlueSafeZone
   - Border
+  - Music
   layers:
   - Default
   - TransparentFX
