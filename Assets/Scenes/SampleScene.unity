@@ -305,7 +305,7 @@ MonoBehaviour:
   spawnRateRainbow: 0
   spawnDelta: 0.00005
   spawnDeltaAdvanced: 0.00005
-  basicEnemySpeed: 10
+  basicEnemySpeed: 5
   splitterSpeed: 5
   minEnemyCount: 4
   maxEnemyCount: 4
@@ -462,12 +462,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   playerSpeed: 3
-  playerFireRate: 5
+  playerFireRate: 4
   playerBulletCount: 1
   basicEnemySpeed: 5
   splitterSpeed: 5
   basicEnemySpawnRate: 1
-  basicEnemySpawnDelta: 0.0005
+  basicEnemySpawnDelta: 0.0001
   splitterSpawnRate: 0
   rainbowSpawnRate: 0
   advancedSpawnDelta: 0
@@ -481,7 +481,7 @@ MonoBehaviour:
   saTargetPlayer: 0
   saMultiAttackChance: 0
   szMaxDiameter: 20
-  szPatrolSpeed: 2
+  szPatrolSpeed: 0
   szShrinkRate: 0.5
   szGrowthRate: 1
 --- !u!1 &9634743
@@ -1812,7 +1812,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
     type: 3}
-  m_Color: {r: 0, g: 0.721333, b: 1, a: 0.30588236}
+  m_Color: {r: 0, g: 0.72156864, b: 1, a: 0.30588236}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3690,7 +3690,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 542026926}
-  m_RootOrder: 2
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5634,7 +5634,7 @@ RectTransform:
   m_Children:
   - {fileID: 1747228574}
   m_Father: {fileID: 542026926}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10931,7 +10931,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8206b0ca7c6211f43b4b54bace44469f, type: 3}
-  m_Color: {r: 0, g: 0, b: 1, a: 0.39215687}
+  m_Color: {r: 0, g: 0.8352941, b: 0.9607843, a: 0.39215687}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12439,7 +12439,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 7c27c0b0fb7a439429d8946025cd1b27, type: 3}
-  m_Color: {r: 0, g: 0, b: 1, a: 0.39215687}
+  m_Color: {r: 0, g: 0.8352941, b: 0.9607843, a: 0.39215687}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14842,7 +14842,7 @@ RectTransform:
   m_Children:
   - {fileID: 1671665812}
   m_Father: {fileID: 542026926}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15466,7 +15466,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
     type: 3}
-  m_Color: {r: 1, g: 0.93226576, b: 0, a: 0}
+  m_Color: {r: 0, g: 0.8352941, b: 0.9607843, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

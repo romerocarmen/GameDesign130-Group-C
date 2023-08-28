@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3353489544054385481}
   - component: {fileID: 3768148062907410592}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SquareLighting 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
