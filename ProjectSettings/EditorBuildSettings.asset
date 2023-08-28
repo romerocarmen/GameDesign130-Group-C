@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PauseLeaderboard.unity
     guid: e63f5a4ba3df24da4bb04b85d210081c
+  - enabled: 1
+    path: Assets/Scenes/StartLeaderboard.unity
+    guid: 8b96bb50ed02a42078fa27f5bae4254a
   m_configObjects: {}
