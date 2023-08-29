@@ -39,6 +39,7 @@ public class Move : Physics2DObject
             moveVertical = Input.GetAxis("Vertical2");
         }
 
+        // not important
         //zero-out the axes that are not needed, if the movement is constrained
         switch (movementType)
         {
@@ -50,7 +51,7 @@ public class Move : Physics2DObject
                 break;
         }
 
-        movement = new Vector2(moveHorizontal, moveVertical);
+        setMovement(); 
 
 
         float currentGameSpeed = Time.timeScale;
@@ -61,6 +62,11 @@ public class Move : Physics2DObject
         //rotate the GameObject towards the direction of movement
         //the axis to look can be decided with the "axis" variable
 
+    }
+
+    private void setMovement()
+    {
+        movement = new Vector2(moveHorizontal, moveVertical);
     }
 
     private void lookAtMouse()

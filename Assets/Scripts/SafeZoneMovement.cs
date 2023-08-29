@@ -14,7 +14,7 @@ public class SafeZoneMovement : MonoBehaviour
     [SerializeField] public float followSpeedMultiplier = 2f; 
     [SerializeField] public float speedAcc = .05f;
     [SerializeField] private float currentSpeed;
-    [SerializeField] private bool isPlayer = false;
+    [SerializeField] public bool isPlayer = false;
 
     [SerializeField] private bool isRandomOnExit = false; 
 
@@ -66,14 +66,14 @@ public class SafeZoneMovement : MonoBehaviour
 
     }
 
-    private void moveTowardsPlayer()
+    public void moveTowardsPlayer()
     {
         directionToPlayer = (staticCompassTarget.transform.position - transform.position).normalized;
         rb2d.velocity = new Vector2(directionToPlayer.x, directionToPlayer.y) * maxSpeed * followSpeedMultiplier;
     }
 
 
-    private void lookAtPlayer()
+    public void lookAtPlayer()
     {
         Vector3 targ = staticCompassTarget.transform.position;
         targ.z = 0f;
