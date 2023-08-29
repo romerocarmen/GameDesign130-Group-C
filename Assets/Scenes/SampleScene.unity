@@ -1121,7 +1121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staticCompassTarget: {fileID: 448095530}
   maxSpeed: 2
-  followSpeedMultiplier: 1.5
+  followSpeedMultiplier: 2.5
   speedAcc: 1000
   currentSpeed: 0
   isPlayer: 0
@@ -1741,7 +1741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staticCompassTarget: {fileID: 448095530}
   maxSpeed: 2
-  followSpeedMultiplier: 1.5
+  followSpeedMultiplier: 2.5
   speedAcc: 1000
   currentSpeed: 0
   isPlayer: 0
@@ -9394,6 +9394,11 @@ PrefabInstance:
       propertyPath: staticCompassTarget
       value: 
       objectReference: {fileID: 448095530}
+    - target: {fileID: 2042766301622980627, guid: 5adbb7ac77d4ad64ba015b02ebdd5872,
+        type: 3}
+      propertyPath: followSpeedMultiplier
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5adbb7ac77d4ad64ba015b02ebdd5872, type: 3}
 --- !u!1001 &5848544685117275952
