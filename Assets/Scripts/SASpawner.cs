@@ -29,7 +29,7 @@ public class SASpawner : MonoBehaviour
 
     [SerializeField] public AudioClip theClip; 
     [SerializeField] private AudioSource stageAttackAudio;
-    [SerializeField] private float volume = 1f; 
+    [SerializeField] private float volume = 0.5f; 
 
     private void Start()
     {

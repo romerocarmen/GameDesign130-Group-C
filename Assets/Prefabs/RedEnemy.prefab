@@ -274,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 0}
   target: {fileID: 0}
-  speed: 5
+  speed: 3
   lookAtTarget: 1
   useSide: 0
   splitEnemy: 0

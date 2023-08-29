@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 8139571}
   - component: {fileID: 8139572}
   - component: {fileID: 8139573}
+  - component: {fileID: 8139574}
   m_Layer: 0
   m_Name: ArenaMaster
   m_TagString: Untagged
@@ -303,10 +304,10 @@ MonoBehaviour:
   spawnRateBasic: 1
   spawnRateSplitter: 0
   spawnRateRainbow: 0
-  spawnDelta: 0.00005
-  spawnDeltaAdvanced: 0.00005
-  basicEnemySpeed: 5
-  splitterSpeed: 5
+  spawnDelta: 0.0001
+  spawnDeltaAdvanced: 0.0001
+  basicEnemySpeed: 4
+  splitterSpeed: 3
   minEnemyCount: 4
   maxEnemyCount: 4
 --- !u!114 &8139570
@@ -351,7 +352,7 @@ MonoBehaviour:
   width: 15
   theClip: {fileID: 8300000, guid: a06d61a4c526f44429dc6fdb4fda033b, type: 3}
   stageAttackAudio: {fileID: 8139572}
-  volume: 1
+  volume: 0.5
 --- !u!82 &8139572
 AudioSource:
   m_ObjectHideFlags: 0
@@ -461,11 +462,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 10
-  playerSpeed: 3
-  playerFireRate: 4
+  playerSpeed: 2.5
+  playerFireRate: 1.5
   playerBulletCount: 1
-  basicEnemySpeed: 5
-  splitterSpeed: 5
+  basicEnemySpeed: 4
+  splitterSpeed: 3
   basicEnemySpawnRate: 1
   basicEnemySpawnDelta: 0.0001
   splitterSpawnRate: 0
@@ -481,9 +482,21 @@ MonoBehaviour:
   saTargetPlayer: 0
   saMultiAttackChance: 0
   szMaxDiameter: 20
-  szPatrolSpeed: 0
+  szPatrolSpeed: 1
   szShrinkRate: 0.5
   szGrowthRate: 1
+--- !u!114 &8139574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8139567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969c0784851186241b8e17b6909047e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9634743
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,6 +613,9 @@ MonoBehaviour:
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
   fireRate: 5
   numBullets: 2
+  theClip: {fileID: 0}
+  bulletAudio: {fileID: 0}
+  volume: 1
 --- !u!212 &25177676
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1257,7 +1273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staticCompassTarget: {fileID: 448095530}
   maxSpeed: 2
-  followSpeedMultiplier: 1.5
+  followSpeedMultiplier: 3
   speedAcc: 1000
   currentSpeed: 0
   isPlayer: 0
@@ -1877,7 +1893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staticCompassTarget: {fileID: 448095530}
   maxSpeed: 2
-  followSpeedMultiplier: 1.5
+  followSpeedMultiplier: 3
   speedAcc: 1000
   currentSpeed: 0
   isPlayer: 0
@@ -2581,6 +2597,9 @@ MonoBehaviour:
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
   fireRate: 5
   numBullets: 2
+  theClip: {fileID: 0}
+  bulletAudio: {fileID: 0}
+  volume: 1
 --- !u!1 &428105337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2757,6 +2776,7 @@ GameObject:
   - component: {fileID: 448095534}
   - component: {fileID: 448095535}
   - component: {fileID: 448095536}
+  - component: {fileID: 448095537}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2985,6 +3005,9 @@ MonoBehaviour:
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
   fireRate: 1
   numBullets: 1
+  theClip: {fileID: 8300000, guid: ed9d0ecdb3320ca4e95e8a798e7fec38, type: 3}
+  bulletAudio: {fileID: 448095537}
+  volume: 0.5
 --- !u!114 &448095535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3014,6 +3037,102 @@ MonoBehaviour:
   pushStrength: 50
   axis: 0
   relativeAxis: 1
+--- !u!82 &448095537
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448095525}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ed9d0ecdb3320ca4e95e8a798e7fec38, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &449116362
 GameObject:
   m_ObjectHideFlags: 0
@@ -5409,6 +5528,9 @@ MonoBehaviour:
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
   fireRate: 5
   numBullets: 2
+  theClip: {fileID: 0}
+  bulletAudio: {fileID: 0}
+  volume: 1
 --- !u!212 &945791478
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5514,6 +5636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d004181d97a4653953b72ec47bafa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  XP: {fileID: 8614795579882293170, guid: fd3ea7d7e225d43aba89d272b0ca4d9d, type: 3}
 --- !u!114 &1003457127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12497,6 +12620,9 @@ MonoBehaviour:
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
   fireRate: 5
   numBullets: 2
+  theClip: {fileID: 0}
+  bulletAudio: {fileID: 0}
+  volume: 1
 --- !u!212 &1504263846
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15677,7 +15803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staticCompassTarget: {fileID: 448095530}
   maxSpeed: 2
-  followSpeedMultiplier: 1.5
+  followSpeedMultiplier: 3
   speedAcc: 1000
   currentSpeed: 0
   isPlayer: 0

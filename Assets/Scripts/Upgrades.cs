@@ -5,15 +5,15 @@ using UnityEngine;
 public class Upgrades : MonoBehaviour
 {
     public int level = LevelCounter.levelValue;
-    public float playerSpeed = 3f;
-    public float playerFireRate = 1f;
-    public float playerBulletCount = 1f;
-    public float basicEnemySpeed = 5f; 
-    public float splitterSpeed = 5f;
-    public float basicEnemySpawnRate = 1f;
+    public float playerSpeed = 2.5f; // how quickly the player moves. Keep below 5
+    public float playerFireRate = 3f; //how quickly the player fires
+    public float playerBulletCount = 1f; // how many streams of bullets the player shoots
+    public float basicEnemySpeed = 3f; // how quickly the basic enemies move
+    public float splitterSpeed = 3f; // how quickly the splitter enemies move
+    public float basicEnemySpawnRate = 1f; // how often the basic enemies are spawned. Turn this down if maxEnemyCount increases
     public float basicEnemySpawnDelta = 0.0001f; // how quickly the spawn rate increases over time 
-    public float splitterSpawnRate = 0f; 
-    public float rainbowSpawnRate = 0f;
+    public float splitterSpawnRate = 0f; // how often splitters are spawned
+    public float rainbowSpawnRate = 0f; // how often rainbow enemies are spawned
     public float advancedSpawnDelta = 0f; // how quickly splitter and rainbow enemies increase over time
     public int minEnemyCount = 1; // the minimum enemies spawned of the same color on a side at once
     public int maxEnemyCount = 1; // the maximum enemies spawned of the same color on a side at once
@@ -25,7 +25,7 @@ public class Upgrades : MonoBehaviour
     public bool saTargetPlayer = false; // turn true if we want stage attacks to spawn at the position of the player
     public float saMultiAttackChance = 0f; // the chance of having double stage attacks (1 vertical and 1 horizontal)
     public float szMaxDiameter = 20f; // safe zone diameter
-    public float szPatrolSpeed = 0f; // how quickly the safezones move about the screen
+    public float szPatrolSpeed = 0.25f; // how quickly the safezones move about the screen
     public float szShrinkRate = 0.5f; // how quickly the safezones shrink while the player is in them
     public float szGrowthRate = 1f; // how quickly the safezones grow back when the player leaves them
     private bool valuesChanged = false; // used for updating the values per level
@@ -78,12 +78,12 @@ public class Upgrades : MonoBehaviour
                 if (level == 2)
             {
                 // player setters
-                playerSpeed = 3.1f;
-                playerFireRate++;
+                playerSpeed = 2.5f;
+                playerFireRate+= 0.5f;
                 playerBulletCount = 1f;
 
                 // enemy setters
-                basicEnemySpeed = 5f;
+                basicEnemySpeed = 4f;
                 basicEnemySpawnRate = 1f;
                 splitterSpawnRate = 0.1f;
                 rainbowSpawnRate = 0.1f;
@@ -91,29 +91,29 @@ public class Upgrades : MonoBehaviour
                 maxEnemyCount = 1;
 
                 // stage attack setters
-                saSpawnRate = 0;
-                saWidth = 0;
-                saGhostBoxTiming = 0;
-                saScaleChange = new Vector3(0f,0,0);
-                saTargetPlayer = true;
-                saMultiAttackChance = 0f;
+                saSpawnRate = 0f;
+                saWidth = 5f;
+                saGhostBoxTiming = 1.25f;
+                saScaleChange = new Vector3(4f, 0, 0);
+                saTargetPlayer = false;
+                saMultiAttackChance = 0.5f;
 
                 // safe zone setters
                 szMaxDiameter = 20f;
-                szPatrolSpeed = 1f;
-                szShrinkRate = 0.6f;
-                szGrowthRate = 0.9f;
+                szPatrolSpeed = 0.5f;
+                szShrinkRate = 0.5f;
+                szGrowthRate = 1f;
                 
             }
             else if (level == 3)
             {
                 // player setters
-                playerSpeed = 3.2f;
-                playerFireRate = 5f;
+                playerSpeed = 2.6f;
+                playerFireRate = playerFireRate;
                 playerBulletCount = 2f;
 
                 // enemy setters
-                basicEnemySpeed = 5f;
+                basicEnemySpeed = 3f;
                 basicEnemySpawnRate = 0.5f;
                 splitterSpawnRate = 0.1f;
                 rainbowSpawnRate = 0.1f;
@@ -130,21 +130,21 @@ public class Upgrades : MonoBehaviour
 
                 // safe zone setters
                 szMaxDiameter = 20f;
-                szPatrolSpeed = 1.25f;
-                szShrinkRate = 0.7f;
-                szGrowthRate = 0.8f;
+                szPatrolSpeed = 0.75f;
+                szShrinkRate = 0.5f;
+                szGrowthRate = 1f;
             }
             else if (level == 4)
             {
                 // player setters
-                playerSpeed = 3.3f;
-                playerFireRate++;
+                playerSpeed = 2.7f;
+                playerFireRate += 0.5f;
                 playerBulletCount = 2f;
 
                 // enemy setters
-                basicEnemySpeed = 5f;
+                basicEnemySpeed = 4f;
                 basicEnemySpawnRate = 0.5f;
-                splitterSpawnRate = 0.1f;
+                splitterSpawnRate = 0.2f;
                 rainbowSpawnRate = 0.1f;
                 minEnemyCount = 1;
                 maxEnemyCount = 3;
@@ -159,21 +159,21 @@ public class Upgrades : MonoBehaviour
 
                 // safe zone setters
                 szMaxDiameter = 20f;
-                szPatrolSpeed = 1.1f;
-                szShrinkRate = 0.8f;
-                szGrowthRate = 0.7f;
+                szPatrolSpeed = 1f;
+                szShrinkRate = 0.5f;
+                szGrowthRate = 1f;
             }
             else if (level == 5)
             {
                 // player setters
-                playerSpeed = 3.4f;
-                playerFireRate = 6f;
+                playerSpeed = 2.8f;
+                playerFireRate = playerFireRate;
                 playerBulletCount = 3f;
 
                 // enemy setters
-                basicEnemySpeed = 7f;
+                basicEnemySpeed = 4f;
                 basicEnemySpawnRate = 0.5f;
-                splitterSpawnRate = 0.5f;
+                splitterSpawnRate = 0.3f;
                 rainbowSpawnRate = 0.1f;
                 minEnemyCount = 1;
                 maxEnemyCount = 4;
@@ -188,19 +188,19 @@ public class Upgrades : MonoBehaviour
 
                 // safe zone setters
                 szMaxDiameter = 20f;
-                szPatrolSpeed = 1.2f;
-                szShrinkRate = 0.9f;
-                szGrowthRate = 0.6f;
+                szPatrolSpeed = 1.25f;
+                szShrinkRate = 0.5f;
+                szGrowthRate = 1f;
             }
             else if (level == 6)
             {
                 // player setters
                 playerSpeed = 3.5f;
-                playerFireRate++;
+                playerFireRate += 0.5f;
                 playerBulletCount = 3f;
 
                 // enemy setters
-                basicEnemySpeed = 6f;
+                basicEnemySpeed = 5f;
                 basicEnemySpawnRate = 0.5f;
                 splitterSpawnRate = 0.4f;
                 rainbowSpawnRate = 0.1f;
@@ -217,19 +217,19 @@ public class Upgrades : MonoBehaviour
 
                 // safe zone setters
                 szMaxDiameter = 20f;
-                szPatrolSpeed = 1.3f;
-                szShrinkRate = 1f;
-                szGrowthRate = 0.5f;
+                szPatrolSpeed = 1.5f;
+                szShrinkRate = 0.5f;
+                szGrowthRate = 1f;
             }
             else if (level == 7)
             {
                 // player setters
-                playerSpeed = 3.6f;
-                playerFireRate = 7f;
+                playerSpeed = 2.9f;
+                playerFireRate = playerFireRate;
                 playerBulletCount = 4f;
 
                 // enemy setters
-                basicEnemySpeed = 7f;
+                basicEnemySpeed = 6f;
                 basicEnemySpawnRate = 0.5f;
                 splitterSpawnRate = 0.5f;
                 rainbowSpawnRate = 0.1f;
@@ -246,19 +246,19 @@ public class Upgrades : MonoBehaviour
 
                 // safe zone setters
                 szMaxDiameter = 20f;
-                szPatrolSpeed = 1.4f;
-                szShrinkRate = 1f;
-                szGrowthRate = 0.5f;
+                szPatrolSpeed = 1.75f;
+                szShrinkRate = 0.5f;
+                szGrowthRate = 1f;
             }
             else if (level == 8)
             {
                 // player setters
-                playerSpeed = 3.7f;
-                playerFireRate++;
+                playerSpeed = 3f;
+                playerFireRate += 0.5f;
                 playerBulletCount = 4f;
 
                 // enemy setters
-                basicEnemySpeed = 8f;
+                basicEnemySpeed = 7f;
                 basicEnemySpawnRate = 0.5f;
                 splitterSpawnRate = 0.6f;
                 rainbowSpawnRate = 0.1f;
@@ -275,19 +275,19 @@ public class Upgrades : MonoBehaviour
 
                 // safe zone setters
                 szMaxDiameter = 20f;
-                szPatrolSpeed = 1.5f;
-                szShrinkRate = 1f;
-                szGrowthRate = 0.5f;
+                szPatrolSpeed = 2f;
+                szShrinkRate = 0.5f;
+                szGrowthRate = 1f;
             }
             else if (level == 9)
             {
                 // player setters
-                playerSpeed = 3.8f;
-                playerFireRate = 8f;
+                playerSpeed = 3.1f;
+                playerFireRate = playerFireRate;
                 playerBulletCount = 5f;
 
                 // enemy setters
-                basicEnemySpeed = 9f;
+                basicEnemySpeed = 8f;
                 basicEnemySpawnRate = 0.5f;
                 splitterSpawnRate = 0.8f;
                 rainbowSpawnRate = 0.1f;
@@ -304,19 +304,19 @@ public class Upgrades : MonoBehaviour
 
                 // safe zone setters
                 szMaxDiameter = 20f;
-                szPatrolSpeed = 1.6f;
-                szShrinkRate = 1f;
-                szGrowthRate = 0.5f;
+                szPatrolSpeed = 2.25f;
+                szShrinkRate = 0.5f;
+                szGrowthRate = 1f;
             }
             else if (level == 10)
             {
                 // player setters
-                playerSpeed = 4f;
-                playerFireRate = 10f;
+                playerSpeed = 3.2f;
+                playerFireRate += 0.5f;
                 playerBulletCount = 5f;
 
                 // enemy setters
-                basicEnemySpeed = 10f;
+                basicEnemySpeed = 9f;
                 basicEnemySpawnRate = 1f;
                 splitterSpawnRate = 1f;
                 rainbowSpawnRate = 0.1f;
@@ -326,21 +326,27 @@ public class Upgrades : MonoBehaviour
                 // stage attack setters
                 saSpawnRate = 0.5f;
                 saWidth = 10f;
-                saGhostBoxTiming = 1f;
+                saGhostBoxTiming = 1.5f;
                 saScaleChange = new Vector3(3f, 0, 0);
                 saTargetPlayer = true;
                 saMultiAttackChance = 1f;
 
                 // safe zone setters
                 szMaxDiameter = 20f;
-                szPatrolSpeed = 1.7f;
+                szPatrolSpeed = 2.5f;
                 szShrinkRate = 1f;
                 szGrowthRate = 0.5f;
             }
             changeGameValues();
             valuesChanged = true;
         }
-        
+        // CHALLENGE LEVEL STAGE ATTACK SETTINGS
+        // saSpawnRate = 0.8f;
+        // saWidth = 5f;
+        // saGhostBoxTiming = 1.25f;
+        // saScaleChange = new Vector3(4f, 0, 0);
+        // saTargetPlayer = false;
+        // saMultiAttackChance = 0.5f;
     }
 
     void changeGameValues(){

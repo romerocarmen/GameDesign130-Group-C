@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class LevelProgress : MonoBehaviour
 {
     public static Slider levelSlider;
+    // public int challengeLevel = 5;
+    private float timeForXPSpawn = 0;
+    public GameObject XP; 
 
     void Start()
     {
@@ -15,8 +18,16 @@ public class LevelProgress : MonoBehaviour
 
     void Update()
     {
+        timeForXPSpawn += Time.deltaTime;
         // set the level bar limit
         levelSlider.maxValue = (LevelCounter.levelValue * 10) + 5;
+
+        // if at challenge level, perform challenge level
+        //if(LevelCounter.levelValue == challengeLevel && timeForXPSpawn > 2) 
+        //{
+            // SpawnXP();
+            //timeForXPSpawn = 0; 
+        //}
 
         // if at level 10, keep the bar full
         if (LevelCounter.levelValue == 10)
@@ -37,6 +48,11 @@ public class LevelProgress : MonoBehaviour
                 PlayerXPInteraction.totalXP = 0;
             }
         }
+    }
+
+    public void SpawnXP()
+    {
+        Instantiate(XP, new Vector2(Random.Range(-20f, 20f), Random.Range(-20f, 20f)), Quaternion.identity);
     }
 
     public static void ResetXP()
