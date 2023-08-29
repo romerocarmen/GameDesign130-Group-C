@@ -19,8 +19,8 @@ public class SizeChange : MonoBehaviour {
 
 
     [Header("Runtime Settings")]
-    [SerializeField] private float scale = 1f;
-    [SerializeField] private bool isPlayer = false; 
+    [SerializeField] public float scale = 1f;
+    [SerializeField] public bool isPlayer = false; 
 
     // old var
     //[SerializeField] private float targetMax = 0f;
@@ -47,24 +47,37 @@ public class SizeChange : MonoBehaviour {
         // control size here
         if (isPlayer)
         {
-            // decrease size
-            if (scale > minScale)
-            {
-                scale -= shrinkRate * Time.deltaTime;
-                transform.localScale = new Vector2(scale, scale);
 
-            }
+            shrink();
 
         } 
         else
         {
-            // increase size
-            if (scale < maxScale)
-            {
-                scale += growthRate * Time.deltaTime;
-                transform.localScale = new Vector2(scale, scale);
 
-            }
+            swell();
+
+        }
+
+    }
+
+    public void shrink()
+    {
+        // decrease size
+        if (scale > minScale)
+        {
+            scale -= shrinkRate * Time.deltaTime;
+            transform.localScale = new Vector2(scale, scale);
+
+        }
+    }
+
+    public void swell()
+    {
+        // increase size
+        if (scale < maxScale)
+        {
+            scale += growthRate * Time.deltaTime;
+            transform.localScale = new Vector2(scale, scale);
 
         }
 
@@ -91,69 +104,5 @@ public class SizeChange : MonoBehaviour {
     }
 
 
-    // increase scale to a random amount up to the max scale
-    // shrink down to reg scale
-    // decrease scale to random amount up to min scale
-    // repeat
-    // I HATE COROUTINES I HATE COURUTINES I HATE COROUTINES
-    /*
-    IEnumerator SizeOscillation()
-    {
-        if (startsDecreasing)
-        {
-            setTargetScales();
-            while (scale > targetMin)
-            {
-                scale -= shrinkRate * Time.deltaTime;
-                transform.localScale = new Vector2(scale, scale);
-
-                yield return null;
-            }
-            startsDecreasing = false;
-        }
-
-        // set random scale targets
-        setTargetScales();
-
-        // scale to target max
-        while (scale < targetMax)
-        {
-            scale += changeSpeed * Time.deltaTime;
-            transform.localScale = new Vector2(scale, scale);
-
-            yield return null;
-        }
-        // scale to neutral
-        while (scale > origScale)
-        {
-            scale -= changeSpeed * Time.deltaTime;
-            transform.localScale = new Vector2(scale, scale);
-
-            yield return null;
-        }
-        // scale to min scale
-        while (scale > minScale)
-        {
-            scale -= changeSpeed * Time.deltaTime;
-            transform.localScale = new Vector2(scale, scale);
-
-            yield return null;
-        }
-
-        StartCoroutine(SizeOscillation());
-    }
-
-    private void setTargetScales()
-    {
-        targetMax = UnityEngine.Random.Range(scale, maxScale);
-        targetMin= UnityEngine.Random.Range(scale, minScale);
-    }
-
-    private bool randomBoolean()
-    {
-
-        return (UnityEngine.Random.value > 0.5f);
-
-    }
-    */
+  
 }
