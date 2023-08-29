@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 1080168455515661504}
   - component: {fileID: -1737736293433626965}
   - component: {fileID: -4046559703669046545}
+  - component: {fileID: -3773681697973548454}
   m_Layer: 6
   m_Name: RedEnemy
   m_TagString: Enemy
@@ -310,6 +311,19 @@ MonoBehaviour:
   keepNearStartingPoint: 1
   orientToDirection: 0
   lookAxis: 0
+--- !u!114 &-3773681697973548454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080168455515661510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d109182dc5966bd45a3d51babd1ecffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1080168456140120472
 GameObject:
   m_ObjectHideFlags: 0

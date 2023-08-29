@@ -34,6 +34,9 @@ public class SASpawner : MonoBehaviour
     private void Start()
     {
         stageAttackAudio = GetComponent<AudioSource>();
+        redStageAttack.GetComponent<ColorSet>().color = new Color(1,0,0);
+        greenStageAttack.GetComponent<ColorSet>().color = new Color(0,1,0);
+        blueStageAttack.GetComponent<ColorSet>().color = new Color(0,1,1);
     }
 
     // Update is called once per frame

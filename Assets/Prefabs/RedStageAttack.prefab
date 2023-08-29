@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 2045026621559235230}
   - component: {fileID: 2045026621559235231}
   - component: {fileID: -3923109751513029945}
+  - component: {fileID: 1494929241510151239}
   m_Layer: 0
   m_Name: RedStageAttack
   m_TagString: RedStageAttack
@@ -310,3 +311,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1494929241510151239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045026621559235224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d109182dc5966bd45a3d51babd1ecffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 0, b: 0, a: 1}
