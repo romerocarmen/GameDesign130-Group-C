@@ -25,6 +25,7 @@ public class PlayModeTests
             safeZoneSize.Equals(safeZone.GetComponent<SizeChange>().scale));
 
     }
+
     [UnityTest]
     public IEnumerator SafeZoneSwellWorks()
     {
