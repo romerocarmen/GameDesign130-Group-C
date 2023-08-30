@@ -6,9 +6,9 @@ public class Upgrades : MonoBehaviour
 {
     public int level = LevelCounter.levelValue;
     public float playerSpeed = 2.5f; // how quickly the player moves. Keep below 5
-    public float playerFireRate = 3f; //how quickly the player fires
+    public float playerFireRate = 2f; //how quickly the player fires
     public float playerBulletCount = 1f; // how many streams of bullets the player shoots
-    public float basicEnemySpeed = 3f; // how quickly the basic enemies move
+    public float basicEnemySpeed = 4f; // how quickly the basic enemies move
     public float splitterSpeed = 3f; // how quickly the splitter enemies move
     public float basicEnemySpawnRate = 1f; // how often the basic enemies are spawned. Turn this down if maxEnemyCount increases
     public float basicEnemySpawnDelta = 0.0001f; // how quickly the spawn rate increases over time 
@@ -173,7 +173,7 @@ public class Upgrades : MonoBehaviour
                 playerBulletCount = 3f;
 
                 // enemy setters
-                basicEnemySpeed = 4f;
+                basicEnemySpeed = 0f;
                 basicEnemySpawnRate = 0.5f;
                 splitterSpawnRate = 0.3f;
                 rainbowSpawnRate = 0.1f;
@@ -281,28 +281,33 @@ public class Upgrades : MonoBehaviour
                 szShrinkRate = 0.5f;
                 szGrowthRate = 1f;
             }
-            else if (level == 9)
+            else if (level == 9) // CHALLENGE LEVEL
             {
                 // player setters
+                GameObject.Find("Player").GetComponent<SpawnBomb>().BigABomb();
+                foreach (GameObject XP in GameObject.FindGameObjectsWithTag("Pickup"))
+                {
+                    Destroy(XP);
+                }
                 playerSpeed = 3.1f;
-                playerFireRate = playerFireRate;
-                playerBulletCount = 5f;
+                playerFireRate = 0;
+                playerBulletCount = 0f;
 
                 // enemy setters
                 basicEnemySpeed = 8f;
-                basicEnemySpawnRate = 0.5f;
-                splitterSpawnRate = 0.8f;
-                rainbowSpawnRate = 0.1f;
+                basicEnemySpawnRate = 0f;
+                splitterSpawnRate = 0f;
+                rainbowSpawnRate = 0f;
                 minEnemyCount = 1;
                 maxEnemyCount = 4;
 
-                // stage attack setters
-                saSpawnRate = 0.4f;
-                saWidth = 10f;
-                saGhostBoxTiming = 1.5f;
-                saScaleChange = new Vector3(3f, 0, 0);
-                saTargetPlayer = false;
-                saMultiAttackChance = 0.5f;
+                //stage attack setters
+                saSpawnRate = 0.8f;
+                saWidth = 5f;
+                saGhostBoxTiming = 1.25f;
+                saScaleChange = new Vector3(4f, 0, 0);
+                saTargetPlayer = true;
+                saMultiAttackChance = 0f;
 
                 // safe zone setters
                 szMaxDiameter = 20f;
@@ -313,8 +318,8 @@ public class Upgrades : MonoBehaviour
             else if (level == 10)
             {
                 // player setters
-                playerSpeed = 3.2f;
-                playerFireRate += 0.5f;
+                playerSpeed = 3.5f;
+                playerFireRate = 6f;
                 playerBulletCount = 5f;
 
                 // enemy setters
