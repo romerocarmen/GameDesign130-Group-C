@@ -13958,7 +13958,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6eabe2ee792b74b4db93728863722284, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -16050,9 +16050,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5848544684755687963, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
         type: 3}
+      propertyPath: volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848544684755687963, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
+        type: 3}
+      propertyPath: theClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e744bead6a8961e468a502bf43b2c21e, type: 3}
+    - target: {fileID: 5848544684755687963, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
+        type: 3}
       propertyPath: pauseScript
       value: 
       objectReference: {fileID: 542026925}
+    - target: {fileID: 5848544684755687963, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
+        type: 3}
+      propertyPath: shieldAudio
+      value: 
+      objectReference: {fileID: 448095540}
+    - target: {fileID: 5848544684755687964, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
+        type: 3}
+      propertyPath: volume
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 5848544684755687964, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
         type: 3}
       propertyPath: theClip

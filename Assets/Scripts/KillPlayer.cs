@@ -13,7 +13,17 @@ public class KillPlayer : MonoBehaviour
     public bool inBlue = false;
     public GameObject shield;
 
+    [SerializeField] public AudioClip theClip;
+    [SerializeField] private AudioSource shieldAudio;
+    [SerializeField] private float volume = 1f;
+
     [SerializeField] private GameObject pauseScript;
+
+    void Start()
+    {
+        shieldAudio = GetComponent<AudioSource>();
+    }
+
     private void Update() {
         if(Time.timeScale < 0.01f){
             gameObject.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Simulate(Time.unscaledDeltaTime, true, false);
@@ -127,11 +137,14 @@ public class KillPlayer : MonoBehaviour
         StartCoroutine(InvincibilityTimer());
         //unfreezes player rotation
         gameObject.GetComponent<Move>().orientToDirection = true;
+
+
     }
 
     public IEnumerator InvincibilityTimer(){
         invincible = true;
         Instantiate(shield, gameObject.transform.position, gameObject.transform.rotation, gameObject.transform);
+        shieldAudio.PlayOneShot(theClip, volume);
         yield return new WaitForSeconds(5);
         invincible = false;
         Destroy(GameObject.FindWithTag("Shield"));
