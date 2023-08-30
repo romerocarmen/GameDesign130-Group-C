@@ -12682,12 +12682,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671665811}
   m_CullTransparentMesh: 1
---- !u!1 &1673109649 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2042766301622980616, guid: 5adbb7ac77d4ad64ba015b02ebdd5872,
-    type: 3}
-  m_PrefabInstance: {fileID: 2042766300950378277}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1686317368
 GameObject:
   m_ObjectHideFlags: 0
@@ -13596,6 +13590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 7253998977144259257, guid: 35473b354cd3da946ba82bcdb31d8e14, type: 3}
   timer: 0
+  onScreen: 0
 --- !u!114 &1775701386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15357,19 +15352,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2042766300950378277}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2015979318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673109649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d109182dc5966bd45a3d51babd1ecffe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 0, b: 0, a: 0.4}
 --- !u!1 &2018288875
 GameObject:
   m_ObjectHideFlags: 0

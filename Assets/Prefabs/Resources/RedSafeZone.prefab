@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 2042766301622980625}
   - component: {fileID: 2042766301622980624}
   - component: {fileID: 2042766301622980627}
+  - component: {fileID: 4478753872597121674}
   m_Layer: 9
   m_Name: RedSafeZone
   m_TagString: RedSafeZone
@@ -290,6 +291,19 @@ MonoBehaviour:
   currentSpeed: 0
   isPlayer: 0
   isRandomOnExit: 0
+--- !u!114 &4478753872597121674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042766301622980616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d109182dc5966bd45a3d51babd1ecffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 0, b: 0, a: 0.4}
 --- !u!1 &2042766301941719752
 GameObject:
   m_ObjectHideFlags: 0

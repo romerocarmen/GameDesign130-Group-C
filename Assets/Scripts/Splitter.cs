@@ -13,6 +13,7 @@ public class Splitter : MonoBehaviour
             enemy.gameObject.GetComponent<FollowTarget>().splitEnemy = true;
             //enemy.gameObject.GetComponent<FollowTarget>().target = GameObject.Find("Player").transform;
             enemy.gameObject.GetComponent<EnemySpawnChecker>().timer = 1;
+            enemy.gameObject.GetComponent<EnemySpawnChecker>().onScreen = true;
             //enemy.gameObject.GetComponent<Wander>().enabled = true;
             enemy.gameObject.GetComponent<FollowTarget>().target = GameObject.Find(walls[i]).transform;
             Instantiate(enemy, transform.position, Quaternion.identity);
