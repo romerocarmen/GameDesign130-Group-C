@@ -10,13 +10,13 @@ public class Shooting : MonoBehaviour
     public float fireRate = 5;
     public float numBullets = 1;
 
-    // [SerializeField] public AudioClip theClip;
-    // [SerializeField] private AudioSource bulletAudio;
-    // [SerializeField] private float volume = 1f;
+    [SerializeField] public AudioClip theClip;
+    [SerializeField] private AudioSource bulletAudio;
+    [SerializeField] private float volume = 1f;
 
     void Start()
     {
-        // bulletAudio = GetComponent<AudioSource>();
+        bulletAudio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -27,7 +27,7 @@ public class Shooting : MonoBehaviour
             float bulletsToFire = numBullets;
             float flipAngle = .1f;
             Bullet.GetComponent<BulletMovement>().heading = gameObject.GetComponent<Move>().heading.normalized;
-            // bulletAudio.PlayOneShot(theClip, volume);
+            bulletAudio.PlayOneShot(theClip, volume);
             if (bulletsToFire % 2 == 0){
                 Instantiate(Bullet, transform.position + transform.up*.3f, transform.rotation);
                 Instantiate(Bullet, transform.position - transform.up*.3f + transform.right * .75f, transform.rotation);
