@@ -369,7 +369,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.75
+      scalar: 0.5
       minScalar: 0.5
       maxCurve:
         serializedVersion: 2
@@ -4916,7 +4916,7 @@ GameObject:
   - component: {fileID: 7253998975693572352}
   - component: {fileID: 7253998975693572353}
   m_Layer: 8
-  m_Name: Square (4)
+  m_Name: Edge4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5001,7 +5001,7 @@ GameObject:
   - component: {fileID: 7253998975733078820}
   - component: {fileID: 7253998975733078821}
   m_Layer: 8
-  m_Name: Square (2)
+  m_Name: Edge2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5086,7 +5086,7 @@ GameObject:
   - component: {fileID: 7253998976072790191}
   - component: {fileID: 7253998976072790184}
   m_Layer: 8
-  m_Name: Square (3)
+  m_Name: Edge3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5171,7 +5171,7 @@ GameObject:
   - component: {fileID: 7253998976133963648}
   - component: {fileID: 7253998976133963649}
   m_Layer: 8
-  m_Name: Square
+  m_Name: Edge1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5256,7 +5256,7 @@ GameObject:
   - component: {fileID: 7253998976458223266}
   - component: {fileID: 7253998976458223267}
   m_Layer: 8
-  m_Name: Square (1)
+  m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5320,7 +5320,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
     type: 3}
-  m_Color: {r: 0, g: 0.8352941, b: 0.9607843, a: 0.39215687}
+  m_Color: {r: 0, g: 0.8352941, b: 0.9607843, a: 0.4}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5344,6 +5344,7 @@ GameObject:
   - component: {fileID: 7253998977144259259}
   - component: {fileID: 7644496643627610925}
   - component: {fileID: -7388727750348918001}
+  - component: {fileID: 7580814134899647237}
   m_Layer: 8
   m_Name: BlueEnemy
   m_TagString: Enemy
@@ -5434,7 +5435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 0}
   target: {fileID: 0}
-  speed: 5.5
+  speed: 5
   lookAtTarget: 1
   useSide: 0
   splitEnemy: 0
@@ -5470,3 +5471,16 @@ MonoBehaviour:
   keepNearStartingPoint: 0
   orientToDirection: 0
   lookAxis: 0
+--- !u!114 &7580814134899647237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7253998977144259257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d109182dc5966bd45a3d51babd1ecffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 1, b: 1, a: 1}
