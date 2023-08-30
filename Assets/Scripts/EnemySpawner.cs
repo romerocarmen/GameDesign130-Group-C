@@ -43,6 +43,15 @@ public class EnemySpawner : MonoBehaviour
     public int minEnemyCount = 1;
     public int maxEnemyCount = 1;
 
+    private void Start(){
+        redEnemy.GetComponent<ColorSet>().color = new Color(1,0,0);
+        greenEnemy.GetComponent<ColorSet>().color = new Color(0,1,0);
+        blueEnemy.GetComponent<ColorSet>().color = new Color(0,1,1);
+        redSplitter.GetComponent<ColorSet>().color = new Color(1,0,0);
+        greenSplitter.GetComponent<ColorSet>().color = new Color(0,1,0);
+        blueSplitter.GetComponent<ColorSet>().color = new Color(0,1,1);
+    }
+
     // Update is called once per frame
     void Update()
     {
