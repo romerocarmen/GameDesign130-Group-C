@@ -7,7 +7,7 @@ public class SubtextLevelScript : MonoBehaviour
 {
     private int currentLevel = 1;
     private TMP_Text textField;
-    private string[] textArray = new string[10] {"Can you make it to level 10?","+Fire Rate\nGetting Tougher!","+Bullets\nDo not touch the bars!","+Fire Rate","+Bullets","+Fire Rate","+Bullets","+Fire Rate","+Bullets","+Fire Rate/XP Disabled\nSurvive as long as you can!"};
+    private string[] textArray = new string[10] { "Can you make it to level 10?", "+Fire Rate\nGetting Tougher!", "+Bullets\nWatch out for Stage Attacks!", "+Fire Rate", "+Bullets", "+Fire Rate", "+Bullets", "+Fire Rate", "+Bullets", "+Fire Rate/XP Disabled\nSurvive as long as you can!" };
 
     // Start is called before the first frame update
     void Start()
@@ -35,10 +35,17 @@ public class SubtextLevelScript : MonoBehaviour
 
     IEnumerator FadeTo(float desiredAlpha, float desiredTime){
         float alpha = textField.color.a;
-        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime/desiredTime){
-            Color newColor = new Color(1,1,1, Mathf.Lerp(alpha,desiredAlpha,t));
+        Color newColor = Color.white;
+        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / desiredTime)
+        {
+            newColor = new Color(1, 1, 1, Mathf.Lerp(alpha, desiredAlpha, t));
             textField.color = newColor;
             yield return null;
+        }
+        if (newColor.a > 0 && desiredAlpha == 0)
+        {
+            newColor.a = 0;
+            textField.color = newColor;
         }
     }
 }

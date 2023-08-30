@@ -138,6 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5027927433791157539}
   - component: {fileID: 3851867886724187616}
+  - component: {fileID: 6162303156848306120}
   m_Layer: 0
   m_Name: Sound Effect
   m_TagString: Untagged
@@ -256,6 +257,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6162303156848306120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5766542742638304209}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e725aa61b071cc544b0f34a2bcec5f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 6423328068268903990}
+  fireRate: 5
+  numBullets: 1
 --- !u!1 &6423328068268903990
 GameObject:
   m_ObjectHideFlags: 0

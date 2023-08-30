@@ -50,10 +50,17 @@ public class LevelUpDing : MonoBehaviour
 
     IEnumerator FadeTo(float desiredAlpha, float desiredTime){
         float alpha = textField.color.a;
-        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime/desiredTime){
-            Color newColor = new Color(1,1,1, Mathf.Lerp(alpha,desiredAlpha,t));
+        Color newColor = Color.white;
+        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / desiredTime)
+        {
+            newColor = new Color(1, 1, 1, Mathf.Lerp(alpha, desiredAlpha, t));
             textField.color = newColor;
             yield return null;
+        }
+        if (newColor.a > 0 && desiredAlpha == 0)
+        {
+            newColor.a = 0;
+            textField.color = newColor;
         }
     }
 }
