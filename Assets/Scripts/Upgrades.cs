@@ -173,7 +173,7 @@ public class Upgrades : MonoBehaviour
                 playerBulletCount = 3f;
 
                 // enemy setters
-                basicEnemySpeed = 0f;
+                basicEnemySpeed = 5f;
                 basicEnemySpawnRate = 0.5f;
                 splitterSpawnRate = 0.3f;
                 rainbowSpawnRate = 0.1f;
