@@ -101,6 +101,9 @@ MonoBehaviour:
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
   fireRate: 5
   numBullets: 2
+  theClip: {fileID: 0}
+  bulletAudio: {fileID: 0}
+  volume: 1
 --- !u!1 &6227278241284958808
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +240,9 @@ MonoBehaviour:
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
   fireRate: 5
   numBullets: 2
+  theClip: {fileID: 0}
+  bulletAudio: {fileID: 0}
+  volume: 1
 --- !u!1 &6227278241603730219
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +550,9 @@ MonoBehaviour:
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
   fireRate: 5
   numBullets: 2
+  theClip: {fileID: 0}
+  bulletAudio: {fileID: 0}
+  volume: 1
 --- !u!1 &6227278241798740006
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +725,9 @@ MonoBehaviour:
   bombCount: 3
   bombPrefab: {fileID: 8230728992403886608, guid: fa0da88f04d02734aa030377b3a26e9e,
     type: 3}
+  theClip: {fileID: 0}
+  bombAudio: {fileID: 0}
+  volume: 1
 --- !u!60 &6227278241798740014
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -789,6 +801,9 @@ MonoBehaviour:
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
   fireRate: 1
   numBullets: 1
+  theClip: {fileID: 0}
+  bulletAudio: {fileID: 0}
+  volume: 1
 --- !u!114 &6227278241798740012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1159,6 +1174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e9c925816474e84a8206bddf0eae0cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theClip: {fileID: 0}
+  boosterAudio: {fileID: 0}
+  volume: 1
+  isPlaying: 0
 --- !u!1 &6227278242394061548
 GameObject:
   m_ObjectHideFlags: 0
@@ -1496,7 +1515,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 60
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1612,7 +1631,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -6333,3 +6352,6 @@ MonoBehaviour:
   Bullet: {fileID: 6423328068268903990, guid: 57486ea2a6f948642bb8a3a60805b559, type: 3}
   fireRate: 5
   numBullets: 2
+  theClip: {fileID: 0}
+  bulletAudio: {fileID: 0}
+  volume: 1
