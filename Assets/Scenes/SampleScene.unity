@@ -1835,7 +1835,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 157f000b3ae8b61459809c959adda9a5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4058,7 +4058,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ed9d0ecdb3320ca4e95e8a798e7fec38, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -13614,6 +13614,7 @@ MonoBehaviour:
   lookAtTarget: 1
   useSide: 0
   splitEnemy: 0
+  theClip: {fileID: 0}
 --- !u!50 &1775701387
 Rigidbody2D:
   serializedVersion: 4
@@ -16059,10 +16060,20 @@ PrefabInstance:
       propertyPath: pauseScript
       value: 
       objectReference: {fileID: 542026925}
+    - target: {fileID: 5848544684755687964, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
+        type: 3}
+      propertyPath: theClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d68469ee2bbd6b44a96aada342684883, type: 3}
+    - target: {fileID: 5848544684755687964, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
+        type: 3}
+      propertyPath: bombAudio
+      value: 
+      objectReference: {fileID: 448095540}
     - target: {fileID: 5848544684755687966, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
         type: 3}
       propertyPath: volume
-      value: 0.3
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 5848544684755687966, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
         type: 3}
