@@ -21,7 +21,7 @@ public class LevelProgress : MonoBehaviour
         timeForXPSpawn += Time.deltaTime;
 
         // set the level bar limit (xp per level)
-        levelSlider.maxValue = (LevelCounter.levelValue * 10) + 5;
+        levelSlider.maxValue = (LevelCounter.levelValue * 10) + 10;
 
         // if at challenge level, perform challenge level
         if(LevelCounter.levelValue == challengeLevel && timeForXPSpawn > 0.5)

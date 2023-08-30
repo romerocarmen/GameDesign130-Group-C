@@ -9,6 +9,8 @@ public class PlayerXPInteraction : MonoBehaviour
     private float timer = 0;
     private Color tmp;
     private float flashSpeed = 0.003f;
+    public int xpValue = 1;
+
 
     void Awake()
     {
@@ -68,7 +70,7 @@ public class PlayerXPInteraction : MonoBehaviour
             // Plays the sound
             audio.Play();
             // add XP to counter
-            totalXP += 1;
+            totalXP += xpValue;
             // Destroy the XP
             Destroy(gameObject);
         }

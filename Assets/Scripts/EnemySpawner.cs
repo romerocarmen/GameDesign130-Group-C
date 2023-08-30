@@ -78,7 +78,7 @@ public class EnemySpawner : MonoBehaviour
         }
         
         if(spawnRateRainbow != 0){
-            spawnRateRainbow += spawnDeltaAdvanced;
+            // spawnRateRainbow += spawnDeltaAdvanced;
             rainbowTimer += Time.deltaTime;
             if(rainbowTimer > 1/spawnRateRainbow){
                 rainbowEnemySpawner();
