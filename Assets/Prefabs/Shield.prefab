@@ -97,3 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9bd1142efe1984fa2041cabbd1ae20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theClip: {fileID: 8300000, guid: cf9caca1838f5984cb3a9376e5af1303, type: 3}
+  shieldAudio: {fileID: 0}
+  volume: 1

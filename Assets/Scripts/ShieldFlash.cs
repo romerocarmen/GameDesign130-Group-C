@@ -6,6 +6,7 @@ public class ShieldFlash : MonoBehaviour
 {
     private float timer = 0;
     private Color tmp;
+
     // Start is called before the first frame update
     void Start()
     {
