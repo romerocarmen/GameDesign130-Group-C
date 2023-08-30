@@ -349,7 +349,7 @@ MonoBehaviour:
   scaleChange: {x: 1, y: 0, z: 0}
   ghostBoxTime: 3
   width: 15
-  theClip: {fileID: 8300000, guid: a06d61a4c526f44429dc6fdb4fda033b, type: 3}
+  theClip: {fileID: 8300000, guid: c955727bdbb75c749be67ccf0cd0413b, type: 3}
   stageAttackAudio: {fileID: 8139572}
   volume: 0.75
 --- !u!82 &8139572
@@ -362,7 +362,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a06d61a4c526f44429dc6fdb4fda033b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c955727bdbb75c749be67ccf0cd0413b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.75
   m_Pitch: 1
@@ -464,7 +464,6 @@ MonoBehaviour:
   playerSpeed: 2.5
   playerFireRate: 3
   playerBulletCount: 1
-  playerBombCount: 3
   basicEnemySpeed: 4
   splitterSpeed: 3
   basicEnemySpawnRate: 0.25
@@ -9487,7 +9486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e9c925816474e84a8206bddf0eae0cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theClip: {fileID: 8300000, guid: ca23c039c3f770f41a20e3b0be65defa, type: 3}
+  theClip: {fileID: 8300000, guid: f0028da36a5b170429fc1dc7094997a7, type: 3}
   boosterAudio: {fileID: 1193704489}
   volume: 0
   isPlaying: 0
@@ -9501,7 +9500,7 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ca23c039c3f770f41a20e3b0be65defa, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f0028da36a5b170429fc1dc7094997a7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
@@ -15967,23 +15966,23 @@ PrefabInstance:
     - target: {fileID: 5848544684125684504, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
         type: 3}
       propertyPath: volume
-      value: 0.75
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5848544684125684504, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
         type: 3}
       propertyPath: theClip
       value: 
-      objectReference: {fileID: 8300000, guid: ca23c039c3f770f41a20e3b0be65defa, type: 3}
+      objectReference: {fileID: 8300000, guid: f0028da36a5b170429fc1dc7094997a7, type: 3}
     - target: {fileID: 5848544684125684505, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
         type: 3}
       propertyPath: m_Volume
-      value: 0.75
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5848544684125684505, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: ca23c039c3f770f41a20e3b0be65defa, type: 3}
+      objectReference: {fileID: 8300000, guid: f0028da36a5b170429fc1dc7094997a7, type: 3}
     - target: {fileID: 5848544684626909487, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
         type: 3}
       propertyPath: m_RootOrder
