@@ -5644,6 +5644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 4909184135796634658}
   timer: 0
+  onScreen: 0
 --- !u!114 &-1307267280972565592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5669,7 +5670,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ab6ffac318b7e324a8fbfab6c0774baf, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
