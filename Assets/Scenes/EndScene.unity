@@ -2169,7 +2169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1973536704}
-  gameOver: {fileID: 8300000, guid: 509bce7aa002e3f4596e72c76479b203, type: 3}
+  gameOver: {fileID: 8300000, guid: 6628ae5c69a3ba64193b1309461620f5, type: 3}
 --- !u!4 &1363196062
 Transform:
   m_ObjectHideFlags: 0
