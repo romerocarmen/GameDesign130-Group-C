@@ -8,7 +8,7 @@ public class Upgrades : MonoBehaviour
     public float playerSpeed = 2.5f; // how quickly the player moves. Keep below 5
     public float playerFireRate = 2f; //how quickly the player fires
     public float playerBulletCount = 1f; // how many streams of bullets the player shoots
-    public int playerBombCount = 3;
+    //public int playerBombCount = 3;
     public float basicEnemySpeed = 4f; // how quickly the basic enemies move
     public float splitterSpeed = 3f; // how quickly the splitter enemies move
     public float basicEnemySpawnRate = 1f; // how often the basic enemies are spawned. Turn this down if maxEnemyCount increases
@@ -58,7 +58,7 @@ public class Upgrades : MonoBehaviour
                 // playerSpeed = 3f;
                 // playerFireRate = 5f;
                 // playerWeapon = 2; need weapon upgrade number
-                playerBombCount = 3;
+                //playerBombCount = 3;
 
                 // enemy setters
                 // basicEnemySpeed = 5f;
@@ -87,7 +87,7 @@ public class Upgrades : MonoBehaviour
                 playerSpeed = 2.5f;
                 playerFireRate = playerFireRate;
                 playerBulletCount = 2f;
-                playerBombCount = 3;
+                //playerBombCount = 3;
 
                 // enemy setters
                 basicEnemySpeed = 4f;
@@ -395,7 +395,7 @@ public class Upgrades : MonoBehaviour
         GameObject.Find("Player").GetComponent<Move>().speed = playerSpeed; 
         GameObject.Find("Player").GetComponent<Shooting>().fireRate = playerFireRate;
         GameObject.Find("Player").GetComponent<Shooting>().numBullets = playerBulletCount;
-        GameObject.Find("Player").GetComponent<SpawnBomb>().bombCount = playerBombCount;
+        //GameObject.Find("Player").GetComponent<SpawnBomb>().bombCount = playerBombCount;
         // GameObject.Find("Player").GetComponent<Shooting>().weapon = playerWeapon;  
     }
 }
