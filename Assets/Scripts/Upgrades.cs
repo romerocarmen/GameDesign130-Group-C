@@ -29,11 +29,13 @@ public class Upgrades : MonoBehaviour
     public float szShrinkRate = 0.5f; // how quickly the safezones shrink while the player is in them
     public float szGrowthRate = 1f; // how quickly the safezones grow back when the player leaves them
     private bool valuesChanged = false; // used for updating the values per level
+    public GameObject xp; 
 
     void Awake()
     {
         // set the game values for lvl 1
         changeGameValues();
+        xp.GetComponent<PlayerXPInteraction>().xpValue = 1;
     }
 
     // enemy speed is through follow target
@@ -73,7 +75,7 @@ public class Upgrades : MonoBehaviour
                 // szPatrolSpeed = 0f;
                 // szShrinkRate = 0f;
                 // szGrowthRate = 0f;
-
+                xp.GetComponent<PlayerXPInteraction>().xpValue = 1;
                 changeGameValues();
                 valuesChanged = true;
             }
@@ -81,16 +83,16 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 2.5f;
-                playerFireRate += 0.5f;
-                playerBulletCount = 1f;
+                playerFireRate = playerFireRate;
+                playerBulletCount = 2f;
 
                 // enemy setters
                 basicEnemySpeed = 4f;
-                basicEnemySpawnRate = 1f;
+                basicEnemySpawnRate = 0.3f;
                 splitterSpawnRate = 0.1f;
-                rainbowSpawnRate = 0.1f;
-                minEnemyCount = 1;
-                maxEnemyCount = 1;
+                rainbowSpawnRate = 0f;
+                minEnemyCount = 3;
+                maxEnemyCount = 5;
 
                 // stage attack setters
                 saSpawnRate = 0f;
@@ -111,16 +113,16 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 2.6f;
-                playerFireRate = playerFireRate;
+                playerFireRate += 0.5f;
                 playerBulletCount = 2f;
 
                 // enemy setters
-                basicEnemySpeed = 3f;
-                basicEnemySpawnRate = 0.5f;
+                basicEnemySpeed = 4f;
+                basicEnemySpawnRate = 0.4f;
                 splitterSpawnRate = 0.1f;
-                rainbowSpawnRate = 0.1f;
-                minEnemyCount = 1;
-                maxEnemyCount = 2;
+                rainbowSpawnRate = 0f;
+                minEnemyCount = 4;
+                maxEnemyCount = 6;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
@@ -140,16 +142,16 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 2.7f;
-                playerFireRate += 0.5f;
-                playerBulletCount = 2f;
+                playerFireRate = playerFireRate;
+                playerBulletCount = 3f;
 
                 // enemy setters
-                basicEnemySpeed = 4f;
-                basicEnemySpawnRate = 0.5f;
+                basicEnemySpeed = 5f;
+                basicEnemySpawnRate = 0.4f;
                 splitterSpawnRate = 0.2f;
-                rainbowSpawnRate = 0.1f;
-                minEnemyCount = 1;
-                maxEnemyCount = 3;
+                rainbowSpawnRate = 0f;
+                minEnemyCount = 4;
+                maxEnemyCount = 6;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
@@ -169,16 +171,16 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 2.8f;
-                playerFireRate = playerFireRate;
+                playerFireRate += 0.5f;
                 playerBulletCount = 3f;
 
                 // enemy setters
                 basicEnemySpeed = 5f;
                 basicEnemySpawnRate = 0.5f;
                 splitterSpawnRate = 0.3f;
-                rainbowSpawnRate = 0.1f;
-                minEnemyCount = 1;
-                maxEnemyCount = 4;
+                rainbowSpawnRate = 0f;
+                minEnemyCount = 5;
+                maxEnemyCount = 7;
 
                 // stage attack setters
                 saSpawnRate = 0.1f;
@@ -198,16 +200,16 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.5f;
-                playerFireRate += 0.5f;
-                playerBulletCount = 3f;
+                playerFireRate = playerFireRate;
+                playerBulletCount = 4f;
 
                 // enemy setters
                 basicEnemySpeed = 5f;
                 basicEnemySpawnRate = 0.5f;
                 splitterSpawnRate = 0.4f;
-                rainbowSpawnRate = 0.1f;
-                minEnemyCount = 1;
-                maxEnemyCount = 4;
+                rainbowSpawnRate = 0f;
+                minEnemyCount = 5;
+                maxEnemyCount = 7;
 
                 // stage attack setters
                 saSpawnRate = 0.2f;
@@ -227,16 +229,16 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 2.9f;
-                playerFireRate = playerFireRate;
+                playerFireRate += 0.5f;
                 playerBulletCount = 4f;
 
                 // enemy setters
                 basicEnemySpeed = 6f;
-                basicEnemySpawnRate = 0.5f;
+                basicEnemySpawnRate = 0.6f;
                 splitterSpawnRate = 0.5f;
-                rainbowSpawnRate = 0.1f;
-                minEnemyCount = 1;
-                maxEnemyCount = 4;
+                rainbowSpawnRate = 0f;
+                minEnemyCount = 6;
+                maxEnemyCount = 8;
 
                 // stage attack setters
                 saSpawnRate = 0.2f;
@@ -257,15 +259,15 @@ public class Upgrades : MonoBehaviour
                 // player setters
                 playerSpeed = 3f;
                 playerFireRate += 0.5f;
-                playerBulletCount = 4f;
+                playerBulletCount = 5f;
 
                 // enemy setters
-                basicEnemySpeed = 7f;
-                basicEnemySpawnRate = 0.5f;
+                basicEnemySpeed = 6f;
+                basicEnemySpawnRate = 0.6f;
                 splitterSpawnRate = 0.6f;
-                rainbowSpawnRate = 0.1f;
-                minEnemyCount = 1;
-                maxEnemyCount = 2;
+                rainbowSpawnRate = 0f;
+                minEnemyCount = 6;
+                maxEnemyCount = 8;
 
                 // stage attack setters
                 saSpawnRate = 0.3f;
@@ -285,6 +287,7 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 GameObject.Find("Player").GetComponent<SpawnBomb>().BigABomb();
+                xp.GetComponent<PlayerXPInteraction>().xpValue = 3;
                 foreach (GameObject XP in GameObject.FindGameObjectsWithTag("Pickup"))
                 {
                     Destroy(XP);
@@ -303,7 +306,7 @@ public class Upgrades : MonoBehaviour
 
                 //stage attack setters
                 saSpawnRate = 0.8f;
-                saWidth = 5f;
+                saWidth = 10f;
                 saGhostBoxTiming = 1.25f;
                 saScaleChange = new Vector3(4f, 0, 0);
                 saTargetPlayer = true;
@@ -319,19 +322,20 @@ public class Upgrades : MonoBehaviour
             {
                 // player setters
                 playerSpeed = 3.5f;
-                playerFireRate = 6f;
+                playerFireRate = 5f;
                 playerBulletCount = 5f;
 
                 // enemy setters
-                basicEnemySpeed = 9f;
-                basicEnemySpawnRate = 1f;
+                basicEnemySpeed = 7f;
+                basicEnemySpawnRate = 0.5f;
+                basicEnemySpawnDelta = 0.0005f;
                 splitterSpawnRate = 1f;
-                rainbowSpawnRate = 0.1f;
-                minEnemyCount = 1;
-                maxEnemyCount = 4;
+                rainbowSpawnRate = 0f;
+                minEnemyCount = 6;
+                maxEnemyCount = 8;
 
                 // stage attack setters
-                saSpawnRate = 0.5f;
+                saSpawnRate = 0.4f;
                 saWidth = 10f;
                 saGhostBoxTiming = 1.5f;
                 saScaleChange = new Vector3(3f, 0, 0);
@@ -347,13 +351,6 @@ public class Upgrades : MonoBehaviour
             changeGameValues();
             valuesChanged = true;
         }
-        // CHALLENGE LEVEL STAGE ATTACK SETTINGS
-        // saSpawnRate = 0.8f;
-        // saWidth = 5f;
-        // saGhostBoxTiming = 1.25f;
-        // saScaleChange = new Vector3(4f, 0, 0);
-        // saTargetPlayer = false;
-        // saMultiAttackChance = 0.5f;
     }
 
     void changeGameValues(){

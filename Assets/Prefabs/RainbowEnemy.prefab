@@ -529,10 +529,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 0}
   target: {fileID: 0}
-  speed: 5.5
+  speed: 7
   lookAtTarget: 1
   useSide: 0
-  splitEnemy: 0
+  splitEnemy: 1
   theClip: {fileID: 8300000, guid: ab6ffac318b7e324a8fbfab6c0774baf, type: 3}
 --- !u!114 &4687473122853218801
 MonoBehaviour:
@@ -547,7 +547,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5742348371142023269}
-  timer: 0
+  timer: 1
+  onScreen: 1
 --- !u!114 &3633979988068018643
 MonoBehaviour:
   m_ObjectHideFlags: 0

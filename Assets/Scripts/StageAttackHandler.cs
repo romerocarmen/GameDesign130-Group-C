@@ -36,7 +36,7 @@ public class StageAttackHandler : MonoBehaviour
         // Set hitbox to on
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
         // Wait for 1 second then destroy this object
-        Destroy(gameObject, 1);
+        Destroy(gameObject, 0.5f);
 
     }
 

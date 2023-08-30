@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BombHandler : MonoBehaviour
 {
-    private Vector3 scaleChange = new Vector3(2f, 2f, 0f);
+    private Vector3 scaleChange = new Vector3(3f, 3f, 0f);
     private float timer;
 
     // Update is called once per frame
@@ -12,7 +12,7 @@ public class BombHandler : MonoBehaviour
     {
         timer += Time.deltaTime;
         gameObject.transform.localScale += scaleChange;
-        if(timer > 1){
+        if(timer > 1f){
             Destroy(gameObject);
         }
     }
