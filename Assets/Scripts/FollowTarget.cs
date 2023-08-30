@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-[AddComponentMenu("Playground/Movement/Follow Target")]
+//[AddComponentMenu("Playground/Movement/Follow Target")]
 [RequireComponent(typeof(Rigidbody2D))]
 public class FollowTarget : Physics2DObject
 {
@@ -28,9 +28,11 @@ public class FollowTarget : Physics2DObject
 	private float timer = 0;
 	
 	public bool splitEnemy = false;
-	
-	// FixedUpdate is called once per frame
-	void FixedUpdate ()
+
+    [SerializeField] public AudioClip theClip;
+
+    // FixedUpdate is called once per frame
+    void FixedUpdate ()
 	{
 		
 		timer += Time.deltaTime;
@@ -80,20 +82,26 @@ public class FollowTarget : Physics2DObject
 			// Enemy is RED
 			case 6:
 			if(other.gameObject.tag == "RedSafeZone"){
-				gameObject.GetComponent<FollowTarget>().death();
+				AudioSource.PlayClipAtPoint(theClip, new Vector3(0, 0, 0));
+                AudioSource.PlayClipAtPoint(theClip, new Vector3(0, 0, 0));
+                gameObject.GetComponent<FollowTarget>().death();
 			}
 			break;
 
 			// Enemy is GREEN
 			case 7:
 			if(other.gameObject.tag == "GreenSafeZone"){
-				gameObject.GetComponent<FollowTarget>().death();
+				AudioSource.PlayClipAtPoint(theClip, new Vector3(0, 0, 0));
+                AudioSource.PlayClipAtPoint(theClip, new Vector3(0, 0, 0));
+                gameObject.GetComponent<FollowTarget>().death();
 			}
 			break;
 			// Enemy is BLUE
 			case 8:
 			if(other.gameObject.tag == "BlueSafeZone"){
-				gameObject.GetComponent<FollowTarget>().death();
+				AudioSource.PlayClipAtPoint(theClip, new Vector3(0, 0, 0));
+                AudioSource.PlayClipAtPoint(theClip, new Vector3(0, 0, 0));
+                gameObject.GetComponent<FollowTarget>().death();
 			}
 			break;
 			default:
@@ -138,7 +146,11 @@ public class FollowTarget : Physics2DObject
 	IEnumerator deathAnimation(){
         
 		transform.Find("deathParticles").gameObject.SetActive(true);
-		
+
+
+
+
+
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }

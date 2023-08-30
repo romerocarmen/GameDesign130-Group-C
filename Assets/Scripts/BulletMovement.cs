@@ -16,6 +16,8 @@ public class BulletMovement : MonoBehaviour
     bool updatedScore = false;
     public Vector3 heading = Vector3.left;
 
+    [SerializeField] public AudioClip theClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,9 +52,14 @@ public class BulletMovement : MonoBehaviour
         if (other.tag == "Enemy")
         {
             // Finds the audio source
-            AudioSource audio = GameObject.Find("Enemy Death Sound Effect").GetComponent<AudioSource>();
+            //AudioSource audio = GameObject.Find("Enemy Death Sound Effect").GetComponent<AudioSource>();
             // Plays the sound
-            audio.Play();
+            
+
+            AudioSource.PlayClipAtPoint(theClip, new Vector3(0, 0, 0));
+            AudioSource.PlayClipAtPoint(theClip, new Vector3(0, 0, 0));
+            //AudioSource.PlayClipAtPoint(theClip, new Vector3(0, 0, 0));
+            //AudioSource.PlayClipAtPoint(theClip, new Vector3(0, 0, 0));
 
             Vector3 endingPosition = other.gameObject.transform.position;
             //Destroy(other.gameObject);
