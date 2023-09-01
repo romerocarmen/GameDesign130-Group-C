@@ -10,6 +10,7 @@ public class UserName : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        userNameInput = "RGB";
     }
 
     // Update is called once per frame
