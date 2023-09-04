@@ -22,7 +22,7 @@ public class Shooting : MonoBehaviour
     void Update()
     {
         timeSinceLastBullet += Time.deltaTime;
-        if (Input.GetMouseButton(0) && timeSinceLastBullet > 1/fireRate) //&& Time.time > canFire
+        if (Input.GetMouseButton(0) && timeSinceLastBullet > 1/fireRate && Time.timeScale != 0) //&& Time.time > canFire
         {
             float bulletsToFire = numBullets;
             float flipAngle = .1f;
