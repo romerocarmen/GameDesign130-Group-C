@@ -464,6 +464,7 @@ MonoBehaviour:
   playerSpeed: 2.5
   playerFireRate: 3
   playerBulletCount: 1
+  playerBombCount: 3
   basicEnemySpeed: 4
   splitterSpeed: 3
   basicEnemySpawnRate: 0.25
@@ -1823,7 +1824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &156449323
 AudioSource:
   m_ObjectHideFlags: 0
