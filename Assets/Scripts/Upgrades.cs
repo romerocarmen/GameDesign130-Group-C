@@ -328,6 +328,7 @@ public class Upgrades : MonoBehaviour
                 playerFireRate = 5f;
                 playerBulletCount = 5f;
                 playerBombCount = 3;
+                GameObject.Find("BombCounter").gameObject.GetComponent<UIBombCounter>().refillBombs();
 
     // enemy setters
     basicEnemySpeed = 7f;
