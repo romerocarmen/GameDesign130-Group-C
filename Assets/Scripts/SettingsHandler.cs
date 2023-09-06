@@ -6,7 +6,7 @@ public class SettingsHandler : MonoBehaviour
 {
     Color color1 = Color.red;
     Color color2 = Color.green;
-    Color color3 = Color.blue;
+    Color color3 = new Color(0,1,1);
 
     // All colored prefabs
     public GameObject redEnemy;
