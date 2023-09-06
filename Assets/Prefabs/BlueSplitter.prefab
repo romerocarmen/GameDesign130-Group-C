@@ -253,7 +253,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 30
+      scalar: 45
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -369,7 +369,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.5
+      scalar: 1
       minScalar: 2
       maxCurve:
         serializedVersion: 2
@@ -6859,8 +6859,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d4732beb69171a34d9b3012cf2ab5593, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
-  m_Pitch: 1
+  m_Volume: 0.075
+  m_Pitch: 0.5
   Loop: 0
   Mute: 0
   Spatialize: 0
