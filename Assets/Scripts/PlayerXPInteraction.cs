@@ -11,6 +11,8 @@ public class PlayerXPInteraction : MonoBehaviour
     private float flashSpeed = 0.003f;
     public int xpValue = 1;
 
+    //public GameObject soundEffect;
+
 
     void Awake()
     {
@@ -66,7 +68,7 @@ public class PlayerXPInteraction : MonoBehaviour
         if (collider.CompareTag("Player"))
         {
             // Finds the audio source
-            AudioSource audio = GameObject.Find("Sound Effect").GetComponent<AudioSource>();
+            AudioSource audio = GameObject.Find("XPSoundEffect").GetComponent<AudioSource>();
             // Plays the sound
             audio.Play();
             // add XP to counter
