@@ -13887,7 +13887,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 6eabe2ee792b74b4db93728863722284, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.75
-  m_Pitch: 1
+  m_Pitch: 0.625
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -15864,6 +15864,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848544684031675965, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
+        type: 3}
+      propertyPath: NoiseModule.enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5848544684031675965, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
         type: 3}

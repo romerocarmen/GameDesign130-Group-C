@@ -202,7 +202,7 @@ public class Upgrades : MonoBehaviour
             else if (level == 6)
             {
                 // player setters
-                playerSpeed = 3.5f;
+                playerSpeed = 2.9f;
                 playerFireRate = playerFireRate;
                 playerBulletCount = 4f;
 
@@ -231,7 +231,7 @@ public class Upgrades : MonoBehaviour
             else if (level == 7)
             {
                 // player setters
-                playerSpeed = 2.9f;
+                playerSpeed = 3.0f;
                 playerFireRate += 0.5f;
                 playerBulletCount = 4f;
 
@@ -260,7 +260,7 @@ public class Upgrades : MonoBehaviour
             else if (level == 8)
             {
                 // player setters
-                playerSpeed = 3f;
+                playerSpeed = 3.1f;
                 playerFireRate += 0.5f;
                 playerBulletCount = 5f;
 
@@ -295,7 +295,7 @@ public class Upgrades : MonoBehaviour
                 {
                     Destroy(XP);
                 }
-                playerSpeed = 3.1f;
+                playerSpeed = 3.2f;
                 playerFireRate = 0;
                 playerBulletCount = 0f;
 
