@@ -7,7 +7,7 @@ public class SubtextLevelScript : MonoBehaviour
 {
     private int currentLevel = 1;
     private TMP_Text textField;
-    private string[] textArray = new string[10] { "Can you make it to level 10?", "+Bullets\n+New Enemies", "+Fire Rate\nAvoid Stage Attacks", "+Bullets", "+Fire Rate", "+Bullets", "+Fire Rate", "+Bullets", "Challenge Level", "+Fire Rate\nBombs Restored\nSurvive as long as you can!" };
+    private string[] textArray = new string[10] { "CAN YOU MAKE IT TO LEVEL 10?", "+BULLETS\n+NEW ENEMIES", "+FIRE RATE\nAVOID STAGE ATTACKS!", "+BULLETS", "+FIRE RATE", "+BULLETS", "+FIRE RATE", "+BULLETS", "", "+FIRE RATE\nBOMBS RESTORED\nSURVIVE AS LONG AS YOU CAN!" };
 
     // Start is called before the first frame update
     void Start()

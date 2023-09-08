@@ -43,7 +43,7 @@ public class LevelUpDing : MonoBehaviour
 
     IEnumerator ChangeText(){
         StartCoroutine(FadeTo(1f,1f));
-        textField.text = "Level " + currentLevel;
+        textField.text = "LEVEL " + currentLevel;
         yield return new WaitForSeconds(3);
         StartCoroutine(FadeTo(0f,1f));
     }

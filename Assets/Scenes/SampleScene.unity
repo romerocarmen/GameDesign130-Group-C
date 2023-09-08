@@ -15992,6 +15992,16 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: e744bead6a8961e468a502bf43b2c21e, type: 3}
     - target: {fileID: 5848544684755687963, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
         type: 3}
+      propertyPath: livesLeft
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848544684755687963, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
+        type: 3}
+      propertyPath: invincible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848544684755687963, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
+        type: 3}
       propertyPath: pauseScript
       value: 
       objectReference: {fileID: 542026925}
