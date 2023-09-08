@@ -6095,23 +6095,29 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'WASD to Move
+  m_text: 'Move: WASD
 
-    Mouse to Aim
+    Aim: Mouse
 
-    Left Click to Shoot
+    Shoot: Hold Left Mouse Button
 
-    Right Click
-    for Bomb
+    Bomb:
+    Click Right Mouse Button
 
-    Hold Space to Boost
-
-
-    Collect XP To Advance
+    Boost: Hold Space To Boost Towards Reticle
 
 
-    Colored Circles
-    Protect From Matching Enemies And Stage Attacks'
+    Collect
+    Orbs To Advance
+
+
+    Colored Circles Protect From
+
+    Matching Enemies And
+    Stage Attacks
+
+
+    Color Blind Options In Settings'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 17102e8a5ec6f70449df6538d731f120, type: 2}
   m_sharedMaterial: {fileID: 8307361671242692010, guid: 17102e8a5ec6f70449df6538d731f120,
@@ -6139,8 +6145,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

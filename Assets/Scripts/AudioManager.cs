@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
-        if (Application.loadedLevelName == "ControllerScene")
+        if (Application.loadedLevelName == "SampleScene")
         {
             Destroy(this.gameObject);
         }
