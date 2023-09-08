@@ -48,7 +48,7 @@ public class PauseLeaderboard : MonoBehaviour
         };
 
         // default leaderboard input
-        scoreDict.Add("RBG", 5);
+        scoreDict.Add("RGB", 5);
         
         // sort by value
         var orderedDict = scoreDict.OrderByDescending(pair => pair.Value);

@@ -25,6 +25,6 @@ public class UserName : MonoBehaviour
 
     public static void ResetUserName()
     {
-        userNameInput = "ABC";
+        userNameInput = "RGB";
     }
 }
