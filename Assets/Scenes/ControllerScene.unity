@@ -12223,8 +12223,13 @@ MonoBehaviour:
     Tab to Pause
 
 
-    Colored Circles Protect
-    From Matching Enemies And Stage Attacks'
+    Collect XP To Advance
+
+
+    Colored
+    Circles Protect From
+
+    Matching Enemies And Stage Attacks'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 17102e8a5ec6f70449df6538d731f120, type: 2}
   m_sharedMaterial: {fileID: 8307361671242692010, guid: 17102e8a5ec6f70449df6538d731f120,
@@ -12252,8 +12257,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75
-  m_fontSizeBase: 75
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
