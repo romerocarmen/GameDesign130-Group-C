@@ -44,6 +44,7 @@ public class EnemySpawner : MonoBehaviour
     public int maxEnemyCount = 1;
 
     private void Start(){
+        Time.timeScale = 1;
         redEnemy.GetComponent<ColorSet>().color = new Color(1,0,0);
         greenEnemy.GetComponent<ColorSet>().color = new Color(0,1,0);
         blueEnemy.GetComponent<ColorSet>().color = new Color(0,1,1);
