@@ -6104,20 +6104,13 @@ MonoBehaviour:
     Bomb:
     Click Right Mouse Button
 
-    Boost: Hold Space To Boost Towards Reticle
+    Boost: Hold Space
 
 
-    Collect
-    Orbs To Advance
+    Colored Circles Protect
+    From
 
-
-    Colored Circles Protect From
-
-    Matching Enemies And
-    Stage Attacks
-
-
-    Color Blind Options In Settings'
+    Matching Enemies And Stage Attacks'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 17102e8a5ec6f70449df6538d731f120, type: 2}
   m_sharedMaterial: {fileID: 8307361671242692010, guid: 17102e8a5ec6f70449df6538d731f120,
@@ -6145,8 +6138,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -15873,6 +15866,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848544684031675965, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
+        type: 3}
+      propertyPath: cullingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848544684031675965, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
+        type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5848544684031675965, guid: 1f2faf979be672a4ab6c26cf5f9613b1,
         type: 3}
