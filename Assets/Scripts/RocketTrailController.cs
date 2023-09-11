@@ -19,26 +19,31 @@ public class RocketTrailController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Time.timeScale != 0)
         {
-            foreach (Transform child in transform)
-                child.gameObject.SetActive(true);
+            // Player input goes here
+            if (Input.GetKey(KeyCode.Space))
+            {
+                foreach (Transform child in transform)
+                    child.gameObject.SetActive(true);
 
-        }
-        else
-        {
-            foreach (Transform child in transform)
-                child.gameObject.SetActive(false);
-        }
+            }
+            else
+            {
+                foreach (Transform child in transform)
+                    child.gameObject.SetActive(false);
+            }
 
-        if(Input.GetKeyDown(KeyCode.Space)){
-            boosterAudio.Play();
-            isPlaying= true;
-        } 
-        else if (Input.GetKeyUp(KeyCode.Space))
-        {
-            boosterAudio.Stop();
-            isPlaying= false;   
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                boosterAudio.Play();
+                isPlaying = true;
+            }
+            else if (Input.GetKeyUp(KeyCode.Space))
+            {
+                boosterAudio.Stop();
+                isPlaying = false;
+            }
         }
     }
 }

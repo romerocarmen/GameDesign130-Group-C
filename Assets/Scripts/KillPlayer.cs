@@ -102,17 +102,21 @@ public class KillPlayer : MonoBehaviour
         // Only option is to use REAL TIME: record current real time in variable
         float startTime = Time.realtimeSinceStartup;
         float storedTime = startTime;
-        
+        var newMain = gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().main;
+
         // Loop runs until 3 seconds of real time has passed
-        while (Time.realtimeSinceStartup - startTime < 3){
+        while (Time.realtimeSinceStartup - startTime < 3)
+        {
             if (pauseScript.GetComponent<PauseScript>().isPaused == true)
             {
                 startTime += Time.unscaledDeltaTime;
+                newMain.simulationSpeed = 0;
             }
             else
             {
-
+                newMain.simulationSpeed = 1;
             }
+            //gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().main = newMain;
             yield return null;
         }
 

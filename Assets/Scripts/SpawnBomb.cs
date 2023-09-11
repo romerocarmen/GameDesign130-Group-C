@@ -21,10 +21,15 @@ public class SpawnBomb : MonoBehaviour
     void Update()
     {
         timeSinceLastBomb += Time.deltaTime;
-        if(Input.GetButtonDown("Bomb") && timeSinceLastBomb > 2 && bombCount > 0){
-            BigABomb();
-            bombCount -= 1;
-            GameObject.Find("BombCounter").GetComponent<UIBombCounter>().decrementBombCounter();
+        if (Time.timeScale != 0)
+        {
+            // Player input goes here
+            if (Input.GetButtonDown("Bomb") && timeSinceLastBomb > 2 && bombCount > 0)
+            {
+                BigABomb();
+                bombCount -= 1;
+                GameObject.Find("BombCounter").GetComponent<UIBombCounter>().decrementBombCounter();
+            }
         }
     }
 
