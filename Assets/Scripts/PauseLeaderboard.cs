@@ -20,6 +20,8 @@ public class PauseLeaderboard : MonoBehaviour
     [SerializeField] TextMeshProUGUI score4;
     [SerializeField] TextMeshProUGUI score5;
 
+    public Dictionary<string, int> scoreDict;
+
     void Start()
     {
         name1 = GameObject.Find("firstPlaceName").GetComponent<TextMeshProUGUI>();
@@ -34,22 +36,24 @@ public class PauseLeaderboard : MonoBehaviour
         score4 = GameObject.Find("fourthPlaceScore").GetComponent<TextMeshProUGUI>();
         score5 = GameObject.Find("fifthPlaceScore").GetComponent<TextMeshProUGUI>();
 
+        scoreDict = GlobalControl.Instance.scoreDict;
+
         ConfigureBoard();
     }
 
     public void ConfigureBoard()
     {
-        Dictionary<string, int> scoreDict = new Dictionary<string, int>()
-        {
-            { "BOB", 1220 },
-            { "ACK", 455 },
-            { "AZZ", 105 },
-            { "DUD", 735 }
-        };
+        SavePlayer();
+        DisplayBoard();
+    }
 
-        // default leaderboard input
-        scoreDict.Add("RGB", 5);
-        
+    public void SavePlayer()
+    {
+        GlobalControl.Instance.scoreDict = scoreDict;
+    }
+
+    public void DisplayBoard()
+    {
         // sort by value
         var orderedDict = scoreDict.OrderByDescending(pair => pair.Value);
 
